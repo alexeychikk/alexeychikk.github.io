@@ -1,14 +1,14 @@
-# Parcel / React / TypeScript / SASS / ESLint Template
+# [Alex Zinkevych](http://alexeychikk.github.io/)
+## Full Stack Web Developer
 
-This is a template project for a [React application](https://reactjs.org) that uses the following toolchain:
+---
 
-* Bundler: [Parcel](https://parceljs.org)
-* Language: [TypeScript](https://www.typescriptlang.org/)
-* CSS: [SASS](https://sass-lang.com/dart-sass)
-* Code Linter: [ESLint](https://eslint.org/)
-* Style Linter: [Stylelint](https://stylelint.io/)
-* Visual Test: [Storybook](https://https://storybook.js.org/)
+### Skills:
+* JavaScript / ES6 / TypeScript / Flow
+* React.js / Redux / recompose / reselect
+* HTML / CSS / SASS / CSS in JS
+* Node.js / MongoDB / Socket.io
+* Webpack / Git
 
-I also include the following packages alongside React (including all tooling):
-
-* [React Router](https://reacttraining.com/react-router/)
+### Contacts:
+alexdarkmm@gmail.com / [LinkedIn](https://www.linkedin.com/in/alex-zinkevych/)
