@@ -1,0 +1,54 @@
+import { createMuiTheme } from '@material-ui/core';
+import createPalette from '@material-ui/core/styles/createPalette';
+
+export const theme = createMuiTheme({
+  palette: createPalette({
+    divider: '#585858',
+    primary: {
+      main: '#cc7832',
+      light: '#ffc66d'
+    },
+    secondary: {
+      main: '#9876aa',
+      light: '#6a8759'
+    },
+    text: {
+      primary: '#cccccc',
+      secondary: 'rgba(255,255,255,0.5)'
+    },
+    background: {
+      default: '#212122',
+      paper: '#1e1e1f'
+    },
+    type: 'dark'
+  }),
+  typography: {
+    fontFamily: 'Segoe WPC,Segoe UI,sans-serif,Roboto'
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        html: { height: '100%' },
+        body: {
+          height: '100%'
+        },
+        '#root': {
+          height: '100%'
+        },
+
+        '::-webkit-scrollbar': {
+          width: '12px'
+        },
+        '::-webkit-scrollbar-track': {
+          background: 'transparent'
+        },
+        '::-webkit-scrollbar-thumb': {
+          background: '#79797966'
+        },
+        '::-webkit-scrollbar-thumb:hover': {
+          background: '#646464b3'
+        }
+      }
+    }
+  }
+});

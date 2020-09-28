@@ -23,11 +23,14 @@
     "baseUrl": "./src",
     /* Maps imports to locations - e.g. ~models will go to ./src/models */
     "paths": {
-      "~/*": [ "./*" ]
+      "~/*": [
+        "./*"
+      ]
     },
     /* List of folders to include type definitions from */
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "./@types"
     ],
     /* allow import React instead of import * as React */
     "allowSyntheticDefaultImports": true,
