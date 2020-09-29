@@ -3,10 +3,10 @@ import React from 'react';
 
 import { useStyles } from './SkillItem.styles';
 
-export type SkillItemProps = {
+export interface SkillItemProps {
   icon: SvgComponent;
   hint?: React.ReactNode;
-};
+}
 
 export type SkillItemElement = React.ReactElement<SkillItemProps>;
 

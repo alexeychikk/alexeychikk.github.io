@@ -7,7 +7,7 @@ import FolderIcon from '~/assets/icons/folder-open.svg';
 import { SkillItemElement } from './SkillItem';
 import { useStyles } from './SkillsFolder.styles';
 
-export type SkillsFolderProps = {
+export interface SkillsFolderProps {
   children:
     | SkillsFolderElement
     | SkillsFolderElement[]
@@ -16,7 +16,7 @@ export type SkillsFolderProps = {
   name: React.ReactNode;
   icon?: SvgComponent;
   expandable?: boolean;
-};
+}
 
 export type SkillsFolderElement = React.ReactElement<SkillsFolderProps>;
 

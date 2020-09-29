@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) =>
     root: {
       display: 'flex',
       alignItems: 'center',
-      padding: theme.spacing(0, 1, 0, 2.5),
+      paddingLeft: theme.spacing(2.5),
       height: '26px',
       borderLeft: `1px solid ${theme.palette.divider}`,
       marginLeft: theme.spacing(-1),

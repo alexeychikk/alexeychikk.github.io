@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import {
   SkillItem,
@@ -48,16 +47,13 @@ import ParcelIcon from '~/assets/icons/parcel.svg';
 import I18nIcon from '~/assets/icons/i18n.svg';
 import VsCodeIcon from '~/assets/icons/vscode.svg';
 
-export type MySkillsProps = {
+export interface MySkillsProps {
   className?: string;
-};
+}
 
 export const MySkills: React.FC<MySkillsProps> = (props) => {
   return (
-    <SkillsExplorer
-      className={props.className}
-      heading={<Link to="/">Alex Zinkevych</Link>}
-    >
+    <SkillsExplorer className={props.className}>
       <SkillsFolder icon={FolderSrcIcon} name="My Skills" expandable={false}>
         <SkillsFolder icon={FolderFunctionsIcon} name="Languages">
           <SkillItem icon={JSIcon}>JavaScript</SkillItem>
@@ -72,7 +68,7 @@ export const MySkills: React.FC<MySkillsProps> = (props) => {
 
         <SkillsFolder icon={FolderClientIcon} name="Front End">
           <SkillItem icon={ReactIcon}>React</SkillItem>
-          <SkillItem icon={ReduxIcon} hint="(reselect, recompose, etc.)">
+          <SkillItem icon={ReduxIcon} hint="(reselect, recompose)">
             Redux
           </SkillItem>
           <SkillItem icon={MaterialUiIcon}>Material UI</SkillItem>
