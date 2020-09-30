@@ -68,6 +68,13 @@ export const theme = createMuiTheme({
           minHeight: '46px'
         }
       }
+    },
+    MuiBreadcrumbs: {
+      separator: {
+        marginLeft: 0,
+        marginRight: 0,
+        padding: 2
+      }
     }
   }
 });

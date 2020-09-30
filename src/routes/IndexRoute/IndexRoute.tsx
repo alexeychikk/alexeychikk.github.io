@@ -13,6 +13,7 @@ import Contacts from '~/routes/Contacts';
 import { useStyles } from './IndexRoute.styles';
 import { MySkills } from './MySkills';
 import { Navigation } from './Navigation';
+import { Breadcrumbs } from './Breadcrumbs';
 
 export const IndexRoute: React.FC = () => {
   const classes = useStyles();
@@ -65,6 +66,7 @@ export const IndexRoute: React.FC = () => {
 
       <div className={classes.content}>
         <Toolbar /> {/* For proper top gap */}
+        <Breadcrumbs />
         <Suspense fallback={null}>
           <Switch>
             <Route exact path="/">
