@@ -32,6 +32,10 @@ export const useStyles = makeStyles((theme) =>
         paddingLeft: '5px'
       }
     },
+    navigation: {
+      flex: 1,
+      alignSelf: 'stretch'
+    },
     toolbarIcon: {
       width: '46px',
       height: '46px',
