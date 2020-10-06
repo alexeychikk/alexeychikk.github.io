@@ -20,7 +20,7 @@ export interface SkillsFolderProps {
 
 export type SkillsFolderElement = React.ReactElement<SkillsFolderProps>;
 
-export const SkillsFolder: React.FC<SkillsFolderProps> = (props) => {
+export const SkillsFolder: React.FC<SkillsFolderProps> = React.memo((props) => {
   const classes = useStyles();
   const Icon = props.icon || FolderIcon;
 
@@ -36,7 +36,7 @@ export const SkillsFolder: React.FC<SkillsFolderProps> = (props) => {
       <div className={classes.childrenWrapper}>{props.children}</div>
     </div>
   );
-};
+});
 
 SkillsFolder.defaultProps = {
   expandable: true

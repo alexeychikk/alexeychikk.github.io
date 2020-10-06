@@ -51,7 +51,7 @@ export interface MySkillsProps {
   className?: string;
 }
 
-export const MySkills: React.FC<MySkillsProps> = (props) => {
+export const MySkills: React.FC<MySkillsProps> = React.memo((props) => {
   return (
     <SkillsExplorer className={props.className}>
       <SkillsFolder icon={FolderSrcIcon} name="My Skills" expandable={false}>
@@ -119,4 +119,4 @@ export const MySkills: React.FC<MySkillsProps> = (props) => {
       </SkillsFolder>
     </SkillsExplorer>
   );
-};
+});

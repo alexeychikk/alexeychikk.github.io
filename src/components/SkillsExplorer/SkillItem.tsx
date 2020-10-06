@@ -4,13 +4,14 @@ import React from 'react';
 import { useStyles } from './SkillItem.styles';
 
 export interface SkillItemProps {
+  children: React.ReactNode;
   icon: SvgComponent;
   hint?: React.ReactNode;
 }
 
 export type SkillItemElement = React.ReactElement<SkillItemProps>;
 
-export const SkillItem: React.FC<SkillItemProps> = (props) => {
+export const SkillItem: React.FC<SkillItemProps> = React.memo((props) => {
   const classes = useStyles();
   const Icon = props.icon;
 
@@ -27,4 +28,4 @@ export const SkillItem: React.FC<SkillItemProps> = (props) => {
       )}
     </div>
   );
-};
+});

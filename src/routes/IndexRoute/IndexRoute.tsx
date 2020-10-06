@@ -1,19 +1,16 @@
 import { AppBar, Button, Hidden, Toolbar, Typography } from '@material-ui/core';
 import { ArrowBackIos } from '@material-ui/icons';
-import React, { Suspense, useCallback, useState } from 'react';
-import { Link, Redirect, Route, Switch } from 'react-router-dom';
+import React, { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import FolderSrcIcon from '~/assets/icons/folder-src-open.svg';
 import { ResponsiveDrawer } from '~/components/ResponsiveDrawer';
-import AboutMe from '~/routes/AboutMe';
-import Experience from '~/routes/Experience';
-import Education from '~/routes/Education';
-import Contacts from '~/routes/Contacts';
 
 import { useStyles } from './IndexRoute.styles';
 import { MySkills } from './MySkills';
 import { Navigation } from './Navigation';
 import { Breadcrumbs } from './Breadcrumbs';
+import { ContentRoutes } from './ContentRoutes';
 
 export const IndexRoute: React.FC = () => {
   const classes = useStyles();
@@ -67,25 +64,7 @@ export const IndexRoute: React.FC = () => {
       <div className={classes.content}>
         <Toolbar /> {/* For proper top gap */}
         <Breadcrumbs />
-        <Suspense fallback={null}>
-          <Switch>
-            <Route exact path="/">
-              <AboutMe />
-            </Route>
-            <Route path="/experience">
-              <Experience />
-            </Route>
-            <Route path="/education">
-              <Education />
-            </Route>
-            <Route path="/contacts">
-              <Contacts />
-            </Route>
-            <Route path="*">
-              <Redirect to="/" />
-            </Route>
-          </Switch>
-        </Suspense>
+        <ContentRoutes />
       </div>
     </div>
   );

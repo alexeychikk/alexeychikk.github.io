@@ -10,7 +10,7 @@ interface NavigationProps {
   className?: string;
 }
 
-export const Navigation: React.FC<NavigationProps> = (props) => {
+export const Navigation: React.FC<NavigationProps> = React.memo((props) => {
   const classes = useStyles();
   return (
     <div className={cn(classes.root, props.className)}>
@@ -26,4 +26,4 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
       ))}
     </div>
   );
-};
+});

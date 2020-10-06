@@ -3,14 +3,17 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { theme } from './config/theme';
-import { IndexRoute } from './routes';
+import { Loader } from '~/components/Loader';
+import { theme } from '~/config/theme';
+import { IndexRoute } from '~/routes';
 
 const Application: React.FC<{}> = () => (
   <MuiThemeProvider theme={theme}>
     <CssBaseline />
     <Router>
-      <IndexRoute />
+      <Loader>
+        <IndexRoute />
+      </Loader>
     </Router>
   </MuiThemeProvider>
 );

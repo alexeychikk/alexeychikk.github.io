@@ -5,15 +5,15 @@ import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
 
 import JsonIcon from '~/assets/icons/json.svg';
+import { routesMeta } from '~/config/routesMeta';
 
 import { useStyles } from './Breadcrumbs.styles';
-import { routesMeta } from '~/config/routesMeta';
 
 interface BreadcrumbsProps {
   className?: string;
 }
 
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = (props) => {
+export const Breadcrumbs: React.FC<BreadcrumbsProps> = React.memo((props) => {
   const classes = useStyles();
   const location = useLocation();
   const route = routesMeta[location.pathname];
@@ -33,4 +33,4 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = (props) => {
       </Typography>
     </MuiBreadcrumbs>
   );
-};
+});
