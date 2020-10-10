@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { routesMeta } from '~/config/routesMeta';
+import { routesMeta } from '~/src/config/routesMeta';
 
 import { useStyles } from './Navigation.styles';
 import { NavLink } from './NavLink';
@@ -10,7 +10,7 @@ interface NavigationProps {
   className?: string;
 }
 
-export const Navigation: React.FC<NavigationProps> = React.memo((props) => {
+const NavigationBase: React.FC<NavigationProps> = (props) => {
   const classes = useStyles();
   return (
     <div className={cn(classes.root, props.className)}>
@@ -26,4 +26,6 @@ export const Navigation: React.FC<NavigationProps> = React.memo((props) => {
       ))}
     </div>
   );
-});
+};
+
+export const Navigation = React.memo(NavigationBase);

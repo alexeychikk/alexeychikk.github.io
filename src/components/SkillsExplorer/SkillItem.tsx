@@ -11,7 +11,7 @@ export interface SkillItemProps {
 
 export type SkillItemElement = React.ReactElement<SkillItemProps>;
 
-export const SkillItem: React.FC<SkillItemProps> = React.memo((props) => {
+const SkillItemBase: React.FC<SkillItemProps> = (props) => {
   const classes = useStyles();
   const Icon = props.icon;
 
@@ -28,4 +28,6 @@ export const SkillItem: React.FC<SkillItemProps> = React.memo((props) => {
       )}
     </div>
   );
-});
+};
+
+export const SkillItem = React.memo(SkillItemBase);

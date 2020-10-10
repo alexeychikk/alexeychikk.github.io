@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import cn from 'classnames';
 
-import JsonIcon from '~/assets/icons/json.svg';
+import JsonIcon from '~/src/assets/icons/json.svg';
 
 import { useStyles } from './NavLink.styles';
 import { Typography } from '@material-ui/core';

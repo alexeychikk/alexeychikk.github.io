@@ -20,7 +20,7 @@
     /* Don't emit javascript */
     "noEmit": true,
     /* Base directory to resolve non-absolute module names */
-    "baseUrl": "./src",
+    "baseUrl": "./",
     /* Maps imports to locations - e.g. ~models will go to ./src/models */
     "paths": {
       "~/*": [

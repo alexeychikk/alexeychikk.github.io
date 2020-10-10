@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    { "removeViewBox": false },
+    { "removeStyleElement": false },
+    { "inlineStyles": false },
+    { "convertStyleToAttrs": false },
+    { "cleanupIDs": false }
+  ]
+}

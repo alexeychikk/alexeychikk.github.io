@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Loader } from '~/components/Loader';
+import { CodeLikeBlock } from '~/src/components/CodeLikeBlock';
 
 export const Experience: React.FC = () => {
-  return <Loader>Experience</Loader>;
+  return <CodeLikeBlock>Coming soon...</CodeLikeBlock>;
 };
 
 export default Experience;

@@ -2,7 +2,7 @@ import { Typography } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 import React from 'react';
 
-import FolderIcon from '~/assets/icons/folder-open.svg';
+import FolderIcon from '~/src/assets/icons/folder-open.svg';
 
 import { SkillItemElement } from './SkillItem';
 import { useStyles } from './SkillsFolder.styles';
@@ -20,7 +20,7 @@ export interface SkillsFolderProps {
 
 export type SkillsFolderElement = React.ReactElement<SkillsFolderProps>;
 
-export const SkillsFolder: React.FC<SkillsFolderProps> = React.memo((props) => {
+const SkillsFolderBase: React.FC<SkillsFolderProps> = (props) => {
   const classes = useStyles();
   const Icon = props.icon || FolderIcon;
 
@@ -36,8 +36,10 @@ export const SkillsFolder: React.FC<SkillsFolderProps> = React.memo((props) => {
       <div className={classes.childrenWrapper}>{props.children}</div>
     </div>
   );
-});
+};
 
-SkillsFolder.defaultProps = {
+SkillsFolderBase.defaultProps = {
   expandable: true
 };
+
+export const SkillsFolder = React.memo(SkillsFolderBase);

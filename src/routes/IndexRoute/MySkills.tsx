@@ -4,54 +4,54 @@ import {
   SkillItem,
   SkillsExplorer,
   SkillsFolder
-} from '~/components/SkillsExplorer';
+} from '~/src/components/SkillsExplorer';
 
-import FolderSrcIcon from '~/assets/icons/folder-src-open.svg';
-import FolderFunctionsIcon from '~/assets/icons/folder-functions-open.svg';
-import JSIcon from '~/assets/icons/javascript.svg';
-import TSIcon from '~/assets/icons/typescript.svg';
-import CSharpIcon from '~/assets/icons/csharp.svg';
-import CoffeeScriptIcon from '~/assets/icons/coffeescript.svg';
+import FolderSrcIcon from '~/src/assets/icons/folder-src-open.svg';
+import FolderFunctionsIcon from '~/src/assets/icons/folder-functions-open.svg';
+import JSIcon from '~/src/assets/icons/javascript.svg';
+import TSIcon from '~/src/assets/icons/typescript.svg';
+import CSharpIcon from '~/src/assets/icons/csharp.svg';
+import CoffeeScriptIcon from '~/src/assets/icons/coffeescript.svg';
 
-import FolderClientIcon from '~/assets/icons/folder-client-open.svg';
-import ReactIcon from '~/assets/icons/react_ts.svg';
-import ReduxIcon from '~/assets/icons/redux-store.svg';
-import MaterialUiIcon from '~/assets/icons/material-ui.svg';
-import HtmlIcon from '~/assets/icons/html.svg';
-import CssIcon from '~/assets/icons/css.svg';
-import SassIcon from '~/assets/icons/sass.svg';
-import JssIcon from '~/assets/icons/jss.svg';
-import GatsbyIcon from '~/assets/icons/gatsby.svg';
-import NetlifyIcon from '~/assets/icons/netlify.svg';
-import AngularIcon from '~/assets/icons/angular.svg';
+import FolderClientIcon from '~/src/assets/icons/folder-client-open.svg';
+import ReactIcon from '~/src/assets/icons/react_ts.svg';
+import ReduxIcon from '~/src/assets/icons/redux-store.svg';
+import MaterialUiIcon from '~/src/assets/icons/material-ui.svg';
+import HtmlIcon from '~/src/assets/icons/html.svg';
+import CssIcon from '~/src/assets/icons/css.svg';
+import SassIcon from '~/src/assets/icons/sass.svg';
+import JssIcon from '~/src/assets/icons/jss.svg';
+import GatsbyIcon from '~/src/assets/icons/gatsby.svg';
+import NetlifyIcon from '~/src/assets/icons/netlify.svg';
+import AngularIcon from '~/src/assets/icons/angular.svg';
 
-import FolderNodeIcon from '~/assets/icons/folder-node-open.svg';
-import NodeJsIcon from '~/assets/icons/nodejs.svg';
-import MongoDBIcon from '~/assets/icons/mongodb.svg';
-import SocketIoIcon from '~/assets/icons/socket-io.svg';
-import AWSIcon from '~/assets/icons/aws.svg';
-import DockerIcon from '~/assets/icons/docker.svg';
-import KubernetesIcon from '~/assets/icons/kubernetes.svg';
+import FolderNodeIcon from '~/src/assets/icons/folder-node-open.svg';
+import NodeJsIcon from '~/src/assets/icons/nodejs.svg';
+import MongoDBIcon from '~/src/assets/icons/mongodb.svg';
+import SocketIoIcon from '~/src/assets/icons/socket-io.svg';
+import AWSIcon from '~/src/assets/icons/aws.svg';
+import DockerIcon from '~/src/assets/icons/docker.svg';
+import KubernetesIcon from '~/src/assets/icons/kubernetes.svg';
 
-import FolderDocsIcon from '~/assets/icons/folder-docs-open.svg';
-import ReadmeIcon from '~/assets/icons/readme.svg';
+import FolderDocsIcon from '~/src/assets/icons/folder-docs-open.svg';
+import ReadmeIcon from '~/src/assets/icons/readme.svg';
 
-import FolderToolsIcon from '~/assets/icons/folder-tools-open.svg';
-import GitIcon from '~/assets/icons/git.svg';
-import GitlabIcon from '~/assets/icons/gitlab.svg';
-import JestIcon from '~/assets/icons/jest.svg';
-import CypressIcon from '~/assets/icons/cypress.svg';
-import SentryIcon from '~/assets/icons/sentry.svg';
-import WebpackIcon from '~/assets/icons/webpack.svg';
-import ParcelIcon from '~/assets/icons/parcel.svg';
-import I18nIcon from '~/assets/icons/i18n.svg';
-import VsCodeIcon from '~/assets/icons/vscode.svg';
+import FolderToolsIcon from '~/src/assets/icons/folder-tools-open.svg';
+import GitIcon from '~/src/assets/icons/git.svg';
+import GitlabIcon from '~/src/assets/icons/gitlab.svg';
+import JestIcon from '~/src/assets/icons/jest.svg';
+import CypressIcon from '~/src/assets/icons/cypress.svg';
+import SentryIcon from '~/src/assets/icons/sentry.svg';
+import WebpackIcon from '~/src/assets/icons/webpack.svg';
+import ParcelIcon from '~/src/assets/icons/parcel.svg';
+import I18nIcon from '~/src/assets/icons/i18n.svg';
+import VsCodeIcon from '~/src/assets/icons/vscode.svg';
 
 export interface MySkillsProps {
   className?: string;
 }
 
-export const MySkills: React.FC<MySkillsProps> = React.memo((props) => {
+const MySkillsBase: React.FC<MySkillsProps> = (props) => {
   return (
     <SkillsExplorer className={props.className}>
       <SkillsFolder icon={FolderSrcIcon} name="My Skills" expandable={false}>
@@ -119,4 +119,6 @@ export const MySkills: React.FC<MySkillsProps> = React.memo((props) => {
       </SkillsFolder>
     </SkillsExplorer>
   );
-});
+};
+
+export const MySkills = React.memo(MySkillsBase);
