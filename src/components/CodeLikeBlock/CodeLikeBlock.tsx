@@ -1,8 +1,8 @@
-import React from 'react';
-import cn from 'classnames';
-import useResizeObserver from 'use-resize-observer';
+import React from "react";
+import cn from "classnames";
+import useResizeObserver from "use-resize-observer";
 
-import { useStyles } from './CodeLikeBlock.styles';
+import { useStyles } from "./CodeLikeBlock.styles";
 
 interface CodeLikeBlockProps {
   className?: string;
@@ -15,7 +15,7 @@ export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
   >();
   const {
     ref: sampleLineRef,
-    height: sampleLineHeight = 1
+    height: sampleLineHeight = 1,
   } = useResizeObserver<HTMLDivElement>();
   const linesCount = Math.ceil(childrenHeight / sampleLineHeight) + 1;
   const classes = useStyles();

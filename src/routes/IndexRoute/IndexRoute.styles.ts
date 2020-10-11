@@ -1,57 +1,57 @@
-import { createStyles, makeStyles } from '@material-ui/core';
+import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
-      height: '100%',
-      display: 'flex'
+      height: "100%",
+      display: "flex",
     },
     appBar: {
-      zIndex: theme.zIndex.drawer + 1
+      zIndex: theme.zIndex.drawer + 1,
     },
     toolbar: {
-      padding: 0
+      padding: 0,
     },
     headingWrapper: {
       boxShadow: theme.shadows[3],
-      display: 'flex',
-      alignItems: 'center',
-      color: '#fff',
+      display: "flex",
+      alignItems: "center",
+      color: "#fff",
       lineHeight: 1,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
       paddingLeft: theme.spacing(2.5),
       backgroundColor: theme.palette.background.paper,
-      height: '46px',
-      width: '320px',
-      '& a': {
-        color: '#fff',
-        textDecoration: 'none'
+      height: "46px",
+      width: "320px",
+      "& a": {
+        color: "#fff",
+        textDecoration: "none",
       },
-      [theme.breakpoints.down('sm')]: {
-        boxShadow: 'none',
-        paddingLeft: '5px'
-      }
+      [theme.breakpoints.down("sm")]: {
+        boxShadow: "none",
+        paddingLeft: "5px",
+      },
     },
     navigation: {
       flex: 1,
-      alignSelf: 'stretch'
+      alignSelf: "stretch",
     },
     toolbarIcon: {
-      width: '46px',
-      height: '46px',
-      padding: '11px',
-      marginRight: '5px'
+      width: "46px",
+      height: "46px",
+      padding: "11px",
+      marginRight: "5px",
     },
     mobileDrawerToolbar: {
       padding: theme.spacing(0, 2),
-      boxShadow: theme.shadows[3]
+      boxShadow: theme.shadows[3],
     },
     content: {
       flexGrow: 1,
-      marginLeft: '320px',
-      [theme.breakpoints.down('sm')]: {
-        marginLeft: 0
-      }
-    }
+      marginLeft: "320px",
+      [theme.breakpoints.down("sm")]: {
+        marginLeft: 0,
+      },
+    },
   })
 );

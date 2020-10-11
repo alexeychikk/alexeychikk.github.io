@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export type RouteMeta = {
   to: string;
@@ -8,21 +8,21 @@ export type RouteMeta = {
 };
 
 export const routesMeta: { [key: string]: RouteMeta } = {
-  '/': {
-    to: '/',
-    label: 'About Me',
-    activeOnlyWhenExact: true
+  "/": {
+    to: "/",
+    label: "About Me",
+    activeOnlyWhenExact: true,
   },
-  '/experience': {
-    to: '/experience',
-    label: 'Experience'
+  "/experience": {
+    to: "/experience",
+    label: "Experience",
   },
-  '/education': {
-    to: '/education',
-    label: 'Education'
+  "/education": {
+    to: "/education",
+    label: "Education",
   },
-  '/contacts': {
-    to: '/contacts',
-    label: 'Contacts'
-  }
+  "/contacts": {
+    to: "/contacts",
+    label: "Contacts",
+  },
 };

@@ -1,8 +1,8 @@
-import { Drawer, Hidden, SwipeableDrawer } from '@material-ui/core';
-import React from 'react';
-import cn from 'classnames';
+import { Drawer, Hidden, SwipeableDrawer } from "@material-ui/core";
+import React from "react";
+import cn from "classnames";
 
-import { useStyles } from './ResponsiveDrawer.styles';
+import { useStyles } from "./ResponsiveDrawer.styles";
 
 export interface ResponsiveDrawerProps {
   children: React.ReactNode;
@@ -20,14 +20,14 @@ const ResponsiveDrawerBase: React.FC<ResponsiveDrawerProps> = (props) => {
       <Hidden mdUp>
         <SwipeableDrawer
           classes={{
-            paper: classes.drawerPaper
+            paper: classes.drawerPaper,
           }}
           variant="temporary"
           open={props.isMobileOpen}
           onOpen={props.onMobileOpen}
           onClose={props.onMobileClose}
           ModalProps={{
-            keepMounted: true
+            keepMounted: true,
           }}
         >
           {props.children}
@@ -37,7 +37,7 @@ const ResponsiveDrawerBase: React.FC<ResponsiveDrawerProps> = (props) => {
       <Hidden smDown implementation="css">
         <Drawer
           classes={{
-            paper: classes.drawerPaper
+            paper: classes.drawerPaper,
           }}
           variant="permanent"
           open

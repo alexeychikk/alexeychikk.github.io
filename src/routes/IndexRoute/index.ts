@@ -1,2 +1,2 @@
-export * from './IndexRoute';
-export { default } from './IndexRoute';
+export * from "./IndexRoute";
+export { default } from "./IndexRoute";
