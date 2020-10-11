@@ -8,6 +8,10 @@ export const useStyles = makeStyles((theme) =>
       fontSize: theme.typography.h6.fontSize,
       paddingTop: theme.spacing(2),
       alignItems: "start",
+      [theme.breakpoints.down("sm")]: {
+        paddingTop: theme.spacing(1),
+        fontSize: theme.typography.body1.fontSize,
+      },
     },
     lines: {},
     line: {
@@ -15,6 +19,10 @@ export const useStyles = makeStyles((theme) =>
       textAlign: "right",
       marginRight: theme.spacing(4),
       color: theme.palette.text.secondary,
+      [theme.breakpoints.down("sm")]: {
+        width: theme.spacing(4),
+        marginRight: theme.spacing(2),
+      },
     },
     sampleLine: {
       position: "fixed",
@@ -25,8 +33,12 @@ export const useStyles = makeStyles((theme) =>
       flex: 1,
       color: "#a9b7c6",
       maxWidth: "1024px",
+      paddingRight: theme.spacing(2),
       "& p": {
         margin: 0,
+      },
+      [theme.breakpoints.down("sm")]: {
+        paddingRight: theme.spacing(1),
       },
     },
     Kw: {
