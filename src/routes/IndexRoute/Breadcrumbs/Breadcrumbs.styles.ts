@@ -11,7 +11,11 @@ export const useStyles = makeStyles((theme) =>
       height: "20px",
       marginRight: theme.spacing(1),
     },
-    active: {},
+    active: {
+      "&:hover": {
+        cursor: "pointer",
+      },
+    },
     item: {
       lineHeight: 1,
       display: "flex",
@@ -19,6 +23,13 @@ export const useStyles = makeStyles((theme) =>
       "&$active": {
         color: "#fff",
       },
+    },
+    link: {
+      color: "inherit",
+      textDecoration: "none",
+    },
+    menu: {
+      backgroundColor: "rgb(37,37,38)",
     },
   })
 );

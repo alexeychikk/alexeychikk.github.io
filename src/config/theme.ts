@@ -34,7 +34,10 @@ export const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       "@global": {
-        html: { height: "100%" },
+        html: {
+          height: "100%",
+          minWidth: "320px",
+        },
         body: {
           height: "100%",
         },

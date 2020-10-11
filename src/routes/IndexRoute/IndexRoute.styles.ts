@@ -29,6 +29,8 @@ export const useStyles = makeStyles((theme) =>
       },
       [theme.breakpoints.down("sm")]: {
         boxShadow: "none",
+        backgroundColor: "rgb(37, 37, 38)",
+        width: "100%",
         paddingLeft: "5px",
       },
     },
@@ -46,10 +48,14 @@ export const useStyles = makeStyles((theme) =>
       padding: theme.spacing(0, 2),
       boxShadow: theme.shadows[3],
     },
+    mobileBreadcrumbs: {
+      boxShadow: theme.shadows[3],
+    },
     content: {
       flexGrow: 1,
       marginLeft: "320px",
       [theme.breakpoints.down("sm")]: {
+        paddingTop: "28px", // breadcrumbs
         marginLeft: 0,
       },
     },

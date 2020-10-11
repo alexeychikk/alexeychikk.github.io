@@ -39,8 +39,13 @@ export const IndexRoute: React.FC = () => {
               <Link to="/">Alex Zinkevych</Link>
             </Typography>
           </div>
-          <Navigation className={classes.navigation} />
+          <Hidden smDown>
+            <Navigation className={classes.navigation} />
+          </Hidden>
         </Toolbar>
+        <Hidden mdUp>
+          <Breadcrumbs className={classes.mobileBreadcrumbs} />
+        </Hidden>
       </AppBar>
 
       <ResponsiveDrawer
@@ -63,7 +68,9 @@ export const IndexRoute: React.FC = () => {
 
       <div className={classes.content}>
         <Toolbar /> {/* For proper top gap */}
-        <Breadcrumbs />
+        <Hidden smDown>
+          <Breadcrumbs />
+        </Hidden>
         <ContentRoutes />
       </div>
     </div>
