@@ -1,7 +1,7 @@
-import { Typography } from '@material-ui/core';
-import React from 'react';
+import { Typography } from "@material-ui/core";
+import React from "react";
 
-import { useStyles } from './SkillItem.styles';
+import { useStyles } from "./SkillItem.styles";
 
 export interface SkillItemProps {
   children: React.ReactNode;
