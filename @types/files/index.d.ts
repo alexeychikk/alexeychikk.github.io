@@ -1,96 +1,68 @@
-declare module '*.jpg' {
+declare module "*.eot" {
   const path: string;
   export default path;
 }
 
-declare module '*.jpeg' {
+declare module "*.otf" {
   const path: string;
   export default path;
 }
 
-declare module '*.png' {
+type SvgComponent = React.FunctionComponent<
+  React.SVGProps<SVGSVGElement> & { title?: string }
+>;
+
+declare module "*.ttf" {
   const path: string;
   export default path;
 }
 
-declare module '*.gif' {
+declare module "*.woff" {
   const path: string;
   export default path;
 }
 
-declare module '*.eot' {
+declare module "*.woff2" {
   const path: string;
   export default path;
 }
 
-declare module '*.otf' {
+declare module "*.mp4" {
   const path: string;
   export default path;
 }
 
-declare module '*.webp' {
+declare module "*.webm" {
   const path: string;
   export default path;
 }
 
-type SvgComponent = React.ElementType<React.SVGProps<'svg'>>;
-
-declare module '*.svg' {
-  const svg: SvgComponent;
-  export default svg;
-}
-
-declare module '*.ttf' {
+declare module "*.wav" {
   const path: string;
   export default path;
 }
 
-declare module '*.woff' {
+declare module "*.mp3" {
   const path: string;
   export default path;
 }
 
-declare module '*.woff2' {
+declare module "*.m4a" {
   const path: string;
   export default path;
 }
 
-declare module '*.mp4' {
+declare module "*.aac" {
   const path: string;
   export default path;
 }
 
-declare module '*.webm' {
+declare module "*.oga" {
   const path: string;
   export default path;
 }
 
-declare module '*.wav' {
-  const path: string;
-  export default path;
-}
-
-declare module '*.mp3' {
-  const path: string;
-  export default path;
-}
-
-declare module '*.m4a' {
-  const path: string;
-  export default path;
-}
-
-declare module '*.aac' {
-  const path: string;
-  export default path;
-}
-
-declare module '*.oga' {
-  const path: string;
-  export default path;
-}
-
-declare module '*.md' {
+declare module "*.md" {
   const html: string;
   export default html;
 }

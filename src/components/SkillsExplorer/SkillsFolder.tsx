@@ -1,11 +1,11 @@
-import { Typography } from '@material-ui/core';
-import { ExpandMore } from '@material-ui/icons';
-import React from 'react';
+import { Typography } from "@material-ui/core";
+import { ExpandMore } from "@material-ui/icons";
+import React from "react";
 
-import FolderIcon from '~/src/assets/icons/folder-open.svg';
+import { ReactComponent as FolderIcon } from "~/assets/icons/folder-open.svg";
 
-import { SkillItemElement } from './SkillItem';
-import { useStyles } from './SkillsFolder.styles';
+import { SkillItemElement } from "./SkillItem";
+import { useStyles } from "./SkillsFolder.styles";
 
 export interface SkillsFolderProps {
   children:
@@ -39,7 +39,7 @@ const SkillsFolderBase: React.FC<SkillsFolderProps> = (props) => {
 };
 
 SkillsFolderBase.defaultProps = {
-  expandable: true
+  expandable: true,
 };
 
 export const SkillsFolder = React.memo(SkillsFolderBase);

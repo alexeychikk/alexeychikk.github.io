@@ -1,10 +1,10 @@
-import React from 'react';
-import cn from 'classnames';
+import React from "react";
+import cn from "classnames";
 
-import { routesMeta } from '~/src/config/routesMeta';
+import { routesMeta } from "~/config/routesMeta";
 
-import { useStyles } from './Navigation.styles';
-import { NavLink } from './NavLink';
+import { useStyles } from "./Navigation.styles";
+import { NavLink } from "./NavLink";
 
 interface NavigationProps {
   className?: string;

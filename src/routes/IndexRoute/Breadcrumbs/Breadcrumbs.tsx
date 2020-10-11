@@ -1,13 +1,13 @@
-import { Breadcrumbs as MuiBreadcrumbs, Typography } from '@material-ui/core';
-import { NavigateNext } from '@material-ui/icons';
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import cn from 'classnames';
+import { Breadcrumbs as MuiBreadcrumbs, Typography } from "@material-ui/core";
+import { NavigateNext } from "@material-ui/icons";
+import React from "react";
+import { useLocation } from "react-router-dom";
+import cn from "classnames";
 
-import JsonIcon from '~/src/assets/icons/json.svg';
-import { routesMeta } from '~/src/config/routesMeta';
+import { ReactComponent as JsonIcon } from "~/assets/icons/json.svg";
+import { routesMeta } from "~/config/routesMeta";
 
-import { useStyles } from './Breadcrumbs.styles';
+import { useStyles } from "./Breadcrumbs.styles";
 
 interface BreadcrumbsProps {
   className?: string;

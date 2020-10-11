@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
-import cn from 'classnames';
+import React from "react";
+import { Link, useRouteMatch } from "react-router-dom";
+import cn from "classnames";
 
-import JsonIcon from '~/src/assets/icons/json.svg';
+import { ReactComponent as JsonIcon } from "~/assets/icons/json.svg";
 
-import { useStyles } from './NavLink.styles';
-import { Typography } from '@material-ui/core';
+import { useStyles } from "./NavLink.styles";
+import { Typography } from "@material-ui/core";
 
 interface NavLinkProps {
   to: string;
@@ -18,7 +18,7 @@ export const NavLink: React.FC<NavLinkProps> = (props) => {
   const classes = useStyles();
   const match = useRouteMatch({
     path: props.to,
-    exact: props.activeOnlyWhenExact
+    exact: props.activeOnlyWhenExact,
   });
   const Icon = props.icon || JsonIcon;
 

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Br, CodeLikeBlock } from '~/src/components/CodeLikeBlock';
+import { Br, CodeLikeBlock } from "~/components/CodeLikeBlock";
 
 export const AboutMe: React.FC = () => {
   return (
@@ -15,19 +15,19 @@ export const AboutMe: React.FC = () => {
       <Br />
 
       <p>
-        <b>I love</b> to write <em>clean</em>, <em>readable</em> and{' '}
+        <b>I love</b> to write <em>clean</em>, <em>readable</em> and{" "}
         <em>maintainable</em> <strong>code</strong>.
       </p>
       <p>
-        <b>My</b> main <strong>stack</strong> is:{' '}
-        <em>JavaScript / TypeScript</em>, <em>React</em>, <em>Node.js</em> and{' '}
+        <b>My</b> main <strong>stack</strong> is:{" "}
+        <em>JavaScript / TypeScript</em>, <em>React</em>, <em>Node.js</em> and{" "}
         <em>MongoDB</em>.
       </p>
 
       <Br />
 
       <p>
-        <b>You can</b> find all of my <strong>skills</strong> in the{' '}
+        <b>You can</b> find all of my <strong>skills</strong> in the{" "}
         <em>sidebar</em> on the <i>left</i>
       </p>
       <p>
@@ -44,19 +44,19 @@ export const AboutMe: React.FC = () => {
         <b>My</b> first <em>programming language</em> was <strong>C++</strong>.
       </p>
       <p>
-        <b>Then</b> I learned <strong>C#</strong> and started <b>writing</b>{' '}
+        <b>Then</b> I learned <strong>C#</strong> and started <b>writing</b>{" "}
         simple <em>games</em> for <i>fun</i>.
       </p>
 
       <Br />
 
       <p>
-        <b>But one day</b>, all the <i>cool guys</i> started <b>talking</b>{' '}
-        about <strong>JS</strong> and how <em>awesome</em> and <em>powerful</em>{' '}
+        <b>But one day</b>, all the <i>cool guys</i> started <b>talking</b>{" "}
+        about <strong>JS</strong> and how <em>awesome</em> and <em>powerful</em>{" "}
         it is.
       </p>
       <p>
-        <b>So I followed</b> the <em>mainstream</em> and dedicated all my{' '}
+        <b>So I followed</b> the <em>mainstream</em> and dedicated all my{" "}
         <em>efforts</em> to become as good <strong>web developer</strong> as I
         can possibly <b>be</b>.
       </p>

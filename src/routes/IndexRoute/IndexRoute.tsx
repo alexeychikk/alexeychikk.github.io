@@ -1,16 +1,16 @@
-import { AppBar, Button, Hidden, Toolbar, Typography } from '@material-ui/core';
-import { ArrowBackIos } from '@material-ui/icons';
-import React, { useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { AppBar, Button, Hidden, Toolbar, Typography } from "@material-ui/core";
+import { ArrowBackIos } from "@material-ui/icons";
+import React, { useCallback, useState } from "react";
+import { Link } from "react-router-dom";
 
-import FolderSrcIcon from '~/src/assets/icons/folder-src-open.svg';
-import { ResponsiveDrawer } from '~/src/components/ResponsiveDrawer';
+import { ReactComponent as FolderSrcIcon } from "~/assets/icons/folder-src-open.svg";
+import { ResponsiveDrawer } from "~/components/ResponsiveDrawer";
 
-import { useStyles } from './IndexRoute.styles';
-import { MySkills } from './MySkills';
-import { Navigation } from './Navigation';
-import { Breadcrumbs } from './Breadcrumbs';
-import { ContentRoutes } from './ContentRoutes';
+import { useStyles } from "./IndexRoute.styles";
+import { MySkills } from "./MySkills";
+import { Navigation } from "./Navigation";
+import { Breadcrumbs } from "./Breadcrumbs";
+import { ContentRoutes } from "./ContentRoutes";
 
 export const IndexRoute: React.FC = () => {
   const classes = useStyles();
