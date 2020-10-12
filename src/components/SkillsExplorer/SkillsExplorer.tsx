@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 import { SkillItemElement } from "./SkillItem";
 import { SkillsFolderElement } from "./SkillsFolder";
@@ -18,7 +18,7 @@ export interface SkillsExplorerProps {
 export const SkillsExplorer: React.FC<SkillsExplorerProps> = (props) => {
   const classes = useStyles(props);
   return (
-    <div className={cn(classes.skillsExplorer, props.className)}>
+    <div className={clsx(classes.skillsExplorer, props.className)}>
       <div className={classes.childrenWrapper}>{props.children}</div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "classnames";
+import clsx from "clsx";
 
 import { useStyles } from "./Loader.styles";
 
@@ -11,11 +11,11 @@ export const Loader: React.FC<LoaderProps> = (props) => {
   const classes = useStyles(props);
 
   return (
-    <div className={cn(classes.loader, props.className)}>
-      <div className={cn(classes.inner, classes.inner1)} />
-      <div className={cn(classes.inner, classes.inner2)} />
-      <div className={cn(classes.inner, classes.inner3)} />
-      <div className={cn(classes.inner, classes.inner4)} />
+    <div className={clsx(classes.loader, props.className)}>
+      <div className={clsx(classes.inner, classes.inner1)} />
+      <div className={clsx(classes.inner, classes.inner2)} />
+      <div className={clsx(classes.inner, classes.inner3)} />
+      <div className={clsx(classes.inner, classes.inner4)} />
       <div className={classes.childrenWrapper}>{props.children}</div>
     </div>
   );

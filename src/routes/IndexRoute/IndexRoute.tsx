@@ -1,70 +1,57 @@
-import { AppBar, Button, Hidden, Toolbar, Typography } from "@material-ui/core";
-import { ArrowBackIos } from "@material-ui/icons";
+import { Hidden, Toolbar } from "@material-ui/core";
 import React, { useCallback, useState } from "react";
-import { Link } from "react-router-dom";
 
-import { ReactComponent as FolderSrcIcon } from "~/assets/icons/folder-src-open.svg";
 import { ResponsiveDrawer } from "~/components/ResponsiveDrawer";
 
 import { useStyles } from "./IndexRoute.styles";
+import { MainAppBar } from "./MainAppBar";
 import { MySkills } from "./MySkills";
-import { Navigation } from "./Navigation";
+import { NavigationDrawer } from "./NavigationDrawer";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { ContentRoutes } from "./ContentRoutes";
 
 export const IndexRoute: React.FC = () => {
   const classes = useStyles();
 
-  const [isMobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [isSkillsDrawerOpen, setSkillsDrawerOpen] = useState(false);
+  const [isNavigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
 
-  const openMobileDrawer = useCallback(() => {
-    setMobileDrawerOpen(true);
+  const openSkillsDrawer = useCallback(() => {
+    setSkillsDrawerOpen(true);
   }, []);
-  const closeMobileDrawer = useCallback(() => {
-    setMobileDrawerOpen(false);
+  const closeSkillsDrawer = useCallback(() => {
+    setSkillsDrawerOpen(false);
+  }, []);
+  const openNavigationDrawer = useCallback(() => {
+    setNavigationDrawerOpen(true);
+  }, []);
+  const closeNavigationDrawer = useCallback(() => {
+    setNavigationDrawerOpen(false);
   }, []);
 
   return (
     <div className={classes.indexRoute}>
-      <AppBar position="fixed" className={classes.appBar} elevation={0}>
-        <Toolbar className={classes.toolbar}>
-          <div className={classes.headingWrapper}>
-            <Hidden mdUp>
-              <FolderSrcIcon
-                className={classes.toolbarIcon}
-                onClick={openMobileDrawer}
-              />
-            </Hidden>
-            <Typography variant="subtitle1">
-              <Link to="/">Alex Zinkevych</Link>
-            </Typography>
-          </div>
-          <Hidden smDown>
-            <Navigation className={classes.navigation} />
-          </Hidden>
-        </Toolbar>
-        <Hidden mdUp>
-          <Breadcrumbs className={classes.mobileBreadcrumbs} />
-        </Hidden>
-      </AppBar>
+      <MainAppBar
+        onNavigationDrawerOpen={openNavigationDrawer}
+        onSkillsDrawerOpen={openSkillsDrawer}
+      />
 
       <ResponsiveDrawer
-        isMobileOpen={isMobileDrawerOpen}
-        onMobileOpen={openMobileDrawer}
-        onMobileClose={closeMobileDrawer}
+        isMobileOpen={isSkillsDrawerOpen}
+        onMobileOpen={openSkillsDrawer}
+        onMobileClose={closeSkillsDrawer}
       >
-        <Hidden mdUp>
-          <Toolbar className={classes.mobileDrawerToolbar}>
-            <Button startIcon={<ArrowBackIos />} onClick={closeMobileDrawer}>
-              Back
-            </Button>
-          </Toolbar>
-        </Hidden>
         <Hidden smDown>
           <Toolbar /> {/* For proper top gap */}
         </Hidden>
         <MySkills />
       </ResponsiveDrawer>
+
+      <NavigationDrawer
+        open={isNavigationDrawerOpen}
+        onOpen={openNavigationDrawer}
+        onClose={closeNavigationDrawer}
+      />
 
       <div className={classes.content}>
         <Toolbar /> {/* For proper top gap */}

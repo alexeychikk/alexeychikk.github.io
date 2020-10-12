@@ -7,7 +7,7 @@ import {
 import { NavigateNext } from "@material-ui/icons";
 import React, { useCallback, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import cn from "classnames";
+import clsx from "clsx";
 
 import { ReactComponent as JsonIcon } from "~/assets/icons/json.svg";
 import { routesMeta } from "~/config/routesMeta";
@@ -43,14 +43,14 @@ const BreadcrumbsBase: React.FC<BreadcrumbsProps> = (props) => {
   return (
     <>
       <MuiBreadcrumbs
-        className={cn(classes.breadcrumbs, props.className)}
+        className={clsx(classes.breadcrumbs, props.className)}
         separator={<NavigateNext />}
       >
         <Typography className={classes.item} variant="body1">
           src
         </Typography>
         <Typography
-          className={cn(classes.item, classes.active)}
+          className={clsx(classes.item, classes.active)}
           variant="body1"
           onClick={handleMenuOpen}
         >
