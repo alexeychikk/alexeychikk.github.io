@@ -16,7 +16,7 @@ const ResponsiveDrawerBase: React.FC<ResponsiveDrawerProps> = (props) => {
   const classes = useStyles();
 
   return (
-    <nav className={cn(classes.root, props.className)}>
+    <nav className={cn(classes.responsiveDrawer, props.className)}>
       <Hidden mdUp>
         <SwipeableDrawer
           classes={{

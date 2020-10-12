@@ -11,7 +11,7 @@ export const Loader: React.FC<LoaderProps> = (props) => {
   const classes = useStyles(props);
 
   return (
-    <div className={cn(classes.root, props.className)}>
+    <div className={cn(classes.loader, props.className)}>
       <div className={cn(classes.inner, classes.inner1)} />
       <div className={cn(classes.inner, classes.inner2)} />
       <div className={cn(classes.inner, classes.inner3)} />

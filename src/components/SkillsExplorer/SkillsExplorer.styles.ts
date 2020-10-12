@@ -2,7 +2,7 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
-    root: {
+    skillsExplorer: {
       backgroundColor: theme.palette.background.paper,
       height: "100%",
       display: "flex",

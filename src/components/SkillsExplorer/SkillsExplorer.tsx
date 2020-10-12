@@ -18,7 +18,7 @@ export interface SkillsExplorerProps {
 export const SkillsExplorer: React.FC<SkillsExplorerProps> = (props) => {
   const classes = useStyles(props);
   return (
-    <div className={cn(classes.root, props.className)}>
+    <div className={cn(classes.skillsExplorer, props.className)}>
       <div className={classes.childrenWrapper}>{props.children}</div>
     </div>
   );

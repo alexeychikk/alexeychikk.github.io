@@ -25,7 +25,7 @@ export const IndexRoute: React.FC = () => {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <div className={classes.indexRoute}>
       <AppBar position="fixed" className={classes.appBar} elevation={0}>
         <Toolbar className={classes.toolbar}>
           <div className={classes.headingWrapper}>

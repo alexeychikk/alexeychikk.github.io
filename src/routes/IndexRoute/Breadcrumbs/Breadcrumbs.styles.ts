@@ -2,7 +2,7 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
-    root: {
+    breadcrumbs: {
       color: "rgba(204, 204, 204, 0.8)",
       padding: theme.spacing(0, 1, 0, 2),
     },

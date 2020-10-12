@@ -2,7 +2,7 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles(() =>
   createStyles({
-    root: {},
+    responsiveDrawer: {},
     drawerPaper: {
       borderRight: "none",
       width: "320px",

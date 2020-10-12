@@ -43,7 +43,7 @@ const BreadcrumbsBase: React.FC<BreadcrumbsProps> = (props) => {
   return (
     <>
       <MuiBreadcrumbs
-        className={cn(classes.root, props.className)}
+        className={cn(classes.breadcrumbs, props.className)}
         separator={<NavigateNext />}
       >
         <Typography className={classes.item} variant="body1">
