@@ -5,7 +5,12 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import { Menu as MenuIcon } from "@material-ui/icons";
+import {
+  Menu as MenuIcon,
+  GitHub,
+  LinkedIn,
+  MailOutlineRounded,
+} from "@material-ui/icons";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -37,6 +42,35 @@ const MainAppBarBase: React.FC<MainAppBarProps> = (props) => {
           <Typography className={classes.myName} variant="subtitle1">
             <Link to="/">Alex Zinkevych</Link>
           </Typography>
+          <Hidden smDown>
+            <a
+              href="https://github.com/alexeychikk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconButton>
+                <GitHub />
+              </IconButton>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/alex-zinkevych/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconButton>
+                <LinkedIn />
+              </IconButton>
+            </a>
+            <a
+              href="mailto:alexdarkmm@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconButton>
+                <MailOutlineRounded />
+              </IconButton>
+            </a>
+          </Hidden>
           <Hidden mdUp>
             <IconButton
               color="inherit"

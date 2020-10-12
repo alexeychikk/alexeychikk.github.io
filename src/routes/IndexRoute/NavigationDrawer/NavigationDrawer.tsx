@@ -1,6 +1,6 @@
 import { Divider, Hidden, List } from "@material-ui/core";
 import React from "react";
-import { LinkedIn, GitHub } from "@material-ui/icons";
+import { LinkedIn, GitHub, MailOutlineRounded } from "@material-ui/icons";
 
 import { routesMeta } from "~/config/routesMeta";
 import { MobileDrawer } from "~/components/MobileDrawer";
@@ -50,6 +50,15 @@ const NavigationDrawerBase: React.FC<NavigationDrawerProps> = (props) => {
             to="https://www.linkedin.com/in/alex-zinkevych/"
           >
             LinkedIn
+          </ListItemLink>
+          <ListItemLink
+            onClick={props.onClose}
+            icon={MailOutlineRounded}
+            isExternal
+            target="_blank"
+            to="mailto:alexdarkmm@gmail.com"
+          >
+            alexdarkmm@gmail.com
           </ListItemLink>
         </List>
       </MobileDrawer>
