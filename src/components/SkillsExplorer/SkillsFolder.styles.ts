@@ -2,15 +2,21 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
-    root: {
+    skillsFolder: {
       position: "relative",
+      "&$expanded": {
+        margin: 0,
+      },
+      "&:before": {
+        display: "none",
+      },
     },
-    row: {
-      display: "flex",
-      alignItems: "center",
-      flexWrap: "wrap",
+    expanded: {},
+    summaryRoot: {
       height: "26px",
+      minHeight: "26px",
       cursor: "pointer",
+      padding: 0,
       "&::before": {
         content: "''",
         position: "absolute",
@@ -23,10 +29,27 @@ export const useStyles = makeStyles((theme) =>
       "&:hover::before": {
         backgroundColor: "#5f717630",
       },
+      "&$expanded": {
+        minHeight: "26px",
+      },
+    },
+    summaryContent: {
+      margin: 0,
+      display: "flex",
+      alignItems: "center",
+      flexWrap: "wrap",
+      "&$expanded": {
+        margin: 0,
+      },
     },
     expandIcon: {
       marginLeft: theme.spacing(-0.5),
       zIndex: 1,
+      transform: "rotate(-90deg)",
+      transition: "transform 250ms",
+      "$summaryContent$expanded > &": {
+        transform: "rotate(0)",
+      },
     },
     icon: {
       width: "22px",
@@ -43,6 +66,7 @@ export const useStyles = makeStyles((theme) =>
       zIndex: 1,
     },
     childrenWrapper: {
+      display: "block",
       flexBasis: "100%",
       padding: theme.spacing(0.5, 0, 0.5, 1.5),
       zIndex: 1,

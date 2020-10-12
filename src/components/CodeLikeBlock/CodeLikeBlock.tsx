@@ -21,7 +21,7 @@ export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={cn(classes.root, props.className)}>
+    <div className={cn(classes.codeLikeBlock, props.className)}>
       <div
         className={cn(classes.lines, classes.sampleLine)}
         ref={sampleLineRef}

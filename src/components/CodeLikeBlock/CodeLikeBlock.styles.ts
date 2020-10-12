@@ -2,7 +2,7 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
-    root: {
+    codeLikeBlock: {
       display: "flex",
       fontFamily: 'Consolas, "Courier New", monospace',
       fontSize: theme.typography.h6.fontSize,

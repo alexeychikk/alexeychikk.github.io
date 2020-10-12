@@ -13,7 +13,7 @@ interface NavigationProps {
 const NavigationBase: React.FC<NavigationProps> = (props) => {
   const classes = useStyles();
   return (
-    <div className={cn(classes.root, props.className)}>
+    <div className={cn(classes.navigation, props.className)}>
       {Object.values(routesMeta).map((route) => (
         <NavLink
           key={route.to}

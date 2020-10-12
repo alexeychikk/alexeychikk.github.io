@@ -3,7 +3,7 @@ import { indigo, blue } from "@material-ui/core/colors";
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
-    root: {
+    loader: {
       width: "100%",
       height: "100%",
       position: "relative",
