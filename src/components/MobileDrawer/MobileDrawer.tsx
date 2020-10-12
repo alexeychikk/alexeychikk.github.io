@@ -35,7 +35,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = (props) => {
       onOpen={props.onOpen}
       onClose={props.onClose}
       disableBackdropTransition={!isIOS}
-      disableDiscovery={isIOS && props.anchor !== "right"}
+      disableDiscovery={isIOS}
       ModalProps={{
         keepMounted: true,
       }}

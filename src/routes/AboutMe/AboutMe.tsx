@@ -1,8 +1,12 @@
 import React from "react";
 
+import { ReactComponent as FolderSrcIcon } from "~/assets/icons/folder-src-open.svg";
 import { Br, CodeLikeBlock, Fn, Kw, Sl, Vn } from "~/components/CodeLikeBlock";
 
+import { useStyles } from "./AboutMe.styles";
+
 export const AboutMe: React.FC = () => {
+  const classes = useStyles();
   return (
     <CodeLikeBlock>
       <p>
@@ -10,6 +14,9 @@ export const AboutMe: React.FC = () => {
       </p>
       <p>
         <Kw>I am</Kw> a <Fn>full-stack web developer</Fn>.
+      </p>
+      <p>
+        <Kw>Currently</Kw> I am <Sl>open</Sl> to new <Fn>job opportunities</Fn>!
       </p>
 
       <Br />
@@ -30,8 +37,9 @@ export const AboutMe: React.FC = () => {
         on the <Sl>left</Sl>
       </p>
       <p>
-        (<Kw>swipe</Kw> or <Kw>tap</Kw> the <Sl>green folder</Sl> if you&apos;re
-        using a <Fn>mobile device</Fn>).
+        (<Kw>swipe</Kw> or <Kw>tap</Kw> the <Sl>green folder</Sl>{" "}
+        <FolderSrcIcon className={classes.icon} /> if you&apos;re using a{" "}
+        <Fn>mobile device</Fn>).
       </p>
 
       <Br />

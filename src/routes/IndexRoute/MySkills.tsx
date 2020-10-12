@@ -25,7 +25,7 @@ import { ReactComponent as GatsbyIcon } from "~/assets/icons/gatsby.svg";
 import { ReactComponent as NetlifyIcon } from "~/assets/icons/netlify.svg";
 import { ReactComponent as AngularIcon } from "~/assets/icons/angular.svg";
 
-import { ReactComponent as FolderNodeIcon } from "~/assets/icons/folder-node-open.svg";
+import { ReactComponent as FolderServerIcon } from "~/assets/icons/folder-server-open.svg";
 import { ReactComponent as NodeJsIcon } from "~/assets/icons/nodejs.svg";
 import { ReactComponent as MongoDBIcon } from "~/assets/icons/mongodb.svg";
 import { ReactComponent as SocketIoIcon } from "~/assets/icons/socket-io.svg";
@@ -82,7 +82,7 @@ const MySkillsBase: React.FC<MySkillsProps> = (props) => {
           </SkillItem>
         </SkillsFolder>
 
-        <SkillsFolder icon={FolderNodeIcon} name="Back End">
+        <SkillsFolder icon={FolderServerIcon} name="Back End">
           <SkillItem icon={NodeJsIcon}>Node.js</SkillItem>
           <SkillItem icon={MongoDBIcon}>MongoDB</SkillItem>
           <SkillItem icon={SocketIoIcon}>Socket.io</SkillItem>
