@@ -38,6 +38,7 @@ export const useStyles = makeStyles((theme) =>
     },
     myName: {
       marginRight: "auto",
+      fontWeight: 700,
     },
     navigation: {
       flex: 1,
