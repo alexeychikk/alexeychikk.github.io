@@ -37,9 +37,6 @@ export const useStyles = makeStyles((theme) =>
       "& p": {
         margin: 0,
       },
-      [theme.breakpoints.down("sm")]: {
-        paddingRight: theme.spacing(1),
-      },
     },
     Kw: {
       color: theme.palette.primary.main,
