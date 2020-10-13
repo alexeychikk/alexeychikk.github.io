@@ -3,13 +3,13 @@ import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { theme } from "~/config/theme";
+import { THEME } from "~/config/theme";
 import { IndexRoute } from "~/routes";
 
 import * as serviceWorker from "./serviceWorker";
 
 const Application: React.FC<{}> = () => (
-  <MuiThemeProvider theme={theme}>
+  <MuiThemeProvider theme={THEME}>
     <CssBaseline />
     <Router>
       <IndexRoute />

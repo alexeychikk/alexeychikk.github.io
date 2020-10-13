@@ -7,7 +7,7 @@ export type RouteMeta = {
   activeOnlyWhenExact?: boolean;
 };
 
-export const routesMeta: { [key: string]: RouteMeta } = {
+export const ROUTES_META: { [key: string]: RouteMeta } = {
   "/": {
     to: "/",
     label: "About Me",

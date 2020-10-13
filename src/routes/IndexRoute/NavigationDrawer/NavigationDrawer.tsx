@@ -2,7 +2,7 @@ import { Divider, Hidden, List } from "@material-ui/core";
 import React from "react";
 import { LinkedIn, GitHub, MailOutlineRounded } from "@material-ui/icons";
 
-import { routesMeta } from "~/config/routesMeta";
+import { ROUTES_META } from "~/config/routesMeta";
 import { MobileDrawer } from "~/components/MobileDrawer";
 
 import { ListItemLink } from "./ListItemLink";
@@ -23,7 +23,7 @@ const NavigationDrawerBase: React.FC<NavigationDrawerProps> = (props) => {
         onClose={props.onClose}
       >
         <List>
-          {Object.values(routesMeta).map(({ label, ...rest }) => (
+          {Object.values(ROUTES_META).map(({ label, ...rest }) => (
             <ListItemLink key={rest.to} onClick={props.onClose} {...rest}>
               {label}
             </ListItemLink>

@@ -25,7 +25,7 @@ const palette = createPalette({
 
 const breakpoints = createBreakpoints({});
 
-export const theme = createMuiTheme({
+export const THEME = createMuiTheme({
   palette,
   breakpoints,
   typography: {

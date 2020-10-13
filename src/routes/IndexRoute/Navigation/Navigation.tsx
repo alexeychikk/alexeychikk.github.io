@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { routesMeta } from "~/config/routesMeta";
+import { ROUTES_META } from "~/config/routesMeta";
 
 import { useStyles } from "./Navigation.styles";
 import { NavLink } from "./NavLink";
@@ -14,7 +14,7 @@ const NavigationBase: React.FC<NavigationProps> = (props) => {
   const classes = useStyles();
   return (
     <div className={clsx(classes.navigation, props.className)}>
-      {Object.values(routesMeta).map((route) => (
+      {Object.values(ROUTES_META).map((route) => (
         <NavLink
           key={route.to}
           to={route.to}

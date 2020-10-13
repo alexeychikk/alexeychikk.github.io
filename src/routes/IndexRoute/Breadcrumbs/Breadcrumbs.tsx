@@ -10,7 +10,7 @@ import { Link, useLocation } from "react-router-dom";
 import clsx from "clsx";
 
 import { ReactComponent as JsonIcon } from "~/assets/icons/json.svg";
-import { routesMeta } from "~/config/routesMeta";
+import { ROUTES_META } from "~/config/routesMeta";
 
 import { useStyles } from "./Breadcrumbs.styles";
 
@@ -21,11 +21,11 @@ interface BreadcrumbsProps {
 const BreadcrumbsBase: React.FC<BreadcrumbsProps> = (props) => {
   const classes = useStyles();
   const location = useLocation();
-  const route = routesMeta[location.pathname];
+  const route = ROUTES_META[location.pathname];
   const Icon = route.icon || JsonIcon;
 
   const restRoutes = useMemo(
-    () => Object.values(routesMeta).filter((r) => r !== route),
+    () => Object.values(ROUTES_META).filter((r) => r !== route),
     [route]
   );
 

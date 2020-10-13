@@ -8,10 +8,6 @@ declare module "*.otf" {
   export default path;
 }
 
-type SvgComponent =
-  | SvgIconComponent
-  | React.FunctionComponent<React.SVGProps<SVGSVGElement> & { title?: string }>;
-
 declare module "*.ttf" {
   const path: string;
   export default path;
