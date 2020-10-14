@@ -1,3 +1,5 @@
+import React from "react";
+
 import { ReactComponent as FolderFunctionsIcon } from "~/assets/icons/folder-functions-open.svg";
 import { ReactComponent as JSIcon } from "~/assets/icons/javascript.svg";
 import { ReactComponent as TSIcon } from "~/assets/icons/typescript.svg";
@@ -37,7 +39,14 @@ import { ReactComponent as VsCodeIcon } from "~/assets/icons/vscode.svg";
 import { ReactComponent as FolderDocsIcon } from "~/assets/icons/folder-docs-open.svg";
 import { ReactComponent as ReadmeIcon } from "~/assets/icons/readme.svg";
 
-const skillCategories = [
+interface SkillCategoryBase<Id = string> {
+  id: Id;
+  name: React.ReactNode;
+  icon: SvgComponent;
+}
+
+const skillCategories = (<T extends any>(t: readonly SkillCategoryBase<T>[]) =>
+  t)([
   {
     id: "Languages",
     name: "Languages",
@@ -63,15 +72,11 @@ const skillCategories = [
     name: "Knowledge",
     icon: FolderDocsIcon,
   },
-] as const;
+] as const);
 
 export type SkillCategoryId = typeof skillCategories[number]["id"];
 
-export interface SkillCategory {
-  id: string;
-  name: React.ReactNode;
-  icon: SvgComponent;
-}
+export interface SkillCategory extends SkillCategoryBase<SkillCategoryId> {}
 
 export type SkillCategoriesMap = { [key in SkillCategoryId]: SkillCategory };
 
@@ -85,7 +90,15 @@ export const SKILL_CATEGORIES_MAP = skillCategories.reduce(
   {}
 ) as SkillCategoriesMap;
 
-const skills = [
+interface SkillBase<Id = string> {
+  id: Id;
+  categoryId: SkillCategoryId;
+  hint?: React.ReactNode;
+  icon: SvgComponent;
+  name: React.ReactNode;
+}
+
+const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
   // Languages
   {
     id: "JavaScript",
@@ -205,17 +218,11 @@ const skills = [
     name: "Design Patterns",
     icon: ReadmeIcon,
   },
-] as const;
+] as const);
 
 export type SkillId = typeof skills[number]["id"];
 
-export interface Skill {
-  categoryId: SkillCategoryId;
-  hint?: React.ReactNode;
-  icon: SvgComponent;
-  id: SkillId;
-  name: React.ReactNode;
-}
+export interface Skill extends SkillBase<SkillId> {}
 
 export type SkillsMap = { [key in SkillId]: Skill };
 
@@ -225,18 +232,3 @@ export const SKILLS_MAP = skills.reduce((res: Partial<SkillsMap>, skill) => {
   res[skill.id] = skill;
   return res;
 }, {}) as SkillsMap;
-
-type UnionSkillType = typeof skills[number];
-type RealSkillKeys = KeysOfUnion<UnionSkillType>;
-type ExpectedSkillKeys = keyof Skill;
-type RealSkillType = {
-  [key in RealSkillKeys]: key extends keyof UnionSkillType
-    ? UnionSkillType[key]
-    : Skill[key];
-};
-
-type cases = [
-  Expect<ExpectExtends<typeof skills[number]["categoryId"], SkillCategoryId>>,
-  Expect<ExpectExtends<RealSkillKeys, ExpectedSkillKeys>>,
-  Expect<ExpectExtends<RealSkillType, Skill>>
-];
