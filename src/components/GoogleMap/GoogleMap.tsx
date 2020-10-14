@@ -1,4 +1,5 @@
-import React from "react";
+import { Skeleton } from "@material-ui/lab";
+import React, { useState, useCallback } from "react";
 import clsx from "clsx";
 
 import { useCodeBlockContext } from "~/components/CodeLikeBlock";
@@ -9,14 +10,26 @@ interface GoogleMapProps {
   className?: string;
 }
 
-export const GoogleMap: React.FC<GoogleMapProps> = (props) => {
+const GoogleMapBase: React.FC<GoogleMapProps> = (props) => {
   const context = useCodeBlockContext();
   const classes = useStyles(context);
+  const [isLoaded, setLoaded] = useState<boolean>(false);
+
+  const handleLoad = useCallback(() => setLoaded(true), []);
 
   return (
-    <div className={clsx(classes.googleMap, props.className)}>
+    <div
+      className={clsx(
+        classes.googleMap,
+        isLoaded && classes.loaded,
+        props.className
+      )}
+    >
+      {!isLoaded && (
+        <Skeleton className={clsx(classes.block, classes.skeleton)} />
+      )}
       <iframe
-        className={classes.iframe}
+        className={clsx(classes.block, classes.iframe)}
         title="My Location"
         width="600"
         height="500"
@@ -26,7 +39,10 @@ export const GoogleMap: React.FC<GoogleMapProps> = (props) => {
         scrolling="no"
         marginHeight={0}
         marginWidth={0}
+        onLoad={handleLoad}
       ></iframe>
     </div>
   );
 };
+
+export const GoogleMap = React.memo(GoogleMapBase);
