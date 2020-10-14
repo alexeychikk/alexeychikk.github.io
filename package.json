@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A website showcasing my skills and experience",
   "homepage": "http://alexeychikk.github.io",
+  "repository": {
+    "url": "https://github.com/alexeychikk/alexeychikk.github.io"
+  },
   "author": {
     "email": "alexdarkmm@gmail.com",
     "name": "Alex Zinkevych",
