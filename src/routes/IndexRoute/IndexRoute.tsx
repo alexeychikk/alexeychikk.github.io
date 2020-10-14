@@ -58,7 +58,9 @@ export const IndexRoute: React.FC = () => {
         <Hidden smDown>
           <Breadcrumbs />
         </Hidden>
-        <ContentRoutes />
+        <div className={classes.routesWrapper}>
+          <ContentRoutes />
+        </div>
       </div>
     </div>
   );

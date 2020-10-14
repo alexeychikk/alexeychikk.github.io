@@ -1,3 +1,5 @@
 import React from "react";
 
-export const Br: React.FC = () => <p>&nbsp;</p>;
+import { L, LProps } from "./L";
+
+export const Br: React.FC<LProps> = (props) => <L {...props}>&nbsp;</L>;

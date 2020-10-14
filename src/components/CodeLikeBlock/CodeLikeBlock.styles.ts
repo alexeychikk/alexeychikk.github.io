@@ -3,25 +3,33 @@ import { createStyles, makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) =>
   createStyles({
     codeLikeBlock: {
+      position: "relative",
+      height: "100%",
       display: "flex",
       fontFamily: 'Consolas, "Courier New", monospace',
       fontSize: theme.typography.h6.fontSize,
-      paddingTop: theme.spacing(2),
       alignItems: "start",
       [theme.breakpoints.down("sm")]: {
-        paddingTop: theme.spacing(1),
         fontSize: theme.typography.body1.fontSize,
       },
+      "&::after": {
+        content: `""`,
+        width: "1px",
+        height: "100%",
+        backgroundColor: "rgb(64,64,64)",
+        [theme.breakpoints.down(1440)]: {
+          display: "none",
+        },
+      },
     },
-    lines: {},
-    line: {
+    lineNumbers: {},
+    lineNum: {
       width: theme.spacing(7),
       textAlign: "right",
-      marginRight: theme.spacing(4),
+      marginRight: "0.4em",
       color: theme.palette.text.secondary,
       [theme.breakpoints.down("sm")]: {
         width: theme.spacing(4),
-        marginRight: theme.spacing(2),
       },
     },
     sampleLine: {
@@ -33,9 +41,38 @@ export const useStyles = makeStyles((theme) =>
       flex: 1,
       color: "#a9b7c6",
       maxWidth: "1024px",
+    },
+    active: {},
+    git: {
+      "&::before": {
+        content: `""`,
+        position: "absolute",
+        top: 1,
+        left: 0,
+        width: "4px",
+        bottom: 0,
+        [theme.breakpoints.down("sm")]: {
+          width: "3px",
+        },
+      },
+      "&-green::before": {
+        backgroundColor: "rgb(88,124,12)",
+      },
+      "&-blue::before": {
+        backgroundColor: "rgb(12,125,157)",
+      },
+    },
+    L: {
+      paddingLeft: "1.3em",
+      position: "relative",
+      [theme.breakpoints.down("sm")]: {
+        paddingLeft: "0.6em",
+      },
+    },
+    LChildren: {
       paddingRight: theme.spacing(2),
-      "& p": {
-        margin: 0,
+      "$L$active &": {
+        backgroundColor: "rgb(42,42,43)",
       },
     },
     Kw: {

@@ -18,7 +18,6 @@ export const useStyles = makeStyles((theme) =>
     contactInfo: {
       order: 1,
       [theme.breakpoints.up("lg")]: {
-        paddingLeft: "2em",
         order: 3,
       },
     },

@@ -34,15 +34,15 @@ export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
     <context.Provider value={{ lineHeight: sampleLineHeight, linesCount }}>
       <div className={clsx(classes.codeLikeBlock, props.className)}>
         <div
-          className={clsx(classes.lines, classes.sampleLine)}
+          className={clsx(classes.lineNumbers, classes.sampleLine)}
           ref={sampleLineRef}
         >
           1234567890
         </div>
-        <div className={classes.lines}>
+        <div className={classes.lineNumbers}>
           {/* eslint-disable-next-line prefer-spread */}
           {Array.apply(null, { length: linesCount } as []).map((e, i) => (
-            <div className={classes.line} key={i}>
+            <div className={classes.lineNum} key={i}>
               {i + 1}
             </div>
           ))}
