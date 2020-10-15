@@ -1,10 +1,13 @@
 import React from "react";
 
+import { ReactComponent as ProjectsIcon } from "~/assets/icons/folder-app-open.svg";
+
 export type RouteMeta = {
   to: string;
   label: React.ReactNode;
   icon?: SvgComponent;
   activeOnlyWhenExact?: boolean;
+  hidden?: boolean;
 };
 
 export const ROUTES_META: { [key: string]: RouteMeta } = {
@@ -24,5 +27,11 @@ export const ROUTES_META: { [key: string]: RouteMeta } = {
   "/contacts": {
     to: "/contacts",
     label: "Contacts",
+  },
+  "/projects": {
+    to: "/projects",
+    label: "Projects",
+    icon: ProjectsIcon,
+    hidden: true,
   },
 };

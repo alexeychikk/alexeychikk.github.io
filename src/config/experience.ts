@@ -9,7 +9,7 @@ export enum Position {
   FullStack = "Full-stack Developer",
 }
 
-export interface Experience<Id = string> {
+interface ExperienceBase<Id = string> {
   id: Id;
   company: Company;
   dateFrom: Date;
@@ -17,7 +17,7 @@ export interface Experience<Id = string> {
   position: Position;
 }
 
-export const EXPERIENCE = (<T>(p: readonly Experience<T>[]) => p)([
+export const EXPERIENCE = (<T>(p: readonly ExperienceBase<T>[]) => p)([
   {
     id: "Trucknet",
     company: {
@@ -58,3 +58,7 @@ export const EXPERIENCE = (<T>(p: readonly Experience<T>[]) => p)([
     position: Position.FullStack,
   },
 ] as const);
+
+export type ExperienceId = typeof EXPERIENCE[number]["id"];
+
+export type Experience = ExperienceBase<ExperienceId>;

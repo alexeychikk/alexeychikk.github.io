@@ -2,8 +2,8 @@ import React from "react";
 
 import { SkillId } from "./skills";
 
-export interface Project {
-  id: string;
+interface ProjectBase<Id = string> {
+  id: Id;
   experienceId: string;
   name: React.ReactNode;
   description: React.ReactNode;
@@ -11,4 +11,10 @@ export interface Project {
   link?: string;
 }
 
-export const PROJECTS: Project[] = [];
+export const PROJECTS = (<T extends any>(p: readonly ProjectBase<T>[]) => p)(
+  [] as const
+);
+
+export type ProjectId = typeof PROJECTS[number]["id"];
+
+export type Project = ProjectBase<ProjectId>;

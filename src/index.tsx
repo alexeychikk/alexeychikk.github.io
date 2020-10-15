@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { THEME } from "~/config/theme";
 import { IndexRoute } from "~/routes";
+import { SkillsProvider } from "~/components/SkillsProvider";
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -12,7 +13,9 @@ const Application: React.FC<{}> = () => (
   <MuiThemeProvider theme={THEME}>
     <CssBaseline />
     <Router>
-      <IndexRoute />
+      <SkillsProvider>
+        <IndexRoute />
+      </SkillsProvider>
     </Router>
   </MuiThemeProvider>
 );

@@ -13,7 +13,7 @@ export const MySkillItem: React.FC<MySkillItemProps> = ({
 }) => {
   const handleClick = useCallback(() => {
     onClick(skill);
-  }, [skill.id]);
+  }, [skill.id, onClick]);
 
   return (
     <SkillItem icon={skill.icon} hint={skill.hint} onClick={handleClick}>

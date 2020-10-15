@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import { ReactComponent as FolderSrcIcon } from "~/assets/icons/folder-src-open.svg";
 
 import { SkillsExplorer, SkillsFolder } from "~/components/SkillsExplorer";
+import { useSkillsContext } from "~/components/SkillsProvider";
 import { SKILL_CATEGORIES, Skill } from "~/config/skills";
 
 import { MySkillCategory } from "./MySkillCategory";
@@ -29,7 +30,14 @@ export const MySkillsBase: React.FC<MySkillsProps> = (props) => {
 };
 
 export const MySkillsContainer: React.FC = () => {
-  return <MySkillsBase onSkillClick={(skill) => console.log("skill", skill)} />;
+  const { selectedSkills, selectSkill } = useSkillsContext();
+
+  const handleSkillClick = useCallback(
+    (skill: Skill) => selectSkill(skill.id),
+    [selectedSkills]
+  );
+
+  return <MySkillsBase onSkillClick={handleSkillClick} />;
 };
 
 export const MySkills = React.memo(MySkillsContainer);

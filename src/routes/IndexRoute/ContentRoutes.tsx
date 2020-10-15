@@ -5,6 +5,7 @@ import AboutMe from "~/routes/AboutMe";
 import Experience from "~/routes/Experience";
 import Education from "~/routes/Education";
 import Contacts from "~/routes/Contacts";
+import Projects from "~/routes/Projects";
 
 export const ContentRoutes: React.FC = () => {
   return (
@@ -21,6 +22,9 @@ export const ContentRoutes: React.FC = () => {
         </Route>
         <Route path="/contacts">
           <Contacts />
+        </Route>
+        <Route path="/projects">
+          <Projects />
         </Route>
         <Route path="*">
           <Redirect to="/" />

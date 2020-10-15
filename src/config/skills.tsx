@@ -76,7 +76,7 @@ const skillCategories = (<T extends any>(t: readonly SkillCategoryBase<T>[]) =>
 
 export type SkillCategoryId = typeof skillCategories[number]["id"];
 
-export interface SkillCategory extends SkillCategoryBase<SkillCategoryId> {}
+export type SkillCategory = SkillCategoryBase<SkillCategoryId>;
 
 export type SkillCategoriesMap = { [key in SkillCategoryId]: SkillCategory };
 
@@ -113,7 +113,7 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
     icon: TSIcon,
   },
   {
-    id: "C#",
+    id: "CSharp",
     categoryId: "Languages",
     name: "C#",
     hint: "(background)",
@@ -168,7 +168,7 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
   { id: "Node.js", categoryId: "BackEnd", name: "Node.js", icon: NodeJsIcon },
   { id: "MongoDB", categoryId: "BackEnd", name: "MongoDB", icon: MongoDBIcon },
   {
-    id: "Socket.io",
+    id: "SocketIo",
     categoryId: "BackEnd",
     name: "Socket.io",
     icon: SocketIoIcon,
@@ -222,7 +222,7 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
 
 export type SkillId = typeof skills[number]["id"];
 
-export interface Skill extends SkillBase<SkillId> {}
+export type Skill = SkillBase<SkillId>;
 
 export type SkillsMap = { [key in SkillId]: Skill };
 

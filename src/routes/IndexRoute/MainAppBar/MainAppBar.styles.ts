@@ -19,6 +19,7 @@ export const useStyles = makeStyles((theme) =>
       backgroundColor: theme.palette.background.paper,
       height: "46px",
       width: "320px",
+      flexShrink: 0,
       "& a": {
         color: "#fff",
         textDecoration: "none",
