@@ -17,6 +17,7 @@ const context = createContext<CodeLikeBlockContext>({
 interface CodeLikeBlockProps {
   className?: string;
   children: React.ReactNode;
+  hasExtraLine?: boolean;
 }
 
 export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
@@ -27,7 +28,8 @@ export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
     ref: sampleLineRef,
     height: sampleLineHeight = 1,
   } = useResizeObserver<HTMLDivElement>();
-  const linesCount = Math.ceil(childrenHeight / sampleLineHeight) + 1;
+  const linesCount =
+    Math.ceil(childrenHeight / sampleLineHeight) + (props.hasExtraLine ? 1 : 0);
   const classes = useStyles();
   const value = useMemo(() => ({ lineHeight: sampleLineHeight, linesCount }), [
     sampleLineHeight,
@@ -57,6 +59,10 @@ export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
       </div>
     </context.Provider>
   );
+};
+
+CodeLikeBlock.defaultProps = {
+  hasExtraLine: true,
 };
 
 export const useCodeBlockContext = () => useContext(context);
