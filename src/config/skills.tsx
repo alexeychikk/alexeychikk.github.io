@@ -15,7 +15,9 @@ import { ReactComponent as CssIcon } from "~/assets/icons/css.svg";
 import { ReactComponent as SassIcon } from "~/assets/icons/sass.svg";
 import { ReactComponent as JssIcon } from "~/assets/icons/jss.svg";
 import { ReactComponent as GatsbyIcon } from "~/assets/icons/gatsby.svg";
+import { ReactComponent as GraphqlIcon } from "~/assets/icons/graphql.svg";
 import { ReactComponent as NetlifyIcon } from "~/assets/icons/netlify.svg";
+import { ReactComponent as StorybookIcon } from "~/assets/icons/storybook.svg";
 import { ReactComponent as AngularIcon } from "~/assets/icons/angular.svg";
 
 import { ReactComponent as FolderServerIcon } from "~/assets/icons/folder-server-open.svg";
@@ -23,6 +25,7 @@ import { ReactComponent as NodeJsIcon } from "~/assets/icons/nodejs.svg";
 import { ReactComponent as MongoDBIcon } from "~/assets/icons/mongodb.svg";
 import { ReactComponent as SocketIoIcon } from "~/assets/icons/socket-io.svg";
 import { ReactComponent as AWSIcon } from "~/assets/icons/aws.svg";
+import { ReactComponent as RedisIcon } from "~/assets/icons/redis.svg";
 import { ReactComponent as DockerIcon } from "~/assets/icons/docker.svg";
 import { ReactComponent as KubernetesIcon } from "~/assets/icons/kubernetes.svg";
 
@@ -151,11 +154,18 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
   { id: "SASS", categoryId: "FrontEnd", name: "SASS", icon: SassIcon },
   { id: "CSSinJS", categoryId: "FrontEnd", name: "CSS in JS", icon: JssIcon },
   { id: "Gatsby", categoryId: "FrontEnd", name: "Gatsby", icon: GatsbyIcon },
+  { id: "GraphQL", categoryId: "FrontEnd", name: "GraphQL", icon: GraphqlIcon },
   {
     id: "NetlifyCMS",
     categoryId: "FrontEnd",
     name: "Netlify CMS",
     icon: NetlifyIcon,
+  },
+  {
+    id: "Storybook",
+    categoryId: "FrontEnd",
+    name: "Storybook",
+    icon: StorybookIcon,
   },
   {
     id: "Angular",
@@ -165,10 +175,10 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
     icon: AngularIcon,
   },
   // BackEnd
-  { id: "Node.js", categoryId: "BackEnd", name: "Node.js", icon: NodeJsIcon },
+  { id: "NodeJS", categoryId: "BackEnd", name: "Node.js", icon: NodeJsIcon },
   { id: "MongoDB", categoryId: "BackEnd", name: "MongoDB", icon: MongoDBIcon },
   {
-    id: "SocketIo",
+    id: "SocketIO",
     categoryId: "BackEnd",
     name: "Socket.io",
     icon: SocketIoIcon,
@@ -179,6 +189,13 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
     name: "AWS",
     hint: "(SQS, S3, SNS)",
     icon: AWSIcon,
+  },
+  {
+    id: "Redis",
+    categoryId: "BackEnd",
+    name: "Redis",
+    hint: "(fundamentals)",
+    icon: RedisIcon,
   },
   {
     id: "Docker",
@@ -206,7 +223,7 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
   // Knowledge
   { id: "OOP", categoryId: "Knowledge", name: "OOP", icon: ReadmeIcon },
   {
-    id: "FunctionalProgramming",
+    id: "FP",
     categoryId: "Knowledge",
     name: "Functional Programming",
     icon: ReadmeIcon,
