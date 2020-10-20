@@ -37,7 +37,7 @@ export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
       link: "https://www.linkedin.com/company/busnet-&-trucknet/",
     },
     dateFrom: new Date(Date.UTC(2019, 0)),
-    dateTo: new Date(Date.UTC(2020, 6)),
+    dateTo: new Date(Date.UTC(2020, 5)),
     position: Position.FullStack,
   },
   {
@@ -54,7 +54,7 @@ export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
       link: "https://www.linkedin.com/company/siteplus-pte-ltd/about/",
     },
     dateFrom: new Date(Date.UTC(2017, 7)),
-    dateTo: new Date(Date.UTC(2018, 8)),
+    dateTo: new Date(Date.UTC(2018, 7)),
     position: Position.FrontEnd,
   },
   {
@@ -72,7 +72,7 @@ export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
       link: "https://www.linkedin.com/company/devster-lab/about/",
     },
     dateFrom: new Date(Date.UTC(2016, 1)),
-    dateTo: new Date(Date.UTC(2017, 8)),
+    dateTo: new Date(Date.UTC(2017, 7)),
     position: Position.FrontEnd,
   },
   {
@@ -88,7 +88,7 @@ export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
       ),
     },
     dateFrom: new Date(Date.UTC(2015, 0)),
-    dateTo: new Date(Date.UTC(2016, 1)),
+    dateTo: new Date(Date.UTC(2016, 0)),
     position: Position.FullStack,
   },
 ] as const);

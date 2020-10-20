@@ -7,7 +7,7 @@ import {
   TimelineConnector,
 } from "@material-ui/lab";
 import React from "react";
-import { format } from "date-fns";
+import { format, addMonths } from "date-fns";
 
 import { Experience } from "~/config/experience";
 import { formatIntervalShort } from "~/utils/date";
@@ -52,7 +52,7 @@ const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
             {" < "}
             {formatIntervalShort({
               start: props.dateFrom,
-              end: props.dateTo,
+              end: addMonths(props.dateTo, 1),
             })}
             {" >"}
           </span>
