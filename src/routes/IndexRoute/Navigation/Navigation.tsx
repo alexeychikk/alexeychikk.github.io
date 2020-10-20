@@ -3,8 +3,9 @@ import clsx from "clsx";
 
 import { useRoutesMeta } from "~/hooks";
 
-import { useStyles } from "./Navigation.styles";
 import { NavLink } from "./NavLink";
+
+import { useStyles } from "./Navigation.styles";
 
 interface NavigationProps {
   className?: string;

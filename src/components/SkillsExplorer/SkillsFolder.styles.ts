@@ -65,6 +65,12 @@ export const useStyles = makeStyles((theme) =>
       lineHeight: 1,
       zIndex: 1,
     },
+    hint: {
+      marginLeft: "0.5em",
+      color: theme.palette.text.secondary,
+      lineHeight: "1.5",
+      zIndex: 1,
+    },
     childrenWrapper: {
       display: "block",
       flexBasis: "100%",

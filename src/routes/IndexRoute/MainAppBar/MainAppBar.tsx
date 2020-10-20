@@ -18,6 +18,7 @@ import { ReactComponent as FolderSrcIcon } from "~/assets/icons/folder-src-open.
 
 import { Navigation } from "../Navigation";
 import { Breadcrumbs } from "../Breadcrumbs";
+
 import { useStyles } from "./MainAppBar.styles";
 
 export interface MainAppBarProps {
@@ -43,11 +44,7 @@ const MainAppBarBase: React.FC<MainAppBarProps> = (props) => {
             <Link to="/">Alex Zinkevych</Link>
           </Typography>
           <Hidden smDown>
-            <a
-              href="https://github.com/alexeychikk"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/alexeychikk" target="_blank">
               <IconButton>
                 <GitHub />
               </IconButton>
@@ -55,17 +52,12 @@ const MainAppBarBase: React.FC<MainAppBarProps> = (props) => {
             <a
               href="https://www.linkedin.com/in/alex-zinkevych/"
               target="_blank"
-              rel="noopener noreferrer"
             >
               <IconButton>
                 <LinkedIn />
               </IconButton>
             </a>
-            <a
-              href="mailto:alexdarkmm@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="mailto:alexdarkmm@gmail.com" target="_blank">
               <IconButton>
                 <MailOutlineRounded />
               </IconButton>

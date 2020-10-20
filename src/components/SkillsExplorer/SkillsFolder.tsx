@@ -19,6 +19,7 @@ export interface SkillsFolderProps {
     | SkillItemElement
     | SkillItemElement[];
   name: React.ReactNode;
+  hint?: React.ReactNode;
   icon?: SvgComponent;
   expandable?: boolean;
 }
@@ -62,6 +63,11 @@ const SkillsFolderBase: React.FC<SkillsFolderProps> = (props) => {
         <Typography className={classes.name} variant="body1">
           {props.name}
         </Typography>
+        {props.hint && (
+          <Typography className={classes.hint} variant="body2">
+            {props.hint}
+          </Typography>
+        )}
       </AccordionSummary>
       <AccordionDetails className={classes.childrenWrapper}>
         {props.children}

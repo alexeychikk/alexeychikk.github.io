@@ -7,7 +7,6 @@ export const useStyles = makeStyles((theme) =>
       alignItems: "center",
       paddingLeft: theme.spacing(2.5),
       height: "26px",
-      borderLeft: `1px solid ${theme.palette.divider}`,
       marginLeft: theme.spacing(-1),
       position: "relative",
       cursor: "pointer",
@@ -21,7 +20,20 @@ export const useStyles = makeStyles((theme) =>
         right: "-2000px",
       },
       "&:hover::before": {
-        backgroundColor: "#5f717630",
+        backgroundColor: "rgb(42,45,46)",
+      },
+      "&::after": {
+        content: "''",
+        position: "absolute",
+        display: "block",
+        top: 0,
+        bottom: 0,
+        left: "0",
+        width: "1px",
+        backgroundColor: theme.palette.divider,
+      },
+      "&$active::before": {
+        backgroundColor: "rgb(55,55,61)",
       },
     },
     icon: {
@@ -41,5 +53,6 @@ export const useStyles = makeStyles((theme) =>
       lineHeight: "1.5",
       zIndex: 1,
     },
+    active: {},
   })
 );

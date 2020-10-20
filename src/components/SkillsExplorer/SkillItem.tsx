@@ -1,5 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
+import clsx from "clsx";
 
 import { useStyles } from "./SkillItem.styles";
 
@@ -8,6 +9,7 @@ export interface SkillItemProps {
   icon: SvgComponent;
   hint?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
+  active?: boolean;
 }
 
 export type SkillItemElement = React.ReactElement<SkillItemProps>;
@@ -17,7 +19,10 @@ const SkillItemBase: React.FC<SkillItemProps> = (props) => {
   const Icon = props.icon;
 
   return (
-    <div className={classes.skillItem} onClick={props.onClick}>
+    <div
+      className={clsx(classes.skillItem, props.active && classes.active)}
+      onClick={props.onClick}
+    >
       <Icon className={classes.icon} />
       <Typography className={classes.childrenWrapper} variant="body1">
         {props.children}

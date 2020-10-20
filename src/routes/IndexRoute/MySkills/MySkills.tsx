@@ -6,17 +6,22 @@ import { SkillsExplorer, SkillsFolder } from "~/components/SkillsExplorer";
 import { useSkillsContext } from "~/components/SkillsProvider";
 import { SKILL_CATEGORIES, Skill } from "~/config/skills";
 
-import { MySkillCategory } from "./MySkillCategory";
+import { MySkillCategory, MySkillCategoryProps } from "./MySkillCategory";
 
 export interface MySkillsProps {
   className?: string;
-  onSkillClick: (skill: Skill) => void;
+  onSkillClick: MySkillCategoryProps["onSkillClick"];
 }
 
 export const MySkillsBase: React.FC<MySkillsProps> = (props) => {
   return (
     <SkillsExplorer className={props.className}>
-      <SkillsFolder icon={FolderSrcIcon} name="My Skills" expandable={false}>
+      <SkillsFolder
+        icon={FolderSrcIcon}
+        name="My Skills"
+        hint="(click them)"
+        expandable={false}
+      >
         {SKILL_CATEGORIES.map((category) => (
           <MySkillCategory
             key={category.id}
@@ -30,10 +35,11 @@ export const MySkillsBase: React.FC<MySkillsProps> = (props) => {
 };
 
 export const MySkillsContainer: React.FC = () => {
-  const { selectedSkills, selectSkill } = useSkillsContext();
+  const { selectedSkills, selectSkill, unselectSkill } = useSkillsContext();
 
   const handleSkillClick = useCallback(
-    (skill: Skill) => selectSkill(skill.id),
+    (skill: Skill, active: boolean) =>
+      active ? unselectSkill(skill.id) : selectSkill(skill.id),
     [selectedSkills]
   );
 

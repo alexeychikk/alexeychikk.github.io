@@ -21,10 +21,5 @@ export const useStyles = makeStyles((theme) =>
         order: 3,
       },
     },
-    linkIcon: {
-      fontSize: "inherit",
-      marginBottom: "-0.1em",
-      transform: "rotate(-45deg)",
-    },
   })
 );

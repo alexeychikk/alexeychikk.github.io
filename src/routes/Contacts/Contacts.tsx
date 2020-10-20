@@ -1,9 +1,8 @@
-import { Link } from "@material-ui/core";
-import { Link as LinkIcon } from "@material-ui/icons";
 import React from "react";
 
 import { CodeLikeBlock, Kw, Sl, Br, Fn, L } from "~/components/CodeLikeBlock";
 import { GoogleMap } from "~/components/GoogleMap";
+import { LinkLine } from "~/components/LinkLine";
 
 import { useStyles } from "./Contacts.styles";
 
@@ -26,33 +25,26 @@ export const Contacts: React.FC = () => {
         </L>
 
         <div className={classes.contactInfo}>
-          <L>
-            Tel:{" "}
-            <Link href="tel:+972587988196" target="_blank">
-              +972 5879 88 196
-            </Link>
-          </L>
-          <L>
-            E-mail:{" "}
-            <Link href="mailto:alexdarkmm@gmail.com" target="_blank">
-              alexdarkmm@gmail.com
-            </Link>
-          </L>
-          <L>
-            LinkedIn:{" "}
-            <Link
-              href="https://www.linkedin.com/in/alex-zinkevych/"
-              target="_blank"
-            >
-              <LinkIcon className={classes.linkIcon} /> Alex Zinkevych
-            </Link>
-          </L>
-          <L>
-            GitHub:{" "}
-            <Link href="https://github.com/alexeychikk" target="_blank">
-              <LinkIcon className={classes.linkIcon} /> alexeychikk
-            </Link>
-          </L>
+          <LinkLine label="Tel" href="tel:+972587988196">
+            +972 5879 88 196
+          </LinkLine>
+          <LinkLine label="E-mail" href="mailto:alexdarkmm@gmail.com">
+            alexdarkmm@gmail.com
+          </LinkLine>
+          <LinkLine
+            label="LinkedIn"
+            href="https://www.linkedin.com/in/alex-zinkevych/"
+            hasLinkIcon
+          >
+            Alex Zinkevych
+          </LinkLine>
+          <LinkLine
+            label="GitHub"
+            href="https://github.com/alexeychikk"
+            hasLinkIcon
+          >
+            alexeychikk
+          </LinkLine>
           <Br />
         </div>
       </div>
