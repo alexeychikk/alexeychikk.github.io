@@ -21,6 +21,10 @@ export const useStyles = makeStyles((theme) =>
       paddingTop: "2px",
       marginBottom: "0.2em",
     },
+    position: {
+      color: "#fff",
+      fontWeight: 500,
+    },
     timeDiff: {
       color: "rgba(255,255,255,0.5)",
     },

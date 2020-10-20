@@ -28,6 +28,7 @@ const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
         <TimelineDot color="secondary" variant="outlined" />
         <TimelineConnector className={classes.connector} />
       </TimelineSeparator>
+
       <TimelineContent className={classes.content}>
         <Typography
           className={classes.companyName}
@@ -57,7 +58,14 @@ const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
           </span>
         </Typography>
 
-        <CommentLikeBlock className={classes.description}>
+        <Typography className={classes.position} variant="body1">
+          {props.position}
+        </Typography>
+
+        <CommentLikeBlock
+          className={classes.description}
+          title="About the company"
+        >
           {props.company.description}
         </CommentLikeBlock>
       </TimelineContent>
