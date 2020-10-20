@@ -64,7 +64,7 @@ const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
 
         <CommentLikeBlock
           className={classes.description}
-          title="About the company"
+          title={props.company.link ? "About the company" : "About"}
         >
           {props.company.description}
         </CommentLikeBlock>
