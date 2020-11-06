@@ -18,12 +18,28 @@ interface ExperienceBase<Id = string> {
   id: Id;
   company: Company;
   dateFrom: Date;
-  dateTo: Date;
+  dateTo?: Date;
   position: Position;
 }
 
 export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
   p)([
+  {
+    id: "Perimeter81",
+    company: {
+      name: "Perimeter 81",
+      description: (
+        <>
+          <Fn>Zero Trust Network as a Service</Fn> designed to simplify secure
+          network, cloud and application access for the modern and distributed
+          workforce.
+        </>
+      ),
+      link: "https://www.linkedin.com/company/perimeter-81/",
+    },
+    dateFrom: new Date(Date.UTC(2020, 10)),
+    position: Position.BackEnd,
+  },
   {
     id: "Trucknet",
     company: {
@@ -83,7 +99,7 @@ export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
         <>
           During this period of my life I worked on various{" "}
           <Fn>projects for the university</Fn> I studied in. This kick-started
-          my career as a front-end developer.
+          my career as a web developer.
         </>
       ),
     },
@@ -96,3 +112,5 @@ export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
 export type ExperienceId = typeof EXPERIENCE[number]["id"];
 
 export type Experience = ExperienceBase<ExperienceId>;
+
+export const IS_HIRABLE = !!EXPERIENCE[0].dateTo;

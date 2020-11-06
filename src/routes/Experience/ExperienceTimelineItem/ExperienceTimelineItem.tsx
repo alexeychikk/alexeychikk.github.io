@@ -47,12 +47,12 @@ const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
         <Typography variant="body2">
           {format(props.dateFrom, "MMM yyyy")}
           {" – "}
-          {format(props.dateTo, "MMM yyyy")}
+          {props.dateTo ? format(props.dateTo, "MMM yyyy") : "Present"}
           <span className={classes.timeDiff}>
             {" < "}
             {formatIntervalShort({
               start: props.dateFrom,
-              end: addMonths(props.dateTo, 1),
+              end: addMonths(props.dateTo || new Date(), 1),
             })}
             {" >"}
           </span>

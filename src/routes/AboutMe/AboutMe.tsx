@@ -10,6 +10,7 @@ import {
   Vn,
   L,
 } from "~/components/CodeLikeBlock";
+import { IfHirable } from "~/components/IfHirable";
 
 import { useStyles } from "./AboutMe.styles";
 
@@ -23,9 +24,12 @@ export const AboutMe: React.FC = () => {
       <L>
         <Kw>I am</Kw> a <Fn>full-stack web developer</Fn>.
       </L>
-      <L active git="green">
-        <Kw>Currently</Kw> I am <Sl>open</Sl> to new <Fn>job opportunities</Fn>!
-      </L>
+      <IfHirable>
+        <L active git="green">
+          <Kw>Currently</Kw> I am <Sl>open</Sl> to new{" "}
+          <Fn>job opportunities</Fn>!
+        </L>
+      </IfHirable>
 
       <Br />
 
