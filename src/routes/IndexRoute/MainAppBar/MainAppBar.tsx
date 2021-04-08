@@ -44,21 +44,26 @@ const MainAppBarBase: React.FC<MainAppBarProps> = (props) => {
             <Link to="/">Alex Zinkevych</Link>
           </Typography>
           <Hidden smDown>
-            <a href="https://github.com/alexeychikk" target="_blank">
-              <IconButton>
+            <a
+              href="https://github.com/alexeychikk"
+              target="_blank"
+              rel="external nofollow"
+            >
+              <IconButton aria-label="GitHub">
                 <GitHub />
               </IconButton>
             </a>
             <a
               href="https://www.linkedin.com/in/alex-zinkevych/"
               target="_blank"
+              rel="external nofollow"
             >
-              <IconButton>
+              <IconButton aria-label="LinkedIn">
                 <LinkedIn />
               </IconButton>
             </a>
             <a href="mailto:alexdarkmm@gmail.com" target="_blank">
-              <IconButton>
+              <IconButton aria-label="E-Mail">
                 <MailOutlineRounded />
               </IconButton>
             </a>

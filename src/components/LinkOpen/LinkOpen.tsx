@@ -18,6 +18,7 @@ export const LinkOpen: React.FC<LinkOpenProps> = (props) => {
       className={clsx(classes.linkOpen, props.className)}
       href={props.href}
       target="_blank"
+      rel="external nofollow"
     >
       <span>{props.children}</span>
       {props.hasLinkIcon && <OpenInNew className={classes.icon} />}

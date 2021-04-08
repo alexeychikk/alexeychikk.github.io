@@ -1,1 +1,4 @@
-https://alexeychikk.github.io/sitemap.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://alexeychikk.github.io/sitemap.txt

@@ -56,7 +56,11 @@ export const PROJECTS = (<T extends any>(p: readonly ProjectBase<T>[]) => p)([
         During the development I integrated Netlify CMS, created functionality
         for blogging and adding vacancies through the CMS, integrated my own
         localization library called{" "}
-        <a href="https://github.com/trucknet-io/react-targem" target="_blank">
+        <a
+          href="https://github.com/trucknet-io/react-targem"
+          target="_blank"
+          rel="external nofollow"
+        >
           react-targem
         </a>
         , optimized the site for SEO.
