@@ -25,9 +25,6 @@ export const Contacts: React.FC = () => {
         </L>
 
         <div className={classes.contactInfo}>
-          <LinkLine label="Tel" href="tel:+972587988196">
-            +972 5879 88 196
-          </LinkLine>
           <LinkLine label="E-mail" href="mailto:alexdarkmm@gmail.com">
             alexdarkmm@gmail.com
           </LinkLine>
