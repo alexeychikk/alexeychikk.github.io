@@ -8,6 +8,8 @@ import { useStyles } from "./GoogleMap.styles";
 
 interface GoogleMapProps {
   className?: string;
+  address: string;
+  title?: string;
 }
 
 const GoogleMapBase: React.FC<GoogleMapProps> = (props) => {
@@ -30,11 +32,11 @@ const GoogleMapBase: React.FC<GoogleMapProps> = (props) => {
       )}
       <iframe
         className={clsx(classes.block, classes.iframe)}
-        title="My Location"
+        title={props.title}
         width="600"
         height="500"
         id="gmap_iframe"
-        src="https://maps.google.com/maps?q=Tel%20Aviv-Yafo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        src={`https://maps.google.com/maps?q=${props.address}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
         frameBorder={0}
         scrolling="no"
         marginHeight={0}

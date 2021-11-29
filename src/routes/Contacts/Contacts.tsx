@@ -11,7 +11,7 @@ export const Contacts: React.FC = () => {
   return (
     <CodeLikeBlock>
       <L>
-        <Kw>I live</Kw> in <Sl>Tel Aviv</Sl>, Israel.
+        <Kw>I live</Kw> in <Sl>Kyiv</Sl>, Ukraine.
       </L>
       <L active git="green">
         <Kw>But</Kw> I definitely consider <Fn>remote</Fn> work.
@@ -21,7 +21,7 @@ export const Contacts: React.FC = () => {
 
       <div className={classes.mapWrapper}>
         <L className={classes.map}>
-          <GoogleMap />
+          <GoogleMap address="Kyiv" title="My Location" />
         </L>
 
         <div className={classes.contactInfo}>

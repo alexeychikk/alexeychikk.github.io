@@ -38,6 +38,7 @@ export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
       link: "https://www.linkedin.com/company/perimeter-81/",
     },
     dateFrom: new Date(Date.UTC(2020, 10)),
+    dateTo: new Date(Date.UTC(2021, 7)),
     position: Position.BackEnd,
   },
   {
