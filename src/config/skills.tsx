@@ -22,10 +22,14 @@ import { ReactComponent as AngularIcon } from "~/assets/icons/angular.svg";
 
 import { ReactComponent as FolderServerIcon } from "~/assets/icons/folder-server-open.svg";
 import { ReactComponent as NodeJsIcon } from "~/assets/icons/nodejs.svg";
-import { ReactComponent as MongoDBIcon } from "~/assets/icons/mongodb.svg";
+import { ReactComponent as NestJsIcon } from "~/assets/icons/nestjs.svg";
+import { ReactComponent as ExpressIcon } from "~/assets/icons/expressjs.svg";
+import { ReactComponent as FastifyIcon } from "~/assets/icons/fastify.svg";
 import { ReactComponent as SocketIoIcon } from "~/assets/icons/socket-io.svg";
-import { ReactComponent as AWSIcon } from "~/assets/icons/aws.svg";
+import { ReactComponent as MongoDBIcon } from "~/assets/icons/mongodb.svg";
 import { ReactComponent as RedisIcon } from "~/assets/icons/redis.svg";
+import { ReactComponent as PostgreSqlIcon } from "~/assets/icons/postgresql.svg";
+import { ReactComponent as AWSIcon } from "~/assets/icons/aws.svg";
 import { ReactComponent as DockerIcon } from "~/assets/icons/docker.svg";
 import { ReactComponent as KubernetesIcon } from "~/assets/icons/kubernetes.svg";
 
@@ -176,12 +180,28 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
   },
   // BackEnd
   { id: "NodeJS", categoryId: "BackEnd", name: "Node.js", icon: NodeJsIcon },
-  { id: "MongoDB", categoryId: "BackEnd", name: "MongoDB", icon: MongoDBIcon },
+  { id: "NestJS", categoryId: "BackEnd", name: "NestJS", icon: NestJsIcon },
+  { id: "Express", categoryId: "BackEnd", name: "Express", icon: ExpressIcon },
+  { id: "Fastify", categoryId: "BackEnd", name: "Fastify", icon: FastifyIcon },
   {
     id: "SocketIO",
     categoryId: "BackEnd",
     name: "Socket.io",
     icon: SocketIoIcon,
+  },
+  { id: "MongoDB", categoryId: "BackEnd", name: "MongoDB", icon: MongoDBIcon },
+  {
+    id: "Redis",
+    categoryId: "BackEnd",
+    name: "Redis",
+    icon: RedisIcon,
+  },
+  {
+    id: "PostgreSQL",
+    categoryId: "BackEnd",
+    name: "PostgreSQL",
+    hint: "(background)",
+    icon: PostgreSqlIcon,
   },
   {
     id: "AWS",
@@ -189,13 +209,6 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
     name: "AWS",
     hint: "(SQS, S3, SNS)",
     icon: AWSIcon,
-  },
-  {
-    id: "Redis",
-    categoryId: "BackEnd",
-    name: "Redis",
-    hint: "(fundamentals)",
-    icon: RedisIcon,
   },
   {
     id: "Docker",
