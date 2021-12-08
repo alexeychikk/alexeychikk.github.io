@@ -19,7 +19,7 @@ export const AboutMe: React.FC = () => {
   return (
     <CodeLikeBlock>
       <L>
-        <Kw>Hi</Kw>, my <Vn>name</Vn> is <Sl>Alex</Sl>!
+        <Kw>Hi</Kw>, my name is <Sl>Alex</Sl>!
       </L>
       <L>
         <Kw>I am</Kw> a <Fn>full-stack web developer</Fn>.
@@ -57,27 +57,26 @@ export const AboutMe: React.FC = () => {
       <Br />
 
       <L>
-        <Kw>I started</Kw> coding when <Kw>I was</Kw> a <Sl>teenager</Sl>.
+        <Kw>I started</Kw> coding when I was a <Sl>teenager</Sl>.
       </L>
       <L>
         <Kw>My</Kw> first <Vn>programming language</Vn> was <Fn>C++</Fn>.
       </L>
       <L>
-        <Kw>Then</Kw> I learned <Fn>C#</Fn> and started <Kw>writing</Kw> simple{" "}
+        <Kw>Then</Kw> I learned <Fn>C#</Fn> and started writing simple{" "}
         <Vn>games</Vn> for <Sl>fun</Sl>.
       </L>
 
       <Br />
 
       <L git="blue">
-        <Kw>But one day</Kw>, all the <Sl>cool guys</Sl> started{" "}
-        <Kw>talking</Kw> about <Fn>JS</Fn> and how <Vn>awesome</Vn> and{" "}
-        <Vn>powerful</Vn> it is.
+        <Kw>But one day</Kw>, all the <Sl>cool guys</Sl> started talking about{" "}
+        <Fn>JS</Fn> and how <Vn>awesome</Vn> and <Vn>powerful</Vn> it is.
       </L>
       <L git="blue">
-        <Kw>So I followed</Kw> the <Vn>mainstream</Vn> and dedicated all my{" "}
+        <Kw>So I followed</Kw> the mainstream and dedicated all my{" "}
         <Vn>efforts</Vn> to become as good <Fn>web developer</Fn> as I can
-        possibly <Kw>be</Kw>.
+        possibly be.
       </L>
     </CodeLikeBlock>
   );
