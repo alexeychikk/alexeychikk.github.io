@@ -2,7 +2,7 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
-    expTimelineItem: {
+    timelineItem: {
       "&::before": {
         flex: 0,
         padding: 0,
@@ -16,12 +16,12 @@ export const useStyles = makeStyles((theme) =>
       paddingRight: 0,
       paddingBottom: theme.spacing(2),
     },
-    companyName: {
+    title: {
       lineHeight: 1,
       paddingTop: "2px",
       marginBottom: "0.2em",
     },
-    position: {
+    subtitle: {
       color: "#fff",
       fontWeight: 500,
     },

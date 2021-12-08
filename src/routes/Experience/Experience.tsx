@@ -1,12 +1,9 @@
-import { Timeline } from "@material-ui/lab";
 import React from "react";
 
 import { EXPERIENCE } from "~/config/experience";
+import { Timeline, InitialItem } from "~/components/Timeline";
 
-import {
-  ExperienceTimelineItem,
-  InitialCommitItem,
-} from "./ExperienceTimelineItem";
+import { ExperienceTimelineItem } from "./ExperienceTimelineItem";
 
 import { useStyles } from "./Experience.styles";
 
@@ -17,7 +14,7 @@ export const Experience: React.FC = () => {
       {EXPERIENCE.map((exp) => (
         <ExperienceTimelineItem key={exp.id} {...exp} />
       ))}
-      <InitialCommitItem />
+      <InitialItem>Initial commit</InitialItem>
     </Timeline>
   );
 };
