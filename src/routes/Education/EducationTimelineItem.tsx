@@ -11,11 +11,7 @@ const EducationTimelineItemBase: React.FC<EducationTimelineItemProps> = (
   return (
     <TimelineItem
       title={props.name}
-      subtitle={
-        <>
-          {props.degree}, {props.field}
-        </>
-      }
+      subtitle={`${props.degree}, ${props.field}`}
       dateFrom={props.dateFrom}
       dateTo={props.dateTo}
       descriptionTitle={`Grade: ${props.grade}`}
