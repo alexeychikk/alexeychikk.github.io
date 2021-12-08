@@ -16,6 +16,7 @@ import { CommentLikeBlock } from "~/components/CommentLikeBlock";
 import { useStyles } from "./TimelineItem.styles";
 
 export interface TimelineItemProps {
+  classes?: ClassesOverride<typeof useStyles>;
   children?: React.ReactNode;
   className?: string;
   descriptionTitle?: React.ReactNode;
@@ -26,11 +27,11 @@ export interface TimelineItemProps {
 }
 
 const TimelineItemBase: React.FC<TimelineItemProps> = (props) => {
-  const classes = useStyles();
+  const classes = useStyles(props);
   return (
     <MuiTimelineItem className={clsx(classes.timelineItem, props.className)}>
       <TimelineSeparator>
-        <TimelineDot color="secondary" variant="outlined" />
+        <TimelineDot className={classes.dot} variant="outlined" />
         <TimelineConnector className={classes.connector} />
       </TimelineSeparator>
 
@@ -59,7 +60,7 @@ const TimelineItemBase: React.FC<TimelineItemProps> = (props) => {
           </Typography>
         )}
 
-        {props.children && (
+        {(props.children || props.descriptionTitle) && (
           <CommentLikeBlock
             className={classes.description}
             title={props.descriptionTitle}

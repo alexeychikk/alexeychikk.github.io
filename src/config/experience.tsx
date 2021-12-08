@@ -22,8 +22,8 @@ interface ExperienceBase<Id = string> {
   position: Position;
 }
 
-export const EXPERIENCE = (<T extends any>(p: readonly ExperienceBase<T>[]) =>
-  p)([
+export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
+  t)([
   {
     id: "Perimeter81",
     company: {

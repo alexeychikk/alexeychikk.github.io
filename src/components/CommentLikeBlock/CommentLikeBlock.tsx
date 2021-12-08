@@ -13,10 +13,16 @@ export const CommentLikeBlock: React.FC<CommentLikeBlockProps> = (props) => {
 
   return (
     <div className={clsx(classes.commentLikeBlock, props.className)}>
-      <div className={classes.slash}>/** {props.title}</div>
-      <div className={classes.line} />
-      <div className={classes.childrenWrapper}>{props.children}</div>
-      <div className={classes.slash}>&nbsp;*/</div>
+      <div className={classes.slash}>
+        /** {props.title} {!props.children && "*/"}
+      </div>
+      {props.children && (
+        <>
+          <div className={classes.line} />
+          <div className={classes.childrenWrapper}>{props.children}</div>
+          <div className={classes.slash}>&nbsp;*/</div>
+        </>
+      )}
     </div>
   );
 };
