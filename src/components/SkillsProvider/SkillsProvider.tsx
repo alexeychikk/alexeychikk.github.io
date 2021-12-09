@@ -1,24 +1,26 @@
 import React, { createContext, useMemo, useContext } from "react";
 import { useHistory } from "react-router-dom";
 
-import { SkillId } from "~/config/skills";
+import { SkillId, SKILLS } from "~/config/skills";
 import { useQuery } from "~/hooks";
 
-export type SkillIdsMap = Partial<{ [key in SkillId]: true }>;
+import { getSkillExperienceInMonths } from "./getSkillExperienceInMonths";
 
 export interface SkillsContext {
   selectedSkills: SkillId[];
-  selectedSkillsMap: SkillIdsMap;
+  selectedSkillsExperience: Record<SkillId, number>;
   selectSkill(id: SkillId): void;
   unselectSkill(id: SkillId): void;
+  selectAllSkills(): void;
   clearSelectedSkills(): void;
 }
 
 const context = createContext<SkillsContext>({
   selectedSkills: [],
-  selectedSkillsMap: {},
+  selectedSkillsExperience: {} as Record<SkillId, number>,
   selectSkill: () => {},
   unselectSkill: () => {},
+  selectAllSkills: () => {},
   clearSelectedSkills: () => {},
 });
 
@@ -32,10 +34,10 @@ export const SkillsProvider: React.FC<SkillsProviderProps> = (props) => {
   const selectedSkills = (skillsQuery
     ? skillsQuery.split(",")
     : []) as SkillId[];
-  const selectedSkillsMap = selectedSkills.reduce((res: SkillIdsMap, id) => {
-    res[id] = true;
+  const selectedSkillsExperience = selectedSkills.reduce((res, id) => {
+    res[id] = getSkillExperienceInMonths(id);
     return res;
-  }, {});
+  }, {} as Record<SkillId, number>);
 
   const setSelectedSkills = (skills: SkillId[]) => {
     history.push({
@@ -59,6 +61,13 @@ export const SkillsProvider: React.FC<SkillsProviderProps> = (props) => {
     setSelectedSkills(newSkills);
   };
 
+  const selectAllSkills = () => {
+    if (selectedSkills.length === SKILLS.length) {
+      return;
+    }
+    setSelectedSkills(SKILLS.map((skill) => skill.id));
+  };
+
   const clearSelectedSkills = () => {
     if (!selectedSkills.length) {
       return;
@@ -69,8 +78,9 @@ export const SkillsProvider: React.FC<SkillsProviderProps> = (props) => {
   const value = useMemo(
     () => ({
       selectedSkills,
-      selectedSkillsMap,
+      selectedSkillsExperience,
       selectSkill,
+      selectAllSkills,
       unselectSkill,
       clearSelectedSkills,
     }),

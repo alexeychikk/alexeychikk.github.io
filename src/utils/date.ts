@@ -1,4 +1,4 @@
-import { formatDuration, intervalToDuration } from "date-fns";
+import { formatDuration, intervalToDuration, addMonths } from "date-fns";
 
 export const formatInterval = ({
   start,
@@ -23,4 +23,11 @@ export const formatIntervalShort = ({
   return formatInterval({ start, end })
     .replace("year", "yr")
     .replace("month", "mo");
+};
+
+export const formatMonthsAsIntervalShort = (months: number) => {
+  return formatIntervalShort({
+    start: new Date(0),
+    end: addMonths(new Date(0), months),
+  });
 };

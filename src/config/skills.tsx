@@ -42,6 +42,7 @@ import { ReactComponent as SentryIcon } from "~/assets/icons/sentry.svg";
 import { ReactComponent as WebpackIcon } from "~/assets/icons/webpack.svg";
 import { ReactComponent as I18nIcon } from "~/assets/icons/i18n.svg";
 import { ReactComponent as VsCodeIcon } from "~/assets/icons/vscode.svg";
+import { ReactComponent as WebStormIcon } from "~/assets/icons/webstorm.svg";
 
 import { ReactComponent as FolderDocsIcon } from "~/assets/icons/folder-docs-open.svg";
 import { ReactComponent as ReadmeIcon } from "~/assets/icons/readme.svg";
@@ -102,7 +103,7 @@ interface SkillBase<Id = string> {
   categoryId: SkillCategoryId;
   hint?: React.ReactNode;
   icon: SvgComponent;
-  name: React.ReactNode;
+  name: string;
 }
 
 const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
@@ -233,6 +234,7 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
   { id: "Webpack", categoryId: "Tools", name: "Webpack", icon: WebpackIcon },
   { id: "i18n", categoryId: "Tools", name: "i18n", icon: I18nIcon },
   { id: "VSCode", categoryId: "Tools", name: "VS Code", icon: VsCodeIcon },
+  { id: "WebStorm", categoryId: "Tools", name: "WebStorm", icon: WebStormIcon },
   // Knowledge
   { id: "OOP", categoryId: "Knowledge", name: "OOP", icon: ReadmeIcon },
   {
@@ -257,6 +259,10 @@ export type Skill = SkillBase<SkillId>;
 export type SkillsMap = { [key in SkillId]: Skill };
 
 export const SKILLS: Readonly<Skill[]> = skills;
+
+export const MAX_SKILL_NAME_LENGTH = Math.max(
+  ...SKILLS.map((skill) => skill.name.length)
+);
 
 export const SKILLS_MAP = skills.reduce((res: Partial<SkillsMap>, skill) => {
   res[skill.id] = skill;

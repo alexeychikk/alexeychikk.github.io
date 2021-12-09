@@ -11,7 +11,7 @@ export interface MySkillCategoryProps extends SkillCategory {
 }
 
 export const MySkillCategory: React.FC<MySkillCategoryProps> = (props) => {
-  const { selectedSkillsMap } = useSkillsContext();
+  const { selectedSkillsExperience } = useSkillsContext();
   const skills = SKILLS.filter((s) => s.categoryId === props.id);
 
   return (
@@ -20,7 +20,7 @@ export const MySkillCategory: React.FC<MySkillCategoryProps> = (props) => {
         <MySkillItem
           key={skill.id}
           onClick={props.onSkillClick}
-          active={selectedSkillsMap[skill.id]}
+          active={skill.id in selectedSkillsExperience}
           {...skill}
         />
       ))}

@@ -4,9 +4,11 @@ export const useStyles = makeStyles((theme) =>
   createStyles({
     indexRoute: {
       height: "100%",
+      width: "100%",
       display: "flex",
     },
     content: {
+      width: "100%",
       flexGrow: 1,
       marginLeft: "320px",
       display: "flex",
@@ -17,6 +19,7 @@ export const useStyles = makeStyles((theme) =>
       },
     },
     routesWrapper: {
+      width: "100%",
       flex: 1,
       paddingTop: theme.spacing(2),
       [theme.breakpoints.down("sm")]: {

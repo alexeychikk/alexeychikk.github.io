@@ -38,11 +38,16 @@ export const useStyles = makeStyles((theme) =>
       visibility: "hidden",
     },
     childrenWrapper: {
+      width: `calc(100% - ${theme.spacing(7)}px - 0.4em)`,
       flex: 1,
       color: "#a9b7c6",
       maxWidth: "1024px",
+      [theme.breakpoints.down("sm")]: {
+        width: `calc(100% - ${theme.spacing(4)}px - 0.4em)`,
+      },
     },
     active: {},
+    hover: {},
     git: {
       "&::before": {
         content: `""`,
@@ -72,6 +77,10 @@ export const useStyles = makeStyles((theme) =>
     LChildren: {
       paddingRight: theme.spacing(2),
       "$L$active &": {
+        backgroundColor: "rgb(42,42,43)",
+      },
+      "$L$hover &:hover": {
+        cursor: "pointer",
         backgroundColor: "rgb(42,42,43)",
       },
     },

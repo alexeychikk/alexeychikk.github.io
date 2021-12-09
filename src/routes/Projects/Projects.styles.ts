@@ -3,7 +3,18 @@ import { createStyles, makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) =>
   createStyles({
     projects: {
+      width: "100%",
+    },
+    line: {
       maxWidth: "42em",
+    },
+    skillTableWrapper: {
+      overflowX: "auto",
+      width: "100%",
+    },
+    skillTable: {
+      width: "100%",
+      minWidth: "410px",
     },
     selectedSkill: {
       color: theme.palette.text.primary,
