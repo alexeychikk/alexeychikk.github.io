@@ -25,20 +25,22 @@ export const Contacts: React.FC = () => {
         </L>
 
         <div className={classes.contactInfo}>
-          <LinkLine label="E-mail" href="mailto:alexdarkmm@gmail.com">
+          <LinkLine label="E-mail" to="mailto:alexdarkmm@gmail.com" external>
             alexdarkmm@gmail.com
           </LinkLine>
           <LinkLine
             label="LinkedIn"
-            href="https://www.linkedin.com/in/alex-zinkevych/"
+            to="https://www.linkedin.com/in/alex-zinkevych/"
             hasLinkIcon
+            external
           >
             Alex Zinkevych
           </LinkLine>
           <LinkLine
             label="GitHub"
-            href="https://github.com/alexeychikk"
+            to="https://github.com/alexeychikk"
             hasLinkIcon
+            external
           >
             alexeychikk
           </LinkLine>

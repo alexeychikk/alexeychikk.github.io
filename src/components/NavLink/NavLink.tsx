@@ -14,7 +14,7 @@ export interface NavLinkProps {
   hasIcon?: boolean;
   icon?: SvgComponent;
   iconClassName?: string;
-  isExternal?: boolean;
+  external?: boolean;
   to: string;
   target?: LinkProps["target"];
 }
@@ -26,7 +26,7 @@ const NavLinkBase: React.FC<NavLinkProps> = (props) => {
     exact: props.activeOnlyWhenExact,
   });
   const Icon = props.icon || JsonIcon;
-  const Component = props.isExternal ? "a" : Link;
+  const Component = props.external ? "a" : Link;
 
   return (
     // @ts-ignore
@@ -38,7 +38,7 @@ const NavLinkBase: React.FC<NavLinkProps> = (props) => {
         props.className
       )}
       target={props.target}
-      {...(props.isExternal ? { href: props.to } : { to: props.to })}
+      {...(props.external ? { href: props.to } : { to: props.to })}
     >
       {props.hasIcon && (
         <Icon className={clsx(classes.icon, props.iconClassName)} />

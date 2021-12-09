@@ -114,4 +114,4 @@ export type ExperienceId = typeof EXPERIENCE[number]["id"];
 
 export type Experience = ExperienceBase<ExperienceId>;
 
-export const IS_HIRABLE = !!EXPERIENCE[0].dateTo;
+export const IS_HIRABLE = false; // !!EXPERIENCE[0].dateTo;

@@ -83,6 +83,9 @@ export const useStyles = makeStyles((theme) =>
         cursor: "pointer",
         backgroundColor: "rgb(42,42,43)",
       },
+      "& svg": {
+        top: "-0.27em",
+      },
     },
     Kw: {
       color: theme.palette.primary.main,

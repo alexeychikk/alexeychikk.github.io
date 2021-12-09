@@ -4,6 +4,7 @@ export const useStyles = makeStyles((theme) =>
   createStyles({
     linkOpen: {
       whiteSpace: "nowrap",
+      color: theme.palette.primary.main,
       "&:hover": {
         color: theme.palette.primary.light,
       },
@@ -14,7 +15,6 @@ export const useStyles = makeStyles((theme) =>
       },
       "& svg": {
         position: "relative",
-        top: 0,
       },
     },
     icon: {

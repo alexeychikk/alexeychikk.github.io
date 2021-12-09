@@ -10,7 +10,8 @@ import {
   Vn,
   L,
 } from "~/components/CodeLikeBlock";
-import { IfHirable } from "~/components/IfHirable";
+import { IfHirable, IfNotHirable } from "~/components/IfHirable";
+import { LinkOpen } from "~/components/LinkOpen";
 
 import { useStyles } from "./AboutMe.styles";
 
@@ -24,12 +25,19 @@ export const AboutMe: React.FC = () => {
       <L>
         <Kw>I am</Kw> a <Fn>full-stack web developer</Fn>.
       </L>
-      <IfHirable>
-        <L active git="green">
+      <L active git="green">
+        <IfHirable>
           <Kw>Currently</Kw> I am <Sl>open</Sl> to new{" "}
           <Fn>job opportunities</Fn>!
-        </L>
-      </IfHirable>
+        </IfHirable>
+        <IfNotHirable>
+          <Kw>Currently</Kw> I am not looking for a new job but feel free to{" "}
+          <LinkOpen to="/contacts" hasLinkIcon>
+            contact
+          </LinkOpen>{" "}
+          me.
+        </IfNotHirable>
+      </L>
 
       <Br />
 

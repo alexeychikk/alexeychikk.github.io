@@ -13,16 +13,17 @@ export interface LinkLineProps extends LProps, LinkOpenProps {
 const LinkLineBase: React.FC<LinkLineProps> = ({
   className,
   label,
-  href,
+  to,
   hasLinkIcon,
   children,
+  external,
   ...props
 }) => {
   const classes = useStyles();
   return (
     <L className={clsx(classes.linkLine, className)} {...props}>
       <span>{label}:</span>{" "}
-      <LinkOpen href={href} hasLinkIcon={hasLinkIcon}>
+      <LinkOpen to={to} hasLinkIcon={hasLinkIcon} external={external}>
         {children}
       </LinkOpen>
     </L>

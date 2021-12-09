@@ -8,9 +8,6 @@ export const useStyles = makeStyles((theme) =>
         display: "inline-block",
         verticalAlign: "bottom",
       },
-      "& svg": {
-        top: "-0.27em",
-      },
     },
   })
 );

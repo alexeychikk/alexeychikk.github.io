@@ -10,7 +10,7 @@ const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
   props
 ) => {
   const title = props.company.link ? (
-    <LinkOpen href={props.company.link} hasLinkIcon>
+    <LinkOpen to={props.company.link} hasLinkIcon external>
       {props.company.name}
     </LinkOpen>
   ) : (

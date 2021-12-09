@@ -38,7 +38,7 @@ const NavigationDrawerBase: React.FC<NavigationDrawerProps> = (props) => {
           <ListItemLink
             onClick={props.onClose}
             icon={GitHub}
-            isExternal
+            external
             target="_blank"
             to="https://github.com/alexeychikk"
           >
@@ -47,7 +47,7 @@ const NavigationDrawerBase: React.FC<NavigationDrawerProps> = (props) => {
           <ListItemLink
             onClick={props.onClose}
             icon={LinkedIn}
-            isExternal
+            external
             target="_blank"
             to="https://www.linkedin.com/in/alex-zinkevych/"
           >
@@ -56,7 +56,7 @@ const NavigationDrawerBase: React.FC<NavigationDrawerProps> = (props) => {
           <ListItemLink
             onClick={props.onClose}
             icon={MailOutlineRounded}
-            isExternal
+            external
             target="_blank"
             to="mailto:alexdarkmm@gmail.com"
           >
