@@ -58,7 +58,7 @@ export const useStyles = makeStyles((theme) =>
     },
     title: {
       lineHeight: 1,
-      paddingTop: "2px",
+      paddingTop: "0.2em",
       marginBottom: "0.2em",
       "$initialItem &": {
         ".az-timeline-primary-main &": {

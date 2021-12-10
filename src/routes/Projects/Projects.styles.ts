@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) =>
     },
     skillTable: {
       width: "100%",
-      minWidth: "410px",
+      minWidth: "440px",
     },
     selectedSkill: {
       color: theme.palette.text.primary,

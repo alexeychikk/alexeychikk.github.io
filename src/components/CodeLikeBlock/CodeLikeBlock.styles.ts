@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme) =>
       position: "relative",
       height: "100%",
       display: "flex",
-      fontFamily: 'Consolas, "Courier New", monospace',
+      fontFamily: "IBM Plex Mono",
       fontSize: theme.typography.h6.fontSize,
       alignItems: "start",
       [theme.breakpoints.down("sm")]: {

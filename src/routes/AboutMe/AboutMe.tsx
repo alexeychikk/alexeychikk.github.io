@@ -72,13 +72,13 @@ export const AboutMe: React.FC = () => {
       </L>
       <L>
         <Kw>Then</Kw> I learned <Fn>C#</Fn> and started writing simple{" "}
-        <Vn>games</Vn> for <Sl>fun</Sl>.
+        <Vn>games</Vn> for fun.
       </L>
 
       <Br />
 
       <L git="blue">
-        <Kw>But one day</Kw>, all the <Sl>cool guys</Sl> started talking about{" "}
+        <Kw>But one day</Kw>, all the cool guys started talking about{" "}
         <Fn>JS</Fn> and how <Vn>awesome</Vn> and <Vn>powerful</Vn> it is.
       </L>
       <L git="blue">

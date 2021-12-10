@@ -29,7 +29,7 @@ export const THEME = createMuiTheme({
   palette,
   breakpoints,
   typography: {
-    fontFamily: "Segoe WPC,Segoe UI,sans-serif,Roboto",
+    fontFamily: "Open Sans",
   },
   overrides: {
     MuiCssBaseline: {

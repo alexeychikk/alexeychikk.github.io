@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) =>
   createStyles({
     commentLikeBlock: {
-      fontFamily: 'Consolas, "Courier New", monospace',
+      fontFamily: "IBM Plex Mono",
       color: "#a9b7c6",
       fontSize: theme.typography.body1.fontSize,
       maxWidth: "800px",
