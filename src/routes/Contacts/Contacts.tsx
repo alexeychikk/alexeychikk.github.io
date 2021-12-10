@@ -3,6 +3,7 @@ import React from "react";
 import { CodeLikeBlock, Kw, Sl, Br, Fn, L } from "~/components/CodeLikeBlock";
 import { GoogleMap } from "~/components/GoogleMap";
 import { LinkLine } from "~/components/LinkLine";
+import { IfHirable, IfNotHirable } from "~/components/IfHirable";
 
 import { useStyles } from "./Contacts.styles";
 
@@ -11,11 +12,19 @@ export const Contacts: React.FC = () => {
   return (
     <CodeLikeBlock>
       <L>
-        <Kw>I live</Kw> in <Sl>Kyiv</Sl>, Ukraine.
+        <Kw>Currently</Kw> I live in <Sl>Kyiv</Sl>, Ukraine.
       </L>
-      <L active git="green">
-        <Kw>But</Kw> I definitely consider <Fn>remote</Fn> work.
-      </L>
+      <IfHirable>
+        <L active git="green">
+          <Kw>But</Kw> I definitely consider <Fn>remote</Fn> work.
+        </L>
+      </IfHirable>
+      <IfNotHirable>
+        <L git="blue">
+          <Kw>I lived</Kw> in <Sl>Israel</Sl> for several years, but decided to
+          return back to Ukraine.
+        </L>
+      </IfNotHirable>
 
       <Br />
 

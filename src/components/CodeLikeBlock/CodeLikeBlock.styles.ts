@@ -38,13 +38,10 @@ export const useStyles = makeStyles((theme) =>
       visibility: "hidden",
     },
     childrenWrapper: {
-      width: `calc(100% - ${theme.spacing(7)}px - 0.4em)`,
       flex: 1,
+      overflow: "hidden",
       color: "#a9b7c6",
       maxWidth: "1024px",
-      [theme.breakpoints.down("sm")]: {
-        width: `calc(100% - ${theme.spacing(4)}px - 0.4em)`,
-      },
     },
     active: {},
     hover: {},
