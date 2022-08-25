@@ -9,6 +9,9 @@ export interface LProps extends HTMLAttributes<HTMLDivElement> {
   git?: "green" | "blue";
 }
 
+/**
+ * Code-like line component.
+ */
 export const L: React.FC<LProps> = ({
   active,
   hover,
