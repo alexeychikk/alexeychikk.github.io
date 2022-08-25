@@ -17,7 +17,7 @@ export const Projects: React.FC = () => {
     selectAllSkills,
     unselectSkill,
   } = useSkillsContext();
-  console.log(selectedSkills);
+
   const sortedSkills = useMemo(
     () =>
       [...selectedSkills].sort(

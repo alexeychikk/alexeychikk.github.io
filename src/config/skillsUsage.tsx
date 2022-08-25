@@ -138,3 +138,26 @@ export const SKILLS_USAGE: JobSkills[] = [
     ],
   },
 ];
+
+export const CONTINUOUSLY_LEARNING_SKILLS: {
+  [key in SkillId]?: { dateFrom?: Date; learningTimeRatio?: number };
+} = {
+  CSSinJS: { learningTimeRatio: 0.3 },
+  DesignPatterns: { learningTimeRatio: 0.7 },
+  Docker: { learningTimeRatio: 0.2 },
+  Git: {},
+  HTML: { learningTimeRatio: 0.2 },
+  JavaScript: {},
+  Jest: { learningTimeRatio: 0.5 },
+  MaterialUI: { learningTimeRatio: 0.2 },
+  MongoDB: { learningTimeRatio: 0.5 },
+  NestJS: { learningTimeRatio: 0.5 },
+  NodeJS: { learningTimeRatio: 0.5 },
+  OOP: {},
+  React: { learningTimeRatio: 0.5 },
+  SocketIO: { learningTimeRatio: 0.5 },
+  TDD: { learningTimeRatio: 0.5 },
+  TypeScript: {},
+  VSCode: {},
+  Webpack: { learningTimeRatio: 0.2 },
+};
