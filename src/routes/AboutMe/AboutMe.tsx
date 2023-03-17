@@ -4,6 +4,7 @@ import { ReactComponent as FolderSrcIcon } from "~/assets/icons/folder-src-open.
 import {
   Br,
   CodeLikeBlock,
+  Cm,
   Fn,
   Kw,
   Sl,
@@ -85,6 +86,12 @@ export const AboutMe: React.FC = () => {
         <Kw>So I followed</Kw> the mainstream and dedicated all my{" "}
         <Vn>efforts</Vn> to become as good <Fn>web developer</Fn> as I can
         possibly be.
+      </L>
+
+      <Br />
+
+      <L>
+        <Cm>f*ck russia</Cm>
       </L>
     </CodeLikeBlock>
   );

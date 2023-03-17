@@ -42,6 +42,7 @@ export const useStyles = makeStyles((theme) =>
       overflow: "hidden",
       color: "#a9b7c6",
       maxWidth: "1024px",
+      position: "relative",
     },
     active: {},
     hover: {},
@@ -96,6 +97,9 @@ export const useStyles = makeStyles((theme) =>
     },
     Vn: {
       color: theme.palette.secondary.main,
+    },
+    Cm: {
+      color: "#808080",
     },
   })
 );
