@@ -47,6 +47,23 @@ export const THEME = createMuiTheme({
           width: "100%",
         },
 
+        "@keyframes azFadeIn": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 100,
+          },
+        },
+        "@keyframes azFadeOut": {
+          "0%": {
+            opacity: 100,
+          },
+          "100%": {
+            opacity: 0,
+          },
+        },
+
         "::-webkit-scrollbar": {
           width: "12px",
         },

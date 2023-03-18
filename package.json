@@ -1,92 +1,93 @@
 {
-  "name": "alexeychikk.github.io",
-  "version": "1.0.0",
-  "description": "A website showcasing my skills and experience",
-  "homepage": "http://alexeychikk.github.io",
-  "repository": {
-    "url": "https://github.com/alexeychikk/alexeychikk.github.io"
-  },
-  "author": {
-    "email": "alexdarkmm@gmail.com",
-    "name": "Alex Zinkevych",
-    "url": "http://alexeychikk.github.io"
-  },
-  "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.56",
-    "@material-ui/styles": "^4.10.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.67",
-    "@types/react": "^16.9.51",
-    "@types/react-dom": "^16.9.8",
-    "clsx": "^1.1.1",
-    "date-fns": "^2.16.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "typescript": "^3.7.5",
-    "use-resize-observer": "^6.1.0"
-  },
-  "devDependencies": {
-    "@craco/craco": "^5.7.0",
-    "@types/react-router-dom": "^5.1.6",
-    "gh-pages": "^3.1.0",
-    "git-branch-is": "^4.0.0",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2",
-    "serve": "^11.3.2",
-    "tsconfig-paths-webpack-plugin": "^3.3.0",
-    "webpack-bundle-analyzer": "^3.9.0"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "serve": "serve build",
-    "test": "craco test",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "if git-branch-is master; then npm run deploy; fi"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app",
-    "overrides": [
-      {
-        "files": [
-          "**/*.ts?(x)"
-        ],
-        "rules": {
-          "react-hooks/exhaustive-deps": "off",
-          "react/jsx-no-target-blank": "off"
-        }
-      }
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "alexeychikk.github.io",
+	"version": "1.0.0",
+	"description": "A website showcasing my skills and experience",
+	"homepage": "http://alexeychikk.github.io",
+	"repository": {
+		"url": "https://github.com/alexeychikk/alexeychikk.github.io"
+	},
+	"author": {
+		"email": "alexdarkmm@gmail.com",
+		"name": "Alex Zinkevych",
+		"url": "http://alexeychikk.github.io"
+	},
+	"dependencies": {
+		"@material-ui/core": "^4.11.0",
+		"@material-ui/icons": "^4.9.1",
+		"@material-ui/lab": "^4.0.0-alpha.56",
+		"@material-ui/styles": "^4.10.0",
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.5.0",
+		"@testing-library/user-event": "^7.2.1",
+		"@types/jest": "^24.9.1",
+		"@types/node": "^12.12.67",
+		"@types/react": "^16.9.51",
+		"@types/react-dom": "^16.9.8",
+		"clsx": "^1.1.1",
+		"date-fns": "^2.16.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "3.4.3",
+		"typescript": "^3.7.5",
+		"use-resize-observer": "^6.1.0"
+	},
+	"devDependencies": {
+		"@craco/craco": "^5.7.0",
+		"@types/react-router-dom": "^5.1.6",
+		"gh-pages": "^3.1.0",
+		"git-branch-is": "^4.0.0",
+		"husky": "^4.3.0",
+		"lint-staged": "^10.4.0",
+		"prettier": "^2.1.2",
+		"serve": "^11.3.2",
+		"tsconfig-paths-webpack-plugin": "^3.3.0",
+		"webpack-bundle-analyzer": "^3.9.0"
+	},
+	"scripts": {
+		"start": "craco start",
+		"build": "craco build",
+		"serve": "serve build",
+		"test": "craco test",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"pre-push": "if git-branch-is master; then npm run deploy; fi"
+		}
+	},
+	"lint-staged": {
+		"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+			"prettier --write"
+		]
+	},
+	"eslintConfig": {
+		"extends": "react-app",
+		"overrides": [
+			{
+				"files": [
+					"**/*.ts?(x)"
+				],
+				"rules": {
+					"react-hooks/exhaustive-deps": "off",
+					"react/jsx-no-target-blank": "off",
+					"jsx-a11y/accessible-emoji": "off"
+				}
+			}
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
 }

@@ -4,6 +4,7 @@ import { CodeLikeBlock, Kw, Sl, Br, Fn, L } from "~/components/CodeLikeBlock";
 import { GoogleMap } from "~/components/GoogleMap";
 import { LinkLine } from "~/components/LinkLine";
 import { IfHirable, IfNotHirable } from "~/components/IfHirable";
+import { LoveSurvey } from "~/components/LoveSurvey";
 
 import { useStyles } from "./Contacts.styles";
 
@@ -25,9 +26,7 @@ export const Contacts: React.FC = () => {
           return back to Ukraine.
         </L>
       </IfNotHirable>
-
       <Br />
-
       <div className={classes.mapWrapper}>
         <L className={classes.map}>
           <GoogleMap address="Kyiv" title="My Location" />
@@ -56,6 +55,7 @@ export const Contacts: React.FC = () => {
           <Br />
         </div>
       </div>
+      <LoveSurvey />
     </CodeLikeBlock>
   );
 };
