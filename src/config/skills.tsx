@@ -4,6 +4,7 @@ import { ReactComponent as FolderFunctionsIcon } from "~/assets/icons/folder-fun
 import { ReactComponent as JSIcon } from "~/assets/icons/javascript.svg";
 import { ReactComponent as TSIcon } from "~/assets/icons/typescript.svg";
 import { ReactComponent as CSharpIcon } from "~/assets/icons/csharp.svg";
+import { ReactComponent as HaxeIcon } from "~/assets/icons/haxe.svg";
 import { ReactComponent as CoffeeScriptIcon } from "~/assets/icons/coffeescript.svg";
 
 import { ReactComponent as FolderClientIcon } from "~/assets/icons/folder-client-open.svg";
@@ -126,6 +127,13 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
     name: "C#",
     hint: "(background)",
     icon: CSharpIcon,
+  },
+  {
+    id: "Haxe",
+    categoryId: "Languages",
+    name: "Haxe",
+    hint: "(background)",
+    icon: HaxeIcon,
   },
   {
     id: "CoffeeScript",

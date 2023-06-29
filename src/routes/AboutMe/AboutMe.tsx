@@ -50,6 +50,23 @@ export const AboutMe: React.FC = () => {
         <Kw>My</Kw> main <Fn>stack</Fn> is: <Vn>JavaScript / TypeScript</Vn>,{" "}
         <Vn>React</Vn>, <Vn>Node.js</Vn> and <Vn>MongoDB</Vn>.
       </L>
+      <L>
+        <Cm>I started coding when I was a teenager.</Cm>
+      </L>
+      <L>
+        <Cm>My first programming language was C++.</Cm>
+      </L>
+
+      <Br />
+
+      <L git="blue">
+        <Kw>I have</Kw> extensive experience in building scalable{" "}
+        <Fn>REST microservices</Fn> and <Fn>monolithic back-ends</Fn>, creating
+        web <Fn>API integrations</Fn>, as well as developing responsive and
+        efficient <Fn>front-end</Fn> web-applications, <Vn>refactoring</Vn> and{" "}
+        <Vn>improving</Vn> existing codebases and even <Vn>migrating</Vn> them
+        to a different technology stack / programming language.
+      </L>
 
       <Br />
 
@@ -61,37 +78,6 @@ export const AboutMe: React.FC = () => {
         (<Kw>swipe</Kw> or <Kw>tap</Kw> the <Sl>green folder</Sl>{" "}
         <FolderSrcIcon className={classes.icon} /> if you&apos;re using a{" "}
         <Fn>mobile device</Fn>).
-      </L>
-
-      <Br />
-
-      <L>
-        <Kw>I started</Kw> coding when I was a <Sl>teenager</Sl>.
-      </L>
-      <L>
-        <Kw>My</Kw> first <Vn>programming language</Vn> was <Fn>C++</Fn>.
-      </L>
-      <L>
-        <Kw>Then</Kw> I learned <Fn>C#</Fn> and started writing simple{" "}
-        <Vn>games</Vn> for fun.
-      </L>
-
-      <Br />
-
-      <L git="blue">
-        <Kw>But one day</Kw>, all the cool guys started talking about{" "}
-        <Fn>JS</Fn> and how <Vn>awesome</Vn> and <Vn>powerful</Vn> it is.
-      </L>
-      <L git="blue">
-        <Kw>So I followed</Kw> the mainstream and dedicated all my{" "}
-        <Vn>efforts</Vn> to become as good <Fn>web developer</Fn> as I can
-        possibly be.
-      </L>
-
-      <Br />
-
-      <L>
-        <Cm>f*ck russia</Cm>
       </L>
     </CodeLikeBlock>
   );

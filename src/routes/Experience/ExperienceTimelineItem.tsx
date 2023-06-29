@@ -23,7 +23,7 @@ const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
       subtitle={props.position}
       dateFrom={props.dateFrom}
       dateTo={props.dateTo}
-      descriptionTitle={props.company.link ? "About the company" : "About"}
+      descriptionTitle={props.descriptionTitle ?? "About the company"}
     >
       {props.company.description}
     </TimelineItem>

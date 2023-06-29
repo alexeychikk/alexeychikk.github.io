@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Fn, Sl } from "~/components/CodeLikeBlock";
+import { LinkOpen } from "~/components/LinkOpen";
 
 export interface Company {
   name: string;
@@ -19,11 +20,34 @@ interface ExperienceBase<Id = string> {
   company: Company;
   dateFrom: Date;
   dateTo?: Date;
+  descriptionTitle?: React.ReactNode;
   position: Position;
 }
 
 export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
   t)([
+  {
+    id: "Happyold",
+    company: {
+      name: `Charitable foundation "Життєлюб"`,
+      description: (
+        <>
+          As a <Fn>volunteer</Fn> I developed and deployed REST API for a web
+          application that allows war refugees to register in a queue for
+          getting <Fn>humanitarian help</Fn>. <br />
+          Live app:{" "}
+          <LinkOpen to="https://vpo.happyold.com.ua/" external>
+            vpo.happyold.com.ua
+          </LinkOpen>
+        </>
+      ),
+      link: "https://happyold.com.ua/",
+    },
+    dateFrom: new Date(Date.UTC(2022, 10)),
+    dateTo: new Date(Date.UTC(2023, 2)),
+    descriptionTitle: <>Achievements</>,
+    position: Position.BackEnd,
+  },
   {
     id: "Perimeter81",
     company: {
@@ -106,6 +130,7 @@ export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
     },
     dateFrom: new Date(Date.UTC(2015, 0)),
     dateTo: new Date(Date.UTC(2016, 0)),
+    descriptionTitle: <>About</>,
     position: Position.FullStack,
   },
 ] as const);
@@ -114,4 +139,4 @@ export type ExperienceId = typeof EXPERIENCE[number]["id"];
 
 export type Experience = ExperienceBase<ExperienceId>;
 
-export const IS_HIRABLE = false; // !!EXPERIENCE[0].dateTo;
+export const IS_HIRABLE = true; // !!EXPERIENCE[0].dateTo;
