@@ -1,7 +1,7 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import clsx from "clsx";
-import { useAsyncFn } from "react-use";
-import { Typography } from "@material-ui/core";
+import { useAsyncFn, useToggle } from "react-use";
+import { Snackbar, Typography } from "@material-ui/core";
 
 import { LoveAnswer } from "~/config/loveSurvey";
 import { GrowingNumber } from "~/components/GrowingNumber";
@@ -15,6 +15,7 @@ import { Conclusion } from "./Conclusion";
 import { SubmitForm, SubmitUser } from "./SubmitForm";
 
 import { useStyles } from "./ResultView.styles";
+import { Alert, AlertTitle } from "@material-ui/lab";
 
 export interface ResultViewProps {
   className?: string;
@@ -23,6 +24,8 @@ export interface ResultViewProps {
 
 const ResultViewBase: React.FC<ResultViewProps> = (props) => {
   const classes = useStyles();
+
+  const [isSnackbarOpen, toggleSnackbarOpen] = useToggle(false);
 
   const compatibilityPercent = useMemo(
     () => calculateCompatibilityPercent(props.answers),
@@ -41,10 +44,21 @@ const ResultViewBase: React.FC<ResultViewProps> = (props) => {
         }),
         headers: { "Content-Type": "application/json" },
       });
+      toggleSnackbarOpen(false);
       return true;
     },
     [props.answers]
   );
+
+  useEffect(() => {
+    if (submitState.loading) {
+      const timeout = setTimeout(toggleSnackbarOpen, 2000, true);
+      return () => {
+        clearTimeout(timeout);
+        toggleSnackbarOpen(false);
+      };
+    }
+  }, [submitState.loading]);
 
   return (
     <div className={clsx(classes.resultView, props.className)}>
@@ -61,6 +75,20 @@ const ResultViewBase: React.FC<ResultViewProps> = (props) => {
       <Conclusion compatibilityPercent={compatibilityPercent} />
 
       <SubmitForm submitState={submitState} onSubmit={submit} />
+
+      <Snackbar
+        className={classes.snackbar}
+        open={isSnackbarOpen}
+        autoHideDuration={10000}
+        onClose={toggleSnackbarOpen}
+      >
+        <Alert severity="info" variant="outlined" onClose={toggleSnackbarOpen}>
+          <AlertTitle>It is waking up...</AlertTitle>
+          My web-service is running on a free hosting so it may be waking up.
+          <br />
+          This might take about 30 seconds for the first time.
+        </Alert>
+      </Snackbar>
     </div>
   );
 };

@@ -84,5 +84,8 @@ export const useStyles = makeStyles((theme) =>
       lineHeight: 1,
       color: theme.palette.secondary.main,
     },
+    snackbar: {
+      textAlign: "left",
+    },
   })
 );
