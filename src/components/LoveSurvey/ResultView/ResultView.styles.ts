@@ -65,7 +65,10 @@ export const useStyles = makeStyles((theme) =>
         animationFillMode: "both",
         height: "140px",
       },
-      "& > *": {
+    },
+    formInput: {
+      // to override MuiFormControl-root
+      "$inputsWrapper &": {
         margin: theme.spacing(1, 2),
       },
     },

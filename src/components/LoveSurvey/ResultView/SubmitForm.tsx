@@ -68,12 +68,14 @@ const SubmitFormBase: React.FC<SubmitFormProps> = (props) => {
     >
       <div className={classes.inputsWrapper}>
         <TextField
+          className={classes.formInput}
           label="Name"
           name="name"
           disabled={submitState.loading}
           defaultValue={IS_DEV ? "Kate" : undefined}
         />
         <TextField
+          className={classes.formInput}
           label="Email"
           name="email"
           type="email"
