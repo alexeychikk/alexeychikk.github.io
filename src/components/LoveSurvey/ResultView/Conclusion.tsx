@@ -1,5 +1,6 @@
 import React from "react";
 import { Emoji } from "~/components/Emoji";
+
 import { useStyles } from "./ResultView.styles";
 
 export interface ConclusionProps {

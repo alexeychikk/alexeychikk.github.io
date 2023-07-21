@@ -7,13 +7,14 @@ import { LoveAnswer } from "~/config/loveSurvey";
 import { GrowingNumber } from "~/components/GrowingNumber";
 
 import { HeartsProgress } from "../HeartsProgress";
-import { useStyles } from "./ResultView.styles";
 import {
   calculateCompatibilityPercent,
   prepareAnswersForSubmit,
 } from "./helpers";
 import { Conclusion } from "./Conclusion";
 import { SubmitForm, SubmitUser } from "./SubmitForm";
+
+import { useStyles } from "./ResultView.styles";
 
 export interface ResultViewProps {
   className?: string;
