@@ -6,9 +6,10 @@ export const useStyles = makeStyles((theme) =>
       display: "flex",
       alignItems: "center",
       flexDirection: "column",
-      height: "100%",
       textAlign: "center",
+      paddingBottom: theme.spacing(1),
       [theme.breakpoints.up("lg")]: {
+        height: "100%",
         justifyContent: "center",
       },
     },
@@ -27,6 +28,58 @@ export const useStyles = makeStyles((theme) =>
       [theme.breakpoints.down("xs")]: {
         maxWidth: "100%",
       },
+    },
+    submitForm: {
+      border: `1px solid`,
+      borderRadius: "4px",
+      borderColor: "rgba(0,0,0,0)",
+      marginTop: "1.5em",
+      width: "86px",
+      minWidth: "86px",
+      height: "38px",
+      minHeight: "38px",
+      opacity: 0,
+      overflow: "hidden",
+      animation: "1s ease-in-out 1.5s azFadeIn",
+      animationFillMode: "both",
+      transition: "all 1s ease-in-out",
+      "&$isFormOpened:not($isSubmitDone)": {
+        borderColor: theme.palette.divider,
+        width: "200px",
+        minWidth: "200px",
+        height: "200px",
+        minHeight: "200px",
+      },
+      "&$isSubmitDone:not($isFormOpened)": {
+        animation: "1s ease-in-out 0s azFadeOut",
+        pointerEvents: "none",
+      },
+    },
+    inputsWrapper: {
+      overflow: "hidden",
+      height: 0,
+      opacity: 0,
+      transition: "all 1s ease-in-out",
+      "$isFormOpened:not($isSubmitDone) &": {
+        animation: "1s ease-in-out 1s azFadeIn",
+        animationFillMode: "both",
+        height: "140px",
+      },
+      "& > *": {
+        margin: theme.spacing(1, 2),
+      },
+    },
+    isFormOpened: {},
+    isSubmitDone: {},
+    submitButton: {
+      "$isFormOpened &": {
+        transition: "all 1s ease-in-out",
+      },
+    },
+    heartUnicode: {
+      fontSize: "1.4em",
+      lineHeight: 1,
+      color: theme.palette.secondary.main,
     },
   })
 );

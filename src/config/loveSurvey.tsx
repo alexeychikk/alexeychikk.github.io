@@ -1,5 +1,6 @@
 import React from "react";
 import { Emoji } from "~/components/Emoji";
+import { IS_DEV } from "./browser";
 
 export enum LoveQuestionType {
   Radio = "Radio",
@@ -86,7 +87,6 @@ export const LOVE_SURVEY: LoveQuestion[] = [
     title: <>What type of relationships do you prefer?</>,
     type: LoveQuestionType.Radio,
     score: 10,
-    doesWrongAnswerTriggerEnd: true,
     answers: [
       { title: <>Monogamy</>, score: 10 },
       { title: <>Open relationships</>, score: 2 },
@@ -233,13 +233,12 @@ export const LOVE_SURVEY: LoveQuestion[] = [
   },
 ];
 
-export const INITIAL_ANSWERS: Record<number, LoveAnswer[]> =
-  process.env.NODE_ENV === "development"
-    ? LOVE_SURVEY.reduce((res, question, index) => {
-        if (!question.testAnswerIndexes?.length) return res;
-        res[index] = question.testAnswerIndexes.map(
-          (index) => question.answers![index]
-        );
-        return res;
-      }, {} as Record<number, LoveAnswer[]>)
-    : {};
+export const INITIAL_ANSWERS: Record<number, LoveAnswer[]> = IS_DEV
+  ? LOVE_SURVEY.reduce((res, question, index) => {
+      if (!question.testAnswerIndexes?.length) return res;
+      res[index] = question.testAnswerIndexes.map(
+        (index) => question.answers![index]
+      );
+      return res;
+    }, {} as Record<number, LoveAnswer[]>)
+  : {};

@@ -11,6 +11,14 @@
 		"name": "Alex Zinkevych",
 		"url": "http://alexeychikk.github.io"
 	},
+	"scripts": {
+		"start": "env-cmd craco start",
+		"build": "env-cmd craco build",
+		"serve": "env-cmd serve build",
+		"test": "craco test",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
+	},
 	"dependencies": {
 		"@material-ui/core": "^4.11.0",
 		"@material-ui/icons": "^4.9.1",
@@ -29,12 +37,14 @@
 		"react-dom": "^16.13.1",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "3.4.3",
-		"typescript": "^3.7.5",
+		"react-use": "^17.4.0",
+		"typescript": "^5.0.4",
 		"use-resize-observer": "^6.1.0"
 	},
 	"devDependencies": {
 		"@craco/craco": "^5.7.0",
 		"@types/react-router-dom": "^5.1.6",
+		"env-cmd": "^10.1.0",
 		"gh-pages": "^3.1.0",
 		"git-branch-is": "^4.0.0",
 		"husky": "^4.3.0",
@@ -43,14 +53,6 @@
 		"serve": "^11.3.2",
 		"tsconfig-paths-webpack-plugin": "^3.3.0",
 		"webpack-bundle-analyzer": "^3.9.0"
-	},
-	"scripts": {
-		"start": "craco start",
-		"build": "craco build",
-		"serve": "serve build",
-		"test": "craco test",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build"
 	},
 	"husky": {
 		"hooks": {

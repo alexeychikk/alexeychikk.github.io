@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme) =>
         display: "none",
       },
     },
-    formWrapper: {
+    contentWrapper: {
       position: "absolute",
       bottom: 0,
       right: theme.spacing(1),
@@ -50,7 +50,7 @@ export const useStyles = makeStyles((theme) =>
         animationDelay: "0.3s",
       },
     },
-    form: {
+    content: {
       height: "100%",
       display: "flex",
       flexDirection: "column",
@@ -64,11 +64,14 @@ export const useStyles = makeStyles((theme) =>
         transitionDelay: 0,
       },
     },
-    formTitle: {
+    title: {
       fontFamily: "inherit",
     },
     topDivider: {
       marginBottom: theme.spacing(1),
+    },
+    dialogContent: {
+      overflowX: "hidden",
     },
     closeButton: {
       position: "absolute",

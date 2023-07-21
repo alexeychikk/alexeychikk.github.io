@@ -16,6 +16,7 @@ import {
 } from "@material-ui/core";
 
 import { Emoji } from "~/components/Emoji";
+import { IS_DEV } from "~/config/browser";
 import { LOVE_SURVEY, LoveAnswer, INITIAL_ANSWERS } from "~/config/loveSurvey";
 
 import { QuestionView } from "./QuestionView";
@@ -31,7 +32,7 @@ const LoveSurveyBase: React.FC<LoveSurveyProps> = (props) => {
   const [expanded, setExpanded] = useState(false);
   const [wasExpandedBefore, setWasExpandedBefore] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
-    process.env.NODE_ENV === "development" ? LOVE_SURVEY.length - 1 : 0
+    IS_DEV ? LOVE_SURVEY.length - 1 : 0
   );
   const [answers, setAnswers] = useState<Record<number, LoveAnswer[]>>(
     INITIAL_ANSWERS
@@ -85,9 +86,9 @@ const LoveSurveyBase: React.FC<LoveSurveyProps> = (props) => {
         <FavoriteBorderIcon className={classes.loveIcon} />
       </IconButton>
 
-      <div className={classes.formWrapper}>
-        <form className={classes.form}>
-          <DialogTitle className={classes.formTitle} disableTypography>
+      <div className={classes.contentWrapper}>
+        <div className={classes.content}>
+          <DialogTitle className={classes.title} disableTypography>
             The <Emoji label="love">❤️</Emoji> survey
             <IconButton className={classes.closeButton} onClick={closeSurvey}>
               <CloseIcon />
@@ -96,7 +97,7 @@ const LoveSurveyBase: React.FC<LoveSurveyProps> = (props) => {
 
           <Divider className={classes.topDivider} />
 
-          <DialogContent>
+          <DialogContent className={classes.dialogContent}>
             {!totalIncompatibility &&
               currentQuestionIndex < LOVE_SURVEY.length && (
                 <QuestionView
@@ -150,7 +151,7 @@ const LoveSurveyBase: React.FC<LoveSurveyProps> = (props) => {
               </Button>
             </DialogActions>
           )}
-        </form>
+        </div>
       </div>
     </div>
   );
