@@ -27,6 +27,22 @@ interface ExperienceBase<Id = string> {
 export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
   t)([
   {
+    id: "Innovecs",
+    company: {
+      name: `Innovecs`,
+      description: (
+        <>
+          Innovecs is a globally-recognized software development company and is
+          listed among the top 100 <Fn>outsourcing companies</Fn>, Inc. 5,000,
+          and Clutch ratings.
+        </>
+      ),
+      link: "https://innovecs.com/",
+    },
+    dateFrom: new Date(Date.UTC(2023, 8)),
+    position: Position.FullStack,
+  },
+  {
     id: "Happyold",
     company: {
       name: `Charitable foundation "Життєлюб"`,
@@ -139,4 +155,4 @@ export type ExperienceId = typeof EXPERIENCE[number]["id"];
 
 export type Experience = ExperienceBase<ExperienceId>;
 
-export const IS_HIRABLE = true; // !!EXPERIENCE[0].dateTo;
+export const IS_HIRABLE = !!EXPERIENCE[0].dateTo;
