@@ -1,3 +1,4 @@
+import './app.pcss';
 import './app.scss';
 import App from './App.svelte';
 

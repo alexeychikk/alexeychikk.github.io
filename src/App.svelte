@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Router, Link, Route } from 'svelte-routing';
+  import { DarkMode } from 'flowbite-svelte';
   import Home from './routes/Home.svelte';
   import About from './routes/About.svelte';
   import Blog from './routes/Blog.svelte';
@@ -13,6 +14,7 @@
     <Link to="/">Home</Link>
     <Link to="/about">About</Link>
     <Link to="/blog">Blog</Link>
+    <DarkMode />
   </nav>
   <div>
     <Route path="/blog/:id" component={Blog} />
