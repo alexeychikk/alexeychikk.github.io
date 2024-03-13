@@ -8,7 +8,7 @@ module.exports = {
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'import'],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2020,
@@ -28,4 +28,34 @@ module.exports = {
       },
     },
   ],
+  rules: {
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { ignoreRestSiblings: true },
+    ],
+    'no-multiple-empty-lines': ['error', { max: 1 }],
+    '@typescript-eslint/consistent-type-imports': 'error',
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        pathGroups: [
+          {
+            pattern: '@src/**',
+            group: 'parent',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['builtin'],
+        distinctGroup: false,
+      },
+    ],
+    'import/no-duplicates': 'error',
+  },
 };
