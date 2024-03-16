@@ -1,5 +1,6 @@
 <script lang="ts">
+  import { tick } from 'svelte';
   import { navigate } from 'svelte-routing';
   export let to = '/';
-  navigate(to);
+  tick().then(() => navigate(to));
 </script>

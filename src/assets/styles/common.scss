@@ -1,0 +1,57 @@
+@use 'src/assets/styles/theme';
+
+html {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: theme.$font-family-base;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes azFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; /* Corrected to 1 for standard opacity value */
+  }
+}
+
+@keyframes azFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme.$color-scrollbar-thumb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme.$color-scrollbar-thumb-hover;
+}
+
+// .breadcrumbs-separator {
+//   margin-left: 0;
+//   margin-right: 0;
+//   padding: 2px;
+// }

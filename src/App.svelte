@@ -1,26 +1,24 @@
 <script lang="ts">
-  import { Router, Link, Route } from 'svelte-routing';
-  import { DarkMode } from 'flowbite-svelte';
-  import Home from './routes/Home.svelte';
-  import About from './routes/About.svelte';
-  import Blog from './routes/Blog.svelte';
-  import Redirect from './components/Redirect.svelte';
+  import { Router, Route } from 'svelte-routing';
+
+  import Redirect from './components/common/Redirect.svelte';
+  import Layout from './components/layout/Layout.svelte';
+  import AboutMe from './routes/AboutMe.svelte';
+  import Contacts from './routes/Contacts.svelte';
+  import Education from './routes/Education.svelte';
+  import Experience from './routes/Experience.svelte';
+  import Projects from './routes/Projects.svelte';
 
   export let url = '';
 </script>
 
 <Router {url}>
-  <nav>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/blog">Blog</Link>
-    <DarkMode />
-  </nav>
-  <div>
-    <Route path="/blog/:id" component={Blog} />
-    <Route path="/blog" component={Blog} />
-    <Route path="/about" component={About} />
-    <Route path="/"><Home /></Route>
-    <Route><Redirect /></Route>
-  </div>
+  <Layout>
+    <Route path="/" component={AboutMe} />
+    <Route path="/experience" component={Experience} />
+    <Route path="/education" component={Education} />
+    <Route path="/contacts" component={Contacts} />
+    <Route path="/projects" component={Projects} />
+    <Route path="*"><Redirect /></Route>
+  </Layout>
 </Router>
