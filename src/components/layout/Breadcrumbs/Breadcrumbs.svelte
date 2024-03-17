@@ -1,1 +1,1 @@
-<div>Breadcrumbs</div>
+<div class={$$restProps.class}>Breadcrumbs</div>

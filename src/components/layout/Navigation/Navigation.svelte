@@ -6,7 +6,7 @@
   let routes = Object.values(ROUTES_META).filter((r) => !r.hidden);
 </script>
 
-<div class="{styles.navigation} {$$props.class}">
+<div class="{styles.navigation} {$$restProps.class}">
   {#each routes as route (route.to)}
     <NavLink
       activeOnlyWhenExact={route.activeOnlyWhenExact}

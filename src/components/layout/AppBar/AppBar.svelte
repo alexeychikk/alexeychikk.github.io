@@ -5,6 +5,7 @@
   import IconMenu from 'svelte-material-icons/Menu.svelte';
   import { Link } from 'svelte-routing';
   import IconFolderSrcOpen from '../../../assets/icons/folder-src-open.svg?component';
+  import IconButton from '../../common/IconButton';
   import Breadcrumbs from '../Breadcrumbs';
   import Navigation from '../Navigation';
   import styles from './AppBar.module.scss';
@@ -29,9 +30,9 @@
         target="_blank"
         rel="external nofollow"
       >
-        <button aria-label="GitHub">
+        <IconButton aria-label="GitHub">
           <IconGithub />
-        </button>
+        </IconButton>
       </a>
       <a
         class={styles.linkButton}
@@ -39,18 +40,18 @@
         target="_blank"
         rel="external nofollow"
       >
-        <button aria-label="LinkedIn">
+        <IconButton aria-label="LinkedIn">
           <IconLinkedIn />
-        </button>
+        </IconButton>
       </a>
       <a
         class={styles.linkButton}
         href="mailto:alexdarkmm@gmail.com"
         target="_blank"
       >
-        <button aria-label="E-Mail">
+        <IconButton aria-label="E-Mail">
           <IconEmailOutline />
-        </button>
+        </IconButton>
       </a>
       <button
         class={styles.menuButton}
@@ -65,5 +66,5 @@
     <Navigation class={styles.navigation} />
   </nav>
 
-  <Breadcrumbs />
+  <Breadcrumbs class={styles.mobileBreadcrumbs} />
 </header>

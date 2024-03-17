@@ -17,7 +17,7 @@
     ? $location.pathname === to
     : $location.pathname.startsWith(to);
 
-  $: className = `${styles.navLink} ${$$props.class} ${active ? `${styles.active} ${activeClass}` : ''}`;
+  $: className = `${styles.navLink} ${$$restProps.class} ${active ? `${styles.active} ${activeClass}` : ''}`;
 </script>
 
 {#if external}

@@ -11,6 +11,8 @@
   margin-right: 1px;
   color: theme.$color-text-secondary;
   background-color: theme.$color-bg-light;
+  font-size: 1rem;
+
   &.active {
     background-color: theme.$color-bg-default;
   }
