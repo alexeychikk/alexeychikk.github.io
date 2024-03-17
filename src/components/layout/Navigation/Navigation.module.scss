@@ -1,0 +1,17 @@
+@use 'src/assets/styles/theme';
+
+.navigation {
+  display: flex;
+  background-color: theme.$color-bg-dark;
+  align-items: center;
+}
+
+.navLink {
+  padding: 0 32px 0 16px;
+  margin-right: 1px;
+  color: theme.$color-text-secondary;
+  background-color: theme.$color-bg-light;
+  &.active {
+    background-color: theme.$color-bg-default;
+  }
+}

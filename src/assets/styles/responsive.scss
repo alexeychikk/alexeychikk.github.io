@@ -1,0 +1,103 @@
+$breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1920px,
+);
+
+@mixin xsUp {
+  @media (min-width: map-get($breakpoints, xs)) {
+    @content;
+  }
+}
+
+@mixin xsDown {
+  @media (max-width: (map-get($breakpoints, sm) - 0.05)) {
+    @content;
+  }
+}
+
+@mixin smUp {
+  @media (min-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin smDown {
+  @media (max-width: (map-get($breakpoints, md) - 0.05px)) {
+    @content;
+  }
+}
+
+@mixin mdUp {
+  @media (min-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin mdDown {
+  @media (max-width: (map-get($breakpoints, lg) - 0.05px)) {
+    @content;
+  }
+}
+
+@mixin lgUp {
+  @media (min-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin lgDown {
+  @media (max-width: (map-get($breakpoints, xl) - 0.05px)) {
+    @content;
+  }
+}
+
+@mixin xlUp {
+  @media (min-width: map-get($breakpoints, xl)) {
+    @content;
+  }
+}
+
+@mixin hideSmUp {
+  @include smUp {
+    display: none;
+  }
+}
+
+@mixin hideSmDown {
+  @include smDown {
+    display: none;
+  }
+}
+
+@mixin hideMdUp {
+  @include mdUp {
+    display: none;
+  }
+}
+
+@mixin hideMdDown {
+  @include mdDown {
+    display: none;
+  }
+}
+
+@mixin hideLgUp {
+  @include lgUp {
+    display: none;
+  }
+}
+
+@mixin hideLgDown {
+  @include lgDown {
+    display: none;
+  }
+}
+
+@mixin hideXlUp {
+  @include xlUp {
+    display: none;
+  }
+}

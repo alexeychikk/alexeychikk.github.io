@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Router, Route } from 'svelte-routing';
 
-  import Redirect from './components/common/Redirect.svelte';
+  import Redirect from './components/common/Redirect';
   import Layout from './components/layout/Layout.svelte';
   import AboutMe from './routes/AboutMe.svelte';
   import Contacts from './routes/Contacts.svelte';

@@ -1,0 +1,20 @@
+@use 'src/assets/styles/theme';
+
+.navLink {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: theme.$color-text-primary;
+
+  &.active {
+    color: #fff;
+  }
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+}

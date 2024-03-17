@@ -1,0 +1,25 @@
+@use 'src/assets/styles/responsive';
+
+.content {
+  width: 100%;
+  flex-grow: 1;
+  margin-left: 320px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 46px;
+
+  @include responsive.smDown {
+    padding-top: 28px;
+    margin-left: 0;
+  }
+}
+
+.routesWrapper {
+  width: 100%;
+  flex: 1;
+  padding-top: 16px;
+
+  @include responsive.smDown {
+    padding-top: 8px;
+  }
+}
