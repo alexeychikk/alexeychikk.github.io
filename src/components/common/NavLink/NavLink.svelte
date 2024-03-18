@@ -1,7 +1,9 @@
 <script lang="ts">
   import type { ComponentType } from 'svelte';
   import { Link, useLocation } from 'svelte-routing';
+
   import IconJson from '../../../assets/icons/json.svg?component';
+
   import styles from './NavLink.module.scss';
 
   export let activeClass: string = '';

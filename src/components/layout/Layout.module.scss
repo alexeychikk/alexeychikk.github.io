@@ -23,3 +23,7 @@
     padding-top: 8px;
   }
 }
+
+.breadcrumbs {
+  @include responsive.hideSmDown;
+}

@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: theme.$z-index-app-bar;
   background-color: theme.$color-bg-default;
 }
 
@@ -40,15 +40,13 @@
     box-shadow: none;
     background-color: theme.$color-bg-dark;
     width: 100%;
-    padding-left: 5px;
+    padding-left: 0;
   }
 }
 
-.folderIcon {
-  width: 46px;
-  height: 46px;
-  padding: 11px;
-  margin-right: 5px;
+.folderButton {
+  margin-left: 10px;
+  margin-right: 10px;
   @include responsive.hideMdUp;
 }
 
@@ -64,6 +62,7 @@
 }
 
 .menuButton {
+  margin-right: 6px;
   @include responsive.hideMdUp;
 }
 

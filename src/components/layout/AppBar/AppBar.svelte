@@ -1,26 +1,32 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
   import IconEmailOutline from 'svelte-material-icons/EmailOutline.svelte';
   import IconGithub from 'svelte-material-icons/Github.svelte';
   import IconLinkedIn from 'svelte-material-icons/Linkedin.svelte';
   import IconMenu from 'svelte-material-icons/Menu.svelte';
   import { Link } from 'svelte-routing';
+
   import IconFolderSrcOpen from '../../../assets/icons/folder-src-open.svg?component';
   import IconButton from '../../common/IconButton';
   import Breadcrumbs from '../Breadcrumbs';
   import Navigation from '../Navigation';
+
   import styles from './AppBar.module.scss';
 
-  export let onSkillsDrawerOpen: (() => void) | undefined = undefined;
-  export let onNavigationDrawerOpen: (() => void) | undefined = undefined;
+  const dispatch = createEventDispatcher();
 </script>
 
 <header class={styles.appBar}>
   <nav class={styles.toolbar}>
     <div class={styles.headingWrapper}>
-      <IconFolderSrcOpen
-        class={styles.folderIcon}
-        on:click={onSkillsDrawerOpen}
-      />
+      <IconButton
+        class={styles.folderButton}
+        aria-label="GitHub"
+        on:click={() => dispatch('openSkillsDrawer')}
+      >
+        <IconFolderSrcOpen />
+      </IconButton>
+
       <h6 class={styles.myName}>
         <Link to="/">Alex Zinkevych</Link>
       </h6>
@@ -53,14 +59,13 @@
           <IconEmailOutline />
         </IconButton>
       </a>
-      <button
+      <IconButton
         class={styles.menuButton}
-        color="inherit"
         aria-label="open navigation drawer"
-        on:click={onNavigationDrawerOpen}
+        on:click={() => dispatch('openNavigationDrawer')}
       >
         <IconMenu />
-      </button>
+      </IconButton>
     </div>
 
     <Navigation class={styles.navigation} />

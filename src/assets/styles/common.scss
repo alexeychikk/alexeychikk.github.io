@@ -31,24 +31,6 @@ svg {
   user-select: none;
 }
 
-@keyframes azFadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1; /* Corrected to 1 for standard opacity value */
-  }
-}
-
-@keyframes azFadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 ::-webkit-scrollbar {
   width: 12px;
 }

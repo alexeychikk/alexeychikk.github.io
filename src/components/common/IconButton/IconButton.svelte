@@ -2,6 +2,10 @@
   import styles from './IconButton.module.scss';
 </script>
 
-<button class={styles.iconButton} {...$$restProps}>
+<button
+  {...$$restProps}
+  class="{styles.iconButton} {$$restProps.class}"
+  on:click
+>
   <slot />
 </button>

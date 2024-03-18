@@ -1,6 +1,7 @@
 <script lang="ts">
   import { ROUTES_META } from '../../../config/routesMeta';
   import NavLink from '../../common/NavLink';
+
   import styles from './Navigation.module.scss';
 
   let routes = Object.values(ROUTES_META).filter((r) => !r.hidden);
