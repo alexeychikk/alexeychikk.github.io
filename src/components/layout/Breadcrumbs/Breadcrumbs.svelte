@@ -1,4 +1,5 @@
 <script lang="ts">
+  import IconChevronRight from 'svelte-material-icons/ChevronRight.svelte';
   import { Link, useLocation } from 'svelte-routing';
 
   import IconJson from '../../../assets/icons/json.svg?component';
@@ -19,6 +20,8 @@
 <div class="{styles.breadcrumbs} {$$restProps.class}">
   <span class={styles.item}>src</span>
 
+  <IconChevronRight class={styles.separator} />
+
   <Popup bind:open={isMenuOpened}>
     <button
       slot="button"
@@ -29,19 +32,17 @@
       {currentRoute.label}
     </button>
 
-    <ul>
+    <div class={styles.list}>
       {#each restRoutes as { to, label, icon = IconJson } (to)}
-        <li class={styles.item}>
-          <Link
-            class={styles.link}
-            {to}
-            on:click={() => (isMenuOpened = false)}
-          >
-            <svelte:component this={icon} class={styles.icon} />
-            {label}
-          </Link>
-        </li>
+        <Link
+          class="{styles.item} {styles.link}"
+          {to}
+          on:click={() => (isMenuOpened = false)}
+        >
+          <svelte:component this={icon} class={styles.icon} />
+          {label}
+        </Link>
       {/each}
-    </ul>
+    </div>
   </Popup>
 </div>

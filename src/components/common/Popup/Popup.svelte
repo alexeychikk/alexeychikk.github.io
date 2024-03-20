@@ -12,11 +12,13 @@
 
 <div class="{styles.popup} {open ? styles.open : ''} {$$restProps.class}">
   <slot name="button" />
+
   <div
     class={styles.overlay}
     on:click={() => (open = false)}
     role="presentation"
-  ></div>
+  />
+
   <div class={styles.content} style:visibility={$visible ? '' : 'hidden'}>
     <slot />
   </div>

@@ -23,7 +23,8 @@
   style:visibility={$visible ? '' : 'hidden'}
   style:--drawer-transition-duration="{transitionDuration}ms"
   on:click={() => (open = false)}
-></div>
+/>
+
 <div
   class="{styles.drawer} {open ? styles.open : ''} {styles[position]}"
   style:--drawer-transition-duration="{transitionDuration}ms"
