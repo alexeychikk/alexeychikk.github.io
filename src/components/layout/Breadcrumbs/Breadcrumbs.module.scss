@@ -1,0 +1,29 @@
+@use 'src/assets/styles/theme';
+
+.breadcrumbs {
+  color: theme.$color-text-light;
+  padding: 0 8px 0 16px;
+}
+
+.icon {
+  margin-right: 1rem;
+}
+
+.item {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+
+  &.active {
+    color: #fff;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}

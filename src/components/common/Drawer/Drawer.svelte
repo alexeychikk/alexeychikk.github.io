@@ -11,16 +11,16 @@
   export let transitionDuration = 225;
   export let closable = false;
 
-  const visibility = tweened(open ? 1 : 0, { duration: transitionDuration });
+  const visible = tweened(open ? 1 : 0, { duration: transitionDuration });
 
-  $: visibility.set(open ? 1 : 0);
+  $: visible.set(open ? 1 : 0);
   $: document.body.style.overflow = open ? 'hidden' : 'auto';
 </script>
 
 <div
   class="{styles.overlay} {open ? styles.open : ''}"
   role="presentation"
-  style:visibility={$visibility ? '' : 'hidden'}
+  style:visibility={$visible ? '' : 'hidden'}
   style:--drawer-transition-duration="{transitionDuration}ms"
   on:click={() => (open = false)}
 ></div>
