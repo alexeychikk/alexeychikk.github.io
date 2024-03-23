@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { tweened } from 'svelte/motion';
   import IconChevronLeft from 'svelte-material-icons/ChevronLeft.svelte';
 
+  import { delayedOut } from '../../../stores';
   import IconButton from '../IconButton';
 
   import styles from './Drawer.module.scss';
@@ -11,12 +11,12 @@
   export let transitionDuration = 225;
   export let responsive = false;
 
-  const visible = tweened(open ? 1 : 0, { duration: transitionDuration });
+  const visible = delayedOut(open, transitionDuration);
 
   $: stateClass = `${responsive ? styles.responsive : ''} ${
     open ? styles.open : ''
   } ${styles[position]}`;
-  $: visible.set(open ? 1 : 0);
+  $: visible.set(open);
   $: document.body.classList.toggle(styles.open, open);
 </script>
 

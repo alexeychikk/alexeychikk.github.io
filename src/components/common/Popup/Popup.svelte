@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { tweened } from 'svelte/motion';
+  import { delayedOut } from '../../../stores';
 
   import styles from './Popup.module.scss';
 
   export let open = false;
   export let transitionDuration = 260;
 
-  const visible = tweened(open ? 1 : 0, { duration: transitionDuration });
-  $: visible.set(open ? 1 : 0);
+  const visible = delayedOut(open, transitionDuration);
+  $: visible.set(open);
 </script>
 
 <div class="{styles.popup} {open ? styles.open : ''} {$$restProps.class}">
