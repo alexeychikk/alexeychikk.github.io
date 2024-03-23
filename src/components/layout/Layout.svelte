@@ -15,11 +15,11 @@
   on:openSkillsDrawer={() => (isSkillsDrawerOpened = true)}
 />
 
-<Drawer bind:open={isSkillsDrawerOpened} closable>
+<Drawer bind:open={isSkillsDrawerOpened} responsive>
   <MySkills />
 </Drawer>
 
-<Drawer bind:open={isNavigationDrawerOpened} position="right" closable>
+<Drawer bind:open={isNavigationDrawerOpened} position="right">
   {`Lorem ipsum dolor sit amet. `.repeat(100)}
 </Drawer>
 

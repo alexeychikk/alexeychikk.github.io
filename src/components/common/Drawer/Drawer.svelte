@@ -9,16 +9,19 @@
   export let open = false;
   export let position: 'left' | 'right' = 'left';
   export let transitionDuration = 225;
-  export let closable = false;
+  export let responsive = false;
 
   const visible = tweened(open ? 1 : 0, { duration: transitionDuration });
 
+  $: stateClass = `${responsive ? styles.responsive : ''} ${
+    open ? styles.open : ''
+  } ${styles[position]}`;
   $: visible.set(open ? 1 : 0);
-  $: document.body.style.overflow = open ? 'hidden' : 'auto';
+  $: document.body.classList.toggle(styles.open, open);
 </script>
 
 <div
-  class="{styles.overlay} {open ? styles.open : ''}"
+  class="{styles.overlay} {stateClass}"
   role="presentation"
   style:visibility={$visible ? '' : 'hidden'}
   style:--drawer-transition-duration="{transitionDuration}ms"
@@ -26,16 +29,15 @@
 />
 
 <div
-  class="{styles.drawer} {open ? styles.open : ''} {styles[position]}"
+  class="{styles.drawer} {stateClass}"
   style:--drawer-transition-duration="{transitionDuration}ms"
 >
-  {#if closable}
-    <div class={styles.header}>
-      <IconButton on:click={() => (open = false)}>
-        <IconChevronLeft />
-      </IconButton>
-    </div>
-  {/if}
+  <div class={styles.header}>
+    <IconButton on:click={() => (open = false)}>
+      <IconChevronLeft />
+    </IconButton>
+  </div>
+
   <div class={styles.content}>
     <slot />
   </div>

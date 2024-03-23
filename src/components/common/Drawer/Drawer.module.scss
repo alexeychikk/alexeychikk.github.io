@@ -1,9 +1,11 @@
 @use 'src/assets/styles/theme';
+@use 'src/assets/styles/responsive';
 
 .drawer {
   position: fixed;
   top: 0;
   width: 320px;
+  min-width: 320px;
   height: 100%;
   background-color: theme.$color-bg-paper;
   transition: transform var(--drawer-transition-duration)
@@ -29,6 +31,17 @@
       0px 16px 24px 2px rgba(0, 0, 0, 0.14),
       0px 6px 30px 5px rgba(0, 0, 0, 0.12);
   }
+
+  @include responsive.mdUp {
+    display: none;
+    &.responsive {
+      display: flex;
+      transform: translateX(0);
+      padding-top: 46px;
+      z-index: 0;
+      box-shadow: none;
+    }
+  }
 }
 
 .overlay {
@@ -45,6 +58,10 @@
   &.open {
     opacity: 1;
   }
+
+  @include responsive.mdUp {
+    display: none;
+  }
 }
 
 .header {
@@ -57,9 +74,19 @@
     0px 3px 3px -2px rgba(0, 0, 0, 0.2),
     0px 3px 4px 0px rgba(0, 0, 0, 0.14),
     0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+
+  @include responsive.hideMdUp;
 }
 
 .content {
   flex: 1;
   overflow-y: auto;
+}
+
+body {
+  &.open {
+    @include responsive.smDown {
+      overflow: hidden;
+    }
+  }
 }
