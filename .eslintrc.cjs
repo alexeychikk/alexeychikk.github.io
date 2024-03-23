@@ -33,6 +33,9 @@ module.exports = {
       parserOptions: {
         parser: '@typescript-eslint/parser',
       },
+      rules: {
+        'import/no-duplicates': 'off',
+      },
     },
   ],
   rules: {

@@ -1,0 +1,21 @@
+@use 'src/assets/styles/theme';
+@use 'src/assets/styles/responsive';
+
+.skillsExplorer {
+  background-color: theme.$color-bg-paper;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.childrenWrapper {
+  flex: 1;
+  padding: 8px 12px 0 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include responsive.smDown {
+    padding-left: 16px;
+  }
+}

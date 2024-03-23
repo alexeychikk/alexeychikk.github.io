@@ -1,5 +1,6 @@
 <script lang="ts">
   import Drawer from '../common/Drawer';
+  import MySkills from '../special/MySkills';
 
   import AppBar from './AppBar';
   import Breadcrumbs from './Breadcrumbs';
@@ -15,7 +16,7 @@
 />
 
 <Drawer bind:open={isSkillsDrawerOpened} closable>
-  {`Lorem ipsum dolor sit amet. `.repeat(100)}
+  <MySkills />
 </Drawer>
 
 <Drawer bind:open={isNavigationDrawerOpened} position="right" closable>

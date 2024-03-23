@@ -7,7 +7,11 @@ import { analyzer } from 'vite-bundle-analyzer';
 export default defineConfig(({ command }) => ({
   plugins: [
     svelte(),
-    svg(),
+    svg({
+      svgoOptions: {
+        plugins: [],
+      },
+    }),
     command === 'build' && analyzer({ analyzerMode: 'static' }),
   ],
 }));

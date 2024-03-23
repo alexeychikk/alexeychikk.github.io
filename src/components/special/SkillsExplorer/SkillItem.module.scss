@@ -1,0 +1,58 @@
+@use 'src/assets/styles/theme';
+@use 'src/assets/styles/responsive';
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  height: 26px;
+  margin-left: -8px;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: -2000px;
+    right: -2000px;
+  }
+  &:hover::before {
+    background-color: #2a2d2e;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background-color: theme.$color-divider;
+  }
+  &.active::before {
+    background-color: #37373d;
+  }
+}
+
+.icon {
+  margin-left: 4px;
+  margin-right: 8px;
+  z-index: 1;
+  fill: initial;
+  font-size: 1.375rem;
+}
+
+.childrenWrapper {
+  z-index: 1;
+}
+
+.hint {
+  margin-left: 0.5em;
+  color: theme.$color-text-secondary;
+  z-index: 1;
+  font-size: 14px;
+  line-height: 1.5;
+}
