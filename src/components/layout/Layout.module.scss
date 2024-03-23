@@ -1,3 +1,4 @@
+@use 'src/assets/styles/theme';
 @use 'src/assets/styles/responsive';
 
 .content {
@@ -6,10 +7,10 @@
   margin-left: 320px;
   display: flex;
   flex-direction: column;
-  padding-top: 46px;
+  padding-top: theme.$height-header;
 
   @include responsive.smDown {
-    padding-top: 28px;
+    padding-top: theme.$height-header + theme.$height-breadcrumbs;
     margin-left: 0;
   }
 }
