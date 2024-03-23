@@ -9,7 +9,17 @@ export default defineConfig(({ command }) => ({
     svelte(),
     svg({
       svgoOptions: {
-        plugins: [],
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                cleanupIds: false,
+                removeViewBox: false,
+              },
+            },
+          },
+        ],
       },
     }),
     command === 'build' && analyzer({ analyzerMode: 'static' }),
