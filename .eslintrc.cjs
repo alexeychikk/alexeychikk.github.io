@@ -35,6 +35,7 @@ module.exports = {
       },
       rules: {
         'import/no-duplicates': 'off',
+        'no-undef': 'off',
       },
     },
   ],
