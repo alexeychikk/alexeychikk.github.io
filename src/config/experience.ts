@@ -37,9 +37,9 @@ export const EXPERIENCE: Experience[] = [
     descriptionTitle: 'Achievements',
     position: Position.BackEnd,
     company: {
-      name: `Charitable foundation "Життєлюб"`,
-      description: `As a volunteer I developed and deployed REST API for a web application that allows war refugees to register in a queue for getting humanitarian help. Live app: vpo.happyold.com.ua (https://vpo.happyold.com.ua/)`,
-      link: 'https://happyold.com.ua/',
+      name: `CF "Enjoying Life"`,
+      description: `As a volunteer I developed and deployed REST API for a web application that allows war refugees to register in a queue for getting humanitarian help.`,
+      link: 'https://happyold.com.ua/en',
     },
   },
   {

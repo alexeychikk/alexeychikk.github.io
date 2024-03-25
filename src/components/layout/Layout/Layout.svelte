@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Drawer from '../common/Drawer';
-  import MySkills from '../special/MySkills';
+  import Drawer from '../../common/Drawer';
+  import MySkills from '../../special/MySkills';
+  import AppBar from '../AppBar';
+  import Breadcrumbs from '../Breadcrumbs';
 
-  import AppBar from './AppBar';
-  import Breadcrumbs from './Breadcrumbs';
   import styles from './Layout.module.scss';
 
   let isSkillsDrawerOpened = false;

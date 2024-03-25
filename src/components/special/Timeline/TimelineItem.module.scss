@@ -1,0 +1,28 @@
+@use 'src/assets/styles/theme';
+
+.title {
+  padding-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: theme.$color-primary-main;
+
+  .timelineStart & {
+    color: var(--az-timeline-color);
+  }
+}
+
+.dates {
+  font-size: 0.875rem;
+  line-height: 1.43;
+}
+
+.timeDiff {
+  color: theme.$color-text-secondary;
+}
+
+.subtitle {
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.5;
+}

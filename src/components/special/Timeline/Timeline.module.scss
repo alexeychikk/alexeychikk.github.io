@@ -1,6 +1,12 @@
 @use 'src/assets/styles/theme';
 
 .timeline {
+  &.purple {
+    --az-timeline-color: #{theme.$color-secondary-main};
+  }
+  &.green {
+    --az-timeline-color: #{theme.$color-secondary-light};
+  }
 }
 
 .item {
@@ -14,16 +20,21 @@
 }
 
 .dot {
-  border: 2px solid theme.$color-secondary-light;
+  border: 2px solid;
   border-radius: 50%;
   padding: 4px;
   margin: 8px 0;
+  border-color: var(--az-timeline-color);
+
+  .itemStart & {
+    background-color: var(--az-timeline-color);
+  }
 }
 
 .line {
   flex: 1;
   width: 2px;
-  background-color: theme.$color-secondary-light;
+  background-color: var(--az-timeline-color);
 
   .itemStart & {
     display: none;

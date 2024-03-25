@@ -2,7 +2,7 @@
   import { Router, Route } from 'svelte-routing';
 
   import Redirect from './components/common/Redirect';
-  import Layout from './components/layout/Layout.svelte';
+  import Layout from './components/layout/Layout';
   import AboutMe from './routes/AboutMe.svelte';
   import Contacts from './routes/Contacts.svelte';
   import Education from './routes/Education.svelte';

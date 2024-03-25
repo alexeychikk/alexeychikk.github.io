@@ -2,9 +2,10 @@
   import styles from './Timeline.module.scss';
 
   export let data: T[] = [];
+  export let theme: 'purple' | 'green' = 'purple';
 </script>
 
-<ul class="{styles.timeline} {$$restProps.class}">
+<ul class="{styles.timeline} {styles[theme]} {$$restProps.class}">
   {#each data as item}
     <li class={styles.item}>
       <div class={styles.separator}>
