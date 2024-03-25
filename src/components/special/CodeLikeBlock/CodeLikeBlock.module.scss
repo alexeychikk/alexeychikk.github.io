@@ -1,0 +1,111 @@
+@use 'src/assets/styles/theme';
+@use 'src/assets/styles/responsive';
+
+.codeLikeBlock {
+  line-height: theme.$line-height-default;
+  position: relative;
+  height: 100%;
+  display: flex;
+  font-family: 'IBM Plex Mono';
+  font-size: 1.25rem;
+  align-items: start;
+  @include responsive.smDown {
+    font-size: 1rem;
+  }
+  &::after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: #404040;
+    @media (max-width: 1440px) {
+      display: none;
+    }
+  }
+}
+
+.lineNum {
+  width: 56px;
+  text-align: right;
+  margin-right: 0.4em;
+  color: theme.$color-text-secondary;
+  @include responsive.smDown {
+    width: 32px;
+  }
+}
+
+.sampleLine {
+  position: fixed;
+  top: -100px;
+  visibility: hidden;
+}
+
+.childrenWrapper {
+  flex: 1;
+  overflow: hidden;
+  color: #a9b7c6;
+  max-width: 1024px;
+  position: relative;
+}
+
+.git {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 4px;
+    bottom: 0;
+    @include responsive.smDown {
+      width: 3px;
+    }
+  }
+  &.green::before {
+    background-color: #587c0c;
+  }
+  &.blue::before {
+    background-color: #0c7d9d;
+  }
+}
+
+.L {
+  padding-left: 1.3em;
+  position: relative;
+  @include responsive.smDown {
+    padding-left: 0.6em;
+  }
+}
+
+.LChildren {
+  padding-right: 16px;
+  .L.active & {
+    background-color: #2a2a2b;
+  }
+  .L.hover &:hover {
+    cursor: pointer;
+    background-color: #2a2a2b;
+  }
+  & svg {
+    top: -0.27em;
+  }
+}
+
+.Kw {
+  color: theme.$color-primary-main;
+  font-weight: 700;
+}
+
+.Fn {
+  color: theme.$color-primary-light;
+}
+
+.Sl {
+  color: theme.$color-secondary-light;
+}
+
+.Vn {
+  color: theme.$color-secondary-main;
+}
+
+.Cm {
+  color: #808080;
+}

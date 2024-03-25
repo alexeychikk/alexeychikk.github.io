@@ -1,0 +1,23 @@
+@use 'src/assets/styles/theme';
+
+.linkOpen {
+  white-space: nowrap;
+  color: theme.$color-primary-main;
+  text-decoration: none;
+
+  &:hover {
+    color: theme.$color-primary-light;
+  }
+  & > * {
+    font-size: inherit;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  & svg {
+    position: relative;
+  }
+}
+
+.icon {
+  margin-left: -0.1em;
+}

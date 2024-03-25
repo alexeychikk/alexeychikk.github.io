@@ -36,7 +36,7 @@
         target="_blank"
         rel="external nofollow"
       >
-        <IconButton aria-label="GitHub">
+        <IconButton aria-label="GitHub" tabindex="-1">
           <IconGithub />
         </IconButton>
       </a>
@@ -46,7 +46,7 @@
         target="_blank"
         rel="external nofollow"
       >
-        <IconButton aria-label="LinkedIn">
+        <IconButton aria-label="LinkedIn" tabindex="-1">
           <IconLinkedIn />
         </IconButton>
       </a>
@@ -55,7 +55,7 @@
         href="mailto:alexdarkmm@gmail.com"
         target="_blank"
       >
-        <IconButton aria-label="E-Mail">
+        <IconButton aria-label="E-Mail" tabindex="-1">
           <IconEmailOutline />
         </IconButton>
       </a>

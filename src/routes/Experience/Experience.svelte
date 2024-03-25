@@ -1,11 +1,11 @@
 <script lang="ts">
-  import styles from '../assets/styles/shared.module.scss';
-  import CommentLikeBlock from '../components/special/CommentLikeBlock';
+  import styles from '../../assets/styles/shared.module.scss';
+  import CommentLikeBlock from '../../components/special/CommentLikeBlock';
   import Timeline, {
     TimelineItem,
     TimelineStart,
-  } from '../components/special/Timeline';
-  import { EXPERIENCE } from '../config/experience';
+  } from '../../components/special/Timeline';
+  import { EXPERIENCE } from '../../config/experience';
 </script>
 
 <Timeline class={styles.container} data={EXPERIENCE} let:item>

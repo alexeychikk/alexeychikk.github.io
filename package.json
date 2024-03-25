@@ -12,6 +12,7 @@
     "format": "eslint --fix . && prettier --write ."
   },
   "dependencies": {
+    "clsx": "^2.1.0",
     "date-fns": "^3.6.0",
     "svelte-material-icons": "^3.0.5",
     "svelte-routing": "^2.12.0"

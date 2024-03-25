@@ -3,11 +3,11 @@
 
   import Redirect from './components/common/Redirect';
   import Layout from './components/layout/Layout';
-  import AboutMe from './routes/AboutMe.svelte';
-  import Contacts from './routes/Contacts.svelte';
-  import Education from './routes/Education.svelte';
-  import Experience from './routes/Experience.svelte';
-  import Projects from './routes/Projects.svelte';
+  import AboutMe from './routes/AboutMe';
+  import Contacts from './routes/Contacts';
+  import Education from './routes/Education';
+  import Experience from './routes/Experience';
+  import Projects from './routes/Projects';
 
   export let url = '';
 </script>
