@@ -1,0 +1,24 @@
+@use 'src/assets/styles/theme';
+@use 'src/assets/styles/responsive';
+
+.mapWrapper {
+  width: 100%;
+  display: flex;
+  @include responsive.mdDown {
+    flex-direction: column;
+  }
+}
+
+.map {
+  order: 2;
+  @include responsive.lgUp {
+    width: 60%;
+  }
+}
+
+.contactInfo {
+  order: 1;
+  @include responsive.lgUp {
+    order: 3;
+  }
+}
