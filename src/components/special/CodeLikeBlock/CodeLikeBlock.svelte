@@ -1,17 +1,15 @@
 <script lang="ts">
   import { clsx } from 'clsx';
-  import { setContext } from 'svelte';
-  import { writable } from 'svelte/store';
 
   import styles from './CodeLikeBlock.module.scss';
+  import { createCodeLikeBlockContext } from './lib';
 
   export let hasExtraLine = true;
 
   let childrenHeight = 1;
   let lineHeight = 1;
 
-  const context = writable({ lineHeight, linesCount: 0 });
-  setContext('codeLikeBlock', context);
+  const context = createCodeLikeBlockContext();
 
   $: linesCount =
     Math.ceil(childrenHeight / lineHeight) + (hasExtraLine ? 1 : 0) || 0;

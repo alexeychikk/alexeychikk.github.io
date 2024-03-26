@@ -7,6 +7,7 @@
     Fn,
     Br,
   } from '../../components/special/CodeLikeBlock';
+  import GoogleMap from '../../components/special/GoogleMap';
   import { IS_HIRABLE } from '../../config/experience';
 
   import styles from './Contacts.module.scss';
@@ -29,7 +30,7 @@
   <Br />
   <div class={styles.mapWrapper}>
     <L class={styles.map}>
-      <!-- <GoogleMap address="Kyiv" title="My Location" /> -->
+      <GoogleMap address="Kyiv" title="My Location" />
     </L>
 
     <div class={styles.contactInfo}>

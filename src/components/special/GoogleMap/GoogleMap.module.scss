@@ -1,0 +1,31 @@
+@use 'src/assets/styles/theme';
+@use 'src/assets/styles/responsive';
+
+.googleMap {
+  width: 100%;
+}
+
+.block {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-radius: 4px;
+  height: calc(var(--line-height) * 15);
+  @include responsive.xsDown {
+    height: calc(var(--line-height) * 10);
+  }
+}
+
+.iframe {
+  display: none;
+  .loaded & {
+    display: block;
+  }
+}
+
+.skeleton {
+  display: block;
+  .loaded & {
+    display: none;
+  }
+}
