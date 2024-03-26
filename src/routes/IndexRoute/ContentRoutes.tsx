@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import React, { Suspense } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
-import AboutMe from "~/routes/AboutMe";
-import Experience from "~/routes/Experience";
-import Education from "~/routes/Education";
-import Contacts from "~/routes/Contacts";
-import Projects from "~/routes/Projects";
+import AboutMe from '~/routes/AboutMe';
+import Contacts from '~/routes/Contacts';
+import Education from '~/routes/Education';
+import Experience from '~/routes/Experience';
+import Projects from '~/routes/Projects';
 
 export const ContentRoutes: React.FC = () => {
   return (

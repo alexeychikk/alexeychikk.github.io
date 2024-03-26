@@ -3,16 +3,16 @@ import {
   Menu,
   MenuItem,
   Typography,
-} from "@material-ui/core";
-import { NavigateNext } from "@material-ui/icons";
-import React, { useCallback, useMemo } from "react";
-import { Link, useLocation } from "react-router-dom";
-import clsx from "clsx";
+} from '@material-ui/core';
+import { NavigateNext } from '@material-ui/icons';
+import clsx from 'clsx';
+import React, { useCallback, useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-import { ReactComponent as JsonIcon } from "~/assets/icons/json.svg";
-import { ROUTES_META } from "~/config/routesMeta";
+import { useStyles } from './Breadcrumbs.styles';
 
-import { useStyles } from "./Breadcrumbs.styles";
+import JsonIcon from '~/assets/icons/json.svg?react';
+import { ROUTES_META } from '~/config/routesMeta';
 
 interface BreadcrumbsProps {
   className?: string;
@@ -26,11 +26,11 @@ const BreadcrumbsBase: React.FC<BreadcrumbsProps> = (props) => {
 
   const restRoutes = useMemo(
     () => Object.values(ROUTES_META).filter((r) => r !== route),
-    [route]
+    [route],
   );
 
   const [menuAnchorEl, setMenuAnchorEl] = React.useState<null | HTMLElement>(
-    null
+    null,
   );
   const isMenuOpen = Boolean(menuAnchorEl);
 
@@ -66,12 +66,12 @@ const BreadcrumbsBase: React.FC<BreadcrumbsProps> = (props) => {
         open={isMenuOpen}
         onClose={handleMenuClose}
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
+          vertical: 'bottom',
+          horizontal: 'left',
         }}
         transformOrigin={{
-          vertical: "top",
-          horizontal: "left",
+          vertical: 'top',
+          horizontal: 'left',
         }}
         PaperProps={{
           className: classes.menu,

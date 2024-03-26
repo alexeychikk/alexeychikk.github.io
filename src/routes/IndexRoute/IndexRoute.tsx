@@ -1,15 +1,14 @@
-import { Hidden, Toolbar } from "@material-ui/core";
-import React, { useCallback, useState } from "react";
+import { Hidden, Toolbar } from '@material-ui/core';
+import React, { useCallback, useState } from 'react';
 
-import { ResponsiveDrawer } from "~/components/ResponsiveDrawer";
+import { Breadcrumbs } from './Breadcrumbs';
+import { ContentRoutes } from './ContentRoutes';
+import { useStyles } from './IndexRoute.styles';
+import { MainAppBar } from './MainAppBar';
+import { MySkills } from './MySkills';
+import { NavigationDrawer } from './NavigationDrawer';
 
-import { MainAppBar } from "./MainAppBar";
-import { MySkills } from "./MySkills";
-import { NavigationDrawer } from "./NavigationDrawer";
-import { Breadcrumbs } from "./Breadcrumbs";
-import { ContentRoutes } from "./ContentRoutes";
-
-import { useStyles } from "./IndexRoute.styles";
+import { ResponsiveDrawer } from '~/components/ResponsiveDrawer';
 
 export const IndexRoute: React.FC = () => {
   const classes = useStyles();

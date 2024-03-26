@@ -1,6 +1,6 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 
-import { ROUTES_META } from "~/config/routesMeta";
+import { ROUTES_META } from '~/config/routesMeta';
 
 export function useRoutesMeta({
   includeHidden = false,

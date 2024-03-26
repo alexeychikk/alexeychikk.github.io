@@ -1,10 +1,9 @@
-import React from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import React from 'react';
 
-import { SkillItemElement } from "./SkillItem";
-import { SkillsFolderElement } from "./SkillsFolder";
-
-import { useStyles } from "./SkillsExplorer.styles";
+import type { SkillItemElement } from './SkillItem';
+import { useStyles } from './SkillsExplorer.styles';
+import type { SkillsFolderElement } from './SkillsFolder';
 
 export interface SkillsExplorerProps {
   className?: string;

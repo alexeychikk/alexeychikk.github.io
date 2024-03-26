@@ -1,80 +1,80 @@
-import { createMuiTheme } from "@material-ui/core";
-import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
-import createPalette from "@material-ui/core/styles/createPalette";
+import { createTheme } from '@material-ui/core/styles';
+import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
+import createPalette from '@material-ui/core/styles/createPalette';
 
 const palette = createPalette({
-  divider: "#585858",
+  divider: '#585858',
   primary: {
-    main: "#cc7832",
-    light: "#ffc66d",
+    main: '#cc7832',
+    light: '#ffc66d',
   },
   secondary: {
-    main: "#9876aa",
-    light: "#6a8759",
+    main: '#9876aa',
+    light: '#6a8759',
   },
   text: {
-    primary: "#cccccc",
-    secondary: "rgba(255,255,255,0.5)",
+    primary: '#cccccc',
+    secondary: 'rgba(255,255,255,0.5)',
   },
   background: {
-    default: "#212122",
-    paper: "#1e1e1f",
+    default: '#212122',
+    paper: '#1e1e1f',
   },
-  type: "dark",
+  type: 'dark',
 });
 
 const breakpoints = createBreakpoints({});
 
-export const THEME = createMuiTheme({
+export const THEME = createTheme({
   palette,
   breakpoints,
   typography: {
-    fontFamily: "Open Sans",
+    fontFamily: 'Open Sans',
   },
   overrides: {
     MuiCssBaseline: {
-      "@global": {
+      '@global': {
         html: {
-          height: "100%",
-          minWidth: "320px",
+          height: '100%',
+          minWidth: '320px',
         },
         body: {
-          height: "100%",
-          width: "100%",
+          height: '100%',
+          width: '100%',
         },
-        "#root": {
-          height: "100%",
-          width: "100%",
+        '#root': {
+          height: '100%',
+          width: '100%',
         },
 
-        "@keyframes azFadeIn": {
-          "0%": {
+        '@keyframes azFadeIn': {
+          '0%': {
             opacity: 0,
           },
-          "100%": {
+          '100%': {
             opacity: 100,
           },
         },
-        "@keyframes azFadeOut": {
-          "0%": {
+        '@keyframes azFadeOut': {
+          '0%': {
             opacity: 100,
           },
-          "100%": {
+          '100%': {
             opacity: 0,
           },
         },
 
-        "::-webkit-scrollbar": {
-          width: "12px",
+        '::-webkit-scrollbar': {
+          width: '12px',
         },
-        "::-webkit-scrollbar-track": {
-          background: "transparent",
+        '::-webkit-scrollbar-track': {
+          background: 'transparent',
         },
-        "::-webkit-scrollbar-thumb": {
-          background: "#79797966",
+        '::-webkit-scrollbar-thumb': {
+          background: '#79797966',
         },
-        "::-webkit-scrollbar-thumb:hover": {
-          background: "#646464b3",
+        '::-webkit-scrollbar-thumb:hover': {
+          background: '#646464b3',
         },
       },
     },
@@ -85,9 +85,9 @@ export const THEME = createMuiTheme({
     },
     MuiToolbar: {
       regular: {
-        minHeight: "46px",
-        [breakpoints.up("xs")]: {
-          minHeight: "46px",
+        minHeight: '46px',
+        [breakpoints.up('xs')]: {
+          minHeight: '46px',
         },
       },
     },

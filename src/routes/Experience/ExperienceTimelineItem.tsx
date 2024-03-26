@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import { Experience } from "~/config/experience";
-import { LinkOpen } from "~/components/LinkOpen";
-import { TimelineItem } from "~/components/Timeline";
+import { LinkOpen } from '~/components/LinkOpen';
+import { TimelineItem } from '~/components/Timeline';
+import type { Experience } from '~/config/experience';
 
 export interface ExperienceTimelineItemProps extends Experience {}
 
 const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
-  props
+  props,
 ) => {
   const title = props.company.link ? (
     <LinkOpen to={props.company.link} hasLinkIcon external>
@@ -23,7 +23,7 @@ const ExperienceTimelineItemBase: React.FC<ExperienceTimelineItemProps> = (
       subtitle={props.position}
       dateFrom={props.dateFrom}
       dateTo={props.dateTo}
-      descriptionTitle={props.descriptionTitle ?? "About the company"}
+      descriptionTitle={props.descriptionTitle ?? 'About the company'}
     >
       {props.company.description}
     </TimelineItem>

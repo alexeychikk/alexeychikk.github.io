@@ -1,10 +1,10 @@
-import { Link as MuiLink } from "@material-ui/core";
-import { OpenInNew as OpenInNewIcon } from "@material-ui/icons";
-import React from "react";
-import clsx from "clsx";
-import { Link } from "react-router-dom";
+import { Link as MuiLink } from '@material-ui/core';
+import { OpenInNew as OpenInNewIcon } from '@material-ui/icons';
+import clsx from 'clsx';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { useStyles } from "./LinkOpen.styles";
+import { useStyles } from './LinkOpen.styles';
 
 export interface LinkOpenProps {
   className?: string;

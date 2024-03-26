@@ -1,10 +1,10 @@
-import { Drawer, Hidden } from "@material-ui/core";
-import React from "react";
-import clsx from "clsx";
+import { Drawer, Hidden } from '@material-ui/core';
+import clsx from 'clsx';
+import React from 'react';
 
-import { MobileDrawer } from "~/components/MobileDrawer";
+import { useStyles } from './ResponsiveDrawer.styles';
 
-import { useStyles } from "./ResponsiveDrawer.styles";
+import { MobileDrawer } from '~/components/MobileDrawer';
 
 export interface ResponsiveDrawerProps {
   children: React.ReactNode;

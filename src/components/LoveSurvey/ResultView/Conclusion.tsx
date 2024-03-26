@@ -1,7 +1,8 @@
-import React from "react";
-import { Emoji } from "~/components/Emoji";
+import React from 'react';
 
-import { useStyles } from "./ResultView.styles";
+import { useStyles } from './ResultView.styles';
+
+import { Emoji } from '~/components/Emoji';
 
 export interface ConclusionProps {
   compatibilityPercent: number;
@@ -39,14 +40,14 @@ const ConclusionBase: React.FC<ConclusionProps> = ({
       {compatibilityPercent >= 75 && compatibilityPercent < 90 && (
         <span>
           Well, well, well, it looks like we've got some chemistry brewing here!
-          Let's see where this attraction takes us{" "}
+          Let's see where this attraction takes us{' '}
           <Emoji label="interesting">🙃</Emoji>
         </span>
       )}
       {compatibilityPercent >= 90 && compatibilityPercent < 100 && (
         <span>
           Holy cow, we're practically made for each other! I can't wait to see
-          what kind of adventures we'll have together{" "}
+          what kind of adventures we'll have together{' '}
           <Emoji label="wow">🤩</Emoji>
         </span>
       )}

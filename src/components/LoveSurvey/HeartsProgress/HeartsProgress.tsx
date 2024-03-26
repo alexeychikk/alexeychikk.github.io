@@ -1,11 +1,11 @@
-import React from "react";
-import clsx from "clsx";
 import {
   Favorite as FavoriteIcon,
   FavoriteBorder as FavoriteBorderIcon,
-} from "@material-ui/icons";
+} from '@material-ui/icons';
+import clsx from 'clsx';
+import React from 'react';
 
-import { useStyles } from "./HeartsProgress.styles";
+import { useStyles } from './HeartsProgress.styles';
 
 export interface HeartsProgressProps {
   className?: string;
@@ -27,7 +27,7 @@ const HeartsProgressBase: React.FC<HeartsProgressProps> = (props) => {
               className={clsx(
                 classes.emptyHeartIcon,
                 index + 1 <= Math.round(props.percentage / 10) &&
-                  classes.fadeOutHeartIcon
+                  classes.fadeOutHeartIcon,
               )}
             />
           ))}

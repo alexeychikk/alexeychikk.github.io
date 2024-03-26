@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { EDUCATION } from "~/config/education";
-import { Timeline, InitialItem, TimelineItem } from "~/components/Timeline";
+import { useStyles } from './Education.styles';
+import { EducationTimelineItem } from './EducationTimelineItem';
 
-import { EducationTimelineItem } from "./EducationTimelineItem";
-
-import { useStyles } from "./Education.styles";
+import { Timeline, InitialItem, TimelineItem } from '~/components/Timeline';
+import { EDUCATION } from '~/config/education';
 
 export const Education: React.FC = () => {
   const classes = useStyles();

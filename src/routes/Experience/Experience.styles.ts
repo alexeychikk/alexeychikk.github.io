@@ -1,9 +1,9 @@
-import { createStyles, makeStyles } from "@material-ui/core";
+import { createStyles, makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles((theme) =>
+export const useStyles = makeStyles(() =>
   createStyles({
     timeline: {
       margin: 0,
     },
-  })
+  }),
 );

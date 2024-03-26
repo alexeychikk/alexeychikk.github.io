@@ -1,1 +1,1 @@
-export * from "./IfHirable";
+export * from './IfHirable';

@@ -1,9 +1,3 @@
-import React, { useState, useCallback } from "react";
-import clsx from "clsx";
-import {
-  FavoriteBorder as FavoriteBorderIcon,
-  Close as CloseIcon,
-} from "@material-ui/icons";
 import {
   IconButton,
   DialogTitle,
@@ -13,15 +7,22 @@ import {
   Typography,
   LinearProgress,
   Divider,
-} from "@material-ui/core";
+} from '@material-ui/core';
+import {
+  FavoriteBorder as FavoriteBorderIcon,
+  Close as CloseIcon,
+} from '@material-ui/icons';
+import clsx from 'clsx';
+import React, { useState, useCallback } from 'react';
 
-import { Emoji } from "~/components/Emoji";
-import { IS_DEV } from "~/config/browser";
-import { LOVE_SURVEY, LoveAnswer, INITIAL_ANSWERS } from "~/config/loveSurvey";
+import { useStyles } from './LoveSurvey.styles';
+import { QuestionView } from './QuestionView';
+import { ResultView } from './ResultView';
 
-import { QuestionView } from "./QuestionView";
-import { ResultView } from "./ResultView";
-import { useStyles } from "./LoveSurvey.styles";
+import { Emoji } from '~/components/Emoji';
+import { IS_DEV } from '~/config/browser';
+import type { LoveAnswer } from '~/config/loveSurvey';
+import { LOVE_SURVEY, INITIAL_ANSWERS } from '~/config/loveSurvey';
 
 interface LoveSurveyProps {
   className?: string;
@@ -32,11 +33,10 @@ const LoveSurveyBase: React.FC<LoveSurveyProps> = (props) => {
   const [expanded, setExpanded] = useState(false);
   const [wasExpandedBefore, setWasExpandedBefore] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
-    IS_DEV ? LOVE_SURVEY.length - 1 : 0
+    IS_DEV ? LOVE_SURVEY.length - 1 : 0,
   );
-  const [answers, setAnswers] = useState<Record<number, LoveAnswer[]>>(
-    INITIAL_ANSWERS
-  );
+  const [answers, setAnswers] =
+    useState<Record<number, LoveAnswer[]>>(INITIAL_ANSWERS);
   const question = LOVE_SURVEY[currentQuestionIndex];
   const prevQuestion = LOVE_SURVEY[currentQuestionIndex - 1];
   const totalIncompatibility =
@@ -66,7 +66,7 @@ const LoveSurveyBase: React.FC<LoveSurveyProps> = (props) => {
     (newAnswers: LoveAnswer[]) => {
       setAnswers({ ...answers, [currentQuestionIndex]: newAnswers });
     },
-    [currentQuestionIndex, answers]
+    [currentQuestionIndex, answers],
   );
 
   return (
@@ -75,7 +75,7 @@ const LoveSurveyBase: React.FC<LoveSurveyProps> = (props) => {
         classes.loveSurvey,
         expanded && classes.expanded,
         !expanded && wasExpandedBefore && classes.collapsed,
-        props.className
+        props.className,
       )}
     >
       <IconButton
@@ -113,7 +113,7 @@ const LoveSurveyBase: React.FC<LoveSurveyProps> = (props) => {
               <Typography gutterBottom variant="h5">
                 {prevQuestion.wrongAnswerInfo || (
                   <>
-                    Sorry, we are totally incompatible{" "}
+                    Sorry, we are totally incompatible{' '}
                     <Emoji label="oops">🤷‍♂️</Emoji>
                   </>
                 )}

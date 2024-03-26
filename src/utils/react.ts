@@ -1,18 +1,18 @@
-import React from "react";
+import type React from 'react';
 
 export function reactNodeToString(node: React.ReactNode): string {
   switch (typeof node) {
-    case "string":
+    case 'string':
       return node;
-    case "bigint":
-    case "number":
+    case 'bigint':
+    case 'number':
       return node.toString();
-    case "object":
+    case 'object':
       if (Array.isArray(node)) {
-        return node.map(reactNodeToString).join("");
+        return node.map(reactNodeToString).join('');
       } else if (node) {
         return reactNodeToString((node as React.ReactElement).props.children);
       }
   }
-  return "";
+  return '';
 }

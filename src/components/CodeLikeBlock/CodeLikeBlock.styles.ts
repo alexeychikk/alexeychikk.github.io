@@ -1,88 +1,88 @@
-import { createStyles, makeStyles } from "@material-ui/core";
+import { createStyles, makeStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
     codeLikeBlock: {
-      position: "relative",
-      height: "100%",
-      display: "flex",
-      fontFamily: "IBM Plex Mono",
+      position: 'relative',
+      height: '100%',
+      display: 'flex',
+      fontFamily: 'IBM Plex Mono',
       fontSize: theme.typography.h6.fontSize,
-      alignItems: "start",
-      [theme.breakpoints.down("sm")]: {
+      alignItems: 'start',
+      [theme.breakpoints.down('sm')]: {
         fontSize: theme.typography.body1.fontSize,
       },
-      "&::after": {
+      '&::after': {
         content: `""`,
-        width: "1px",
-        height: "100%",
-        backgroundColor: "rgb(64,64,64)",
+        width: '1px',
+        height: '100%',
+        backgroundColor: 'rgb(64,64,64)',
         [theme.breakpoints.down(1440)]: {
-          display: "none",
+          display: 'none',
         },
       },
     },
     lineNumbers: {},
     lineNum: {
       width: theme.spacing(7),
-      textAlign: "right",
-      marginRight: "0.4em",
+      textAlign: 'right',
+      marginRight: '0.4em',
       color: theme.palette.text.secondary,
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down('sm')]: {
         width: theme.spacing(4),
       },
     },
     sampleLine: {
-      position: "fixed",
-      top: "-100px",
-      visibility: "hidden",
+      position: 'fixed',
+      top: '-100px',
+      visibility: 'hidden',
     },
     childrenWrapper: {
       flex: 1,
-      overflow: "hidden",
-      color: "#a9b7c6",
-      maxWidth: "1024px",
-      position: "relative",
+      overflow: 'hidden',
+      color: '#a9b7c6',
+      maxWidth: '1024px',
+      position: 'relative',
     },
     active: {},
     hover: {},
     git: {
-      "&::before": {
+      '&::before': {
         content: `""`,
-        position: "absolute",
+        position: 'absolute',
         top: 1,
         left: 0,
-        width: "4px",
+        width: '4px',
         bottom: 0,
-        [theme.breakpoints.down("sm")]: {
-          width: "3px",
+        [theme.breakpoints.down('sm')]: {
+          width: '3px',
         },
       },
-      "&-green::before": {
-        backgroundColor: "rgb(88,124,12)",
+      '&-green::before': {
+        backgroundColor: 'rgb(88,124,12)',
       },
-      "&-blue::before": {
-        backgroundColor: "rgb(12,125,157)",
+      '&-blue::before': {
+        backgroundColor: 'rgb(12,125,157)',
       },
     },
     L: {
-      paddingLeft: "1.3em",
-      position: "relative",
-      [theme.breakpoints.down("sm")]: {
-        paddingLeft: "0.6em",
+      paddingLeft: '1.3em',
+      position: 'relative',
+      [theme.breakpoints.down('sm')]: {
+        paddingLeft: '0.6em',
       },
     },
     LChildren: {
       paddingRight: theme.spacing(2),
-      "$L$active &": {
-        backgroundColor: "rgb(42,42,43)",
+      '$L$active &': {
+        backgroundColor: 'rgb(42,42,43)',
       },
-      "$L$hover &:hover": {
-        cursor: "pointer",
-        backgroundColor: "rgb(42,42,43)",
+      '$L$hover &:hover': {
+        cursor: 'pointer',
+        backgroundColor: 'rgb(42,42,43)',
       },
-      "& svg": {
-        top: "-0.27em",
+      '& svg': {
+        top: '-0.27em',
       },
     },
     Kw: {
@@ -99,7 +99,7 @@ export const useStyles = makeStyles((theme) =>
       color: theme.palette.secondary.main,
     },
     Cm: {
-      color: "#808080",
+      color: '#808080',
     },
-  })
+  }),
 );

@@ -1,13 +1,13 @@
-import React, { useMemo } from "react";
+import React, { useMemo } from 'react';
 
-import { SKILLS, SKILLS_MAP } from "~/config/skills";
-import { CodeLikeBlock, L, Br, Sl, Fn, Kw } from "~/components/CodeLikeBlock";
-import { useSkillsContext } from "~/components/SkillsProvider";
+import { useStyles } from './Projects.styles';
+import { SelectedSkill } from './SelectedSkill';
+import { SkillGap } from './SkillGap';
+import { SkillSeparator } from './SkillSeparator';
 
-import { SkillSeparator } from "./SkillSeparator";
-import { SkillGap } from "./SkillGap";
-import { SelectedSkill } from "./SelectedSkill";
-import { useStyles } from "./Projects.styles";
+import { CodeLikeBlock, L, Br, Sl, Fn, Kw } from '~/components/CodeLikeBlock';
+import { useSkillsContext } from '~/components/SkillsProvider';
+import { SKILLS, SKILLS_MAP } from '~/config/skills';
 
 export const Projects: React.FC = () => {
   const classes = useStyles();
@@ -23,9 +23,9 @@ export const Projects: React.FC = () => {
       [...selectedSkills].sort(
         (s1, s2) =>
           selectedSkillsExperience[s2] - selectedSkillsExperience[s1] ||
-          SKILLS.indexOf(SKILLS_MAP[s1]) - SKILLS.indexOf(SKILLS_MAP[s2])
+          SKILLS.indexOf(SKILLS_MAP[s1]) - SKILLS.indexOf(SKILLS_MAP[s2]),
       ),
-    [selectedSkills]
+    [selectedSkills],
   );
 
   return (

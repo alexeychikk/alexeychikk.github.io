@@ -1,12 +1,13 @@
-import React, { useCallback } from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import React, { useCallback } from 'react';
 
-import { SKILLS_MAP, SkillId } from "~/config/skills";
-import { L, Sl, Fn, Kw } from "~/components/CodeLikeBlock";
-import { formatMonthsAsIntervalShort } from "~/utils/date";
+import { useStyles } from './Projects.styles';
+import { SkillGap } from './SkillGap';
 
-import { SkillGap } from "./SkillGap";
-import { useStyles } from "./Projects.styles";
+import { L, Sl, Fn, Kw } from '~/components/CodeLikeBlock';
+import type { SkillId } from '~/config/skills';
+import { SKILLS_MAP } from '~/config/skills';
+import { formatMonthsAsIntervalShort } from '~/utils/date';
 
 export interface SelectedSkillProps {
   className?: string;
@@ -30,10 +31,10 @@ const SelectedSkillBase: React.FC<SelectedSkillProps> = (props) => {
         : Sl
       : React.Fragment;
 
-  const handleClick = useCallback(() => props.onClick?.(props.skillId), [
-    props.skillId,
-    props.onClick,
-  ]);
+  const handleClick = useCallback(
+    () => props.onClick?.(props.skillId),
+    [props.skillId, props.onClick],
+  );
 
   return (
     <L
@@ -43,10 +44,10 @@ const SelectedSkillBase: React.FC<SelectedSkillProps> = (props) => {
     >
       <Icon className={classes.skillIcon} /> <SkillGap name={skill.name} />|
       {monthsOfExperience >= 120 || monthsOfExperience === 0
-        ? " "
-        : "\u00A0".repeat(2)}
+        ? ' '
+        : '\u00A0'.repeat(2)}
       <ExperienceWrapper>
-        {formatMonthsAsIntervalShort(monthsOfExperience) || "non-commercial"}
+        {formatMonthsAsIntervalShort(monthsOfExperience) || 'non-commercial'}
       </ExperienceWrapper>
     </L>
   );

@@ -4,22 +4,22 @@ import {
   IconButton,
   Toolbar,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 import {
   Menu as MenuIcon,
   GitHub,
   LinkedIn,
   MailOutlineRounded,
-} from "@material-ui/icons";
-import React from "react";
-import { Link } from "react-router-dom";
+} from '@material-ui/icons';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { ReactComponent as FolderSrcIcon } from "~/assets/icons/folder-src-open.svg";
+import { Breadcrumbs } from '../Breadcrumbs';
+import { Navigation } from '../Navigation';
 
-import { Navigation } from "../Navigation";
-import { Breadcrumbs } from "../Breadcrumbs";
+import { useStyles } from './MainAppBar.styles';
 
-import { useStyles } from "./MainAppBar.styles";
+import FolderSrcIcon from '~/assets/icons/folder-src-open.svg?react';
 
 export interface MainAppBarProps {
   className?: string;

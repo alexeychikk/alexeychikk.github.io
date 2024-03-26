@@ -1,1 +1,1 @@
-export * from "./GrowingNumber";
+export * from './GrowingNumber';

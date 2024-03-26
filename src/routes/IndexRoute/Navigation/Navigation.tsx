@@ -1,11 +1,10 @@
-import React from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import React from 'react';
 
-import { useRoutesMeta } from "~/hooks";
+import { useStyles } from './Navigation.styles';
+import { NavLink } from './NavLink';
 
-import { NavLink } from "./NavLink";
-
-import { useStyles } from "./Navigation.styles";
+import { useRoutesMeta } from '~/hooks';
 
 interface NavigationProps {
   className?: string;

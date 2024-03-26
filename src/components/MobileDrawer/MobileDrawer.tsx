@@ -1,19 +1,15 @@
-import {
-  Button,
-  SwipeableDrawer,
-  SwipeableDrawerProps,
-  Toolbar,
-} from "@material-ui/core";
-import { ArrowBackIos } from "@material-ui/icons";
-import React from "react";
-import clsx from "clsx";
+import type { SwipeableDrawerProps } from '@material-ui/core';
+import { Button, SwipeableDrawer, Toolbar } from '@material-ui/core';
+import { ArrowBackIos } from '@material-ui/icons';
+import clsx from 'clsx';
+import React from 'react';
 
-import { isIOS } from "~/config/browser";
+import { useStyles } from './MobileDrawer.styles';
 
-import { useStyles } from "./MobileDrawer.styles";
+import { isIOS } from '~/config/browser';
 
 export interface MobileDrawerProps {
-  anchor?: SwipeableDrawerProps["anchor"];
+  anchor?: SwipeableDrawerProps['anchor'];
   children: React.ReactNode;
   className?: string;
   hasBackButton?: boolean;

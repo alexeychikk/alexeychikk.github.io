@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { Fn, Sl } from "~/components/CodeLikeBlock";
-import { LinkOpen } from "~/components/LinkOpen";
+import { Fn, Sl } from '~/components/CodeLikeBlock';
+import { LinkOpen } from '~/components/LinkOpen';
 
 export interface Company {
   name: string;
@@ -10,9 +10,9 @@ export interface Company {
 }
 
 export enum Position {
-  FrontEnd = "Front-end Developer",
-  BackEnd = "Back-end Developer",
-  FullStack = "Full-stack Developer",
+  FrontEnd = 'Front-end Developer',
+  BackEnd = 'Back-end Developer',
+  FullStack = 'Full-stack Developer',
 }
 
 interface ExperienceBase<Id = string> {
@@ -27,7 +27,7 @@ interface ExperienceBase<Id = string> {
 export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
   t)([
   {
-    id: "Innovecs",
+    id: 'Innovecs',
     company: {
       name: `Innovecs`,
       description: (
@@ -37,13 +37,13 @@ export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
           and Clutch ratings.
         </>
       ),
-      link: "https://innovecs.com/",
+      link: 'https://innovecs.com/',
     },
     dateFrom: new Date(Date.UTC(2023, 8)),
     position: Position.FullStack,
   },
   {
-    id: "Happyold",
+    id: 'Happyold',
     company: {
       name: `Charitable foundation "Життєлюб"`,
       description: (
@@ -51,13 +51,13 @@ export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
           As a <Fn>volunteer</Fn> I developed and deployed REST API for a web
           application that allows war refugees to register in a queue for
           getting <Fn>humanitarian help</Fn>. <br />
-          Live app:{" "}
+          Live app:{' '}
           <LinkOpen to="https://vpo.happyold.com.ua/" external>
             vpo.happyold.com.ua
           </LinkOpen>
         </>
       ),
-      link: "https://happyold.com.ua/",
+      link: 'https://happyold.com.ua/',
     },
     dateFrom: new Date(Date.UTC(2022, 10)),
     dateTo: new Date(Date.UTC(2023, 2)),
@@ -65,9 +65,9 @@ export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
     position: Position.BackEnd,
   },
   {
-    id: "Perimeter81",
+    id: 'Perimeter81',
     company: {
-      name: "Perimeter 81",
+      name: 'Perimeter 81',
       description: (
         <>
           <Fn>Zero Trust Network as a Service</Fn> designed to simplify secure
@@ -75,32 +75,32 @@ export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
           workforce.
         </>
       ),
-      link: "https://www.linkedin.com/company/perimeter-81/",
+      link: 'https://www.linkedin.com/company/perimeter-81/',
     },
     dateFrom: new Date(Date.UTC(2020, 10)),
     dateTo: new Date(Date.UTC(2021, 7)),
     position: Position.BackEnd,
   },
   {
-    id: "Trucknet",
+    id: 'Trucknet',
     company: {
-      name: "Trucknet Enterprise LTD",
+      name: 'Trucknet Enterprise LTD',
       description: (
         <>
           Cloud based <Fn>transport optimization platform</Fn> that utilizes
           smart freight exchange to improve efficiency & profitability.
         </>
       ),
-      link: "https://www.linkedin.com/company/busnet-&-trucknet/",
+      link: 'https://www.linkedin.com/company/busnet-&-trucknet/',
     },
     dateFrom: new Date(Date.UTC(2019, 0)),
     dateTo: new Date(Date.UTC(2020, 5)),
     position: Position.FullStack,
   },
   {
-    id: "Siteplus",
+    id: 'Siteplus',
     company: {
-      name: "Siteplus Pte LTD",
+      name: 'Siteplus Pte LTD',
       description: (
         <>
           <Fn>B2B website builder</Fn> that features Drag & Drop / WYSIWYG
@@ -108,37 +108,37 @@ export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
           store and more.
         </>
       ),
-      link: "https://www.linkedin.com/company/siteplus-pte-ltd/about/",
+      link: 'https://www.linkedin.com/company/siteplus-pte-ltd/about/',
     },
     dateFrom: new Date(Date.UTC(2017, 7)),
     dateTo: new Date(Date.UTC(2018, 7)),
     position: Position.FrontEnd,
   },
   {
-    id: "DevsterLab",
+    id: 'DevsterLab',
     company: {
-      name: "Devster Lab",
+      name: 'Devster Lab',
       description: (
         <>
           An <Fn>outsourcing company</Fn>, but also a team of friends -
           programmers, designers, dreamers, and innovators - who understand
-          business. Working at this company felt like being at home with my{" "}
+          business. Working at this company felt like being at home with my{' '}
           <Sl>family</Sl>.
         </>
       ),
-      link: "https://www.linkedin.com/company/devster-lab/about/",
+      link: 'https://www.linkedin.com/company/devster-lab/about/',
     },
     dateFrom: new Date(Date.UTC(2016, 1)),
     dateTo: new Date(Date.UTC(2017, 7)),
     position: Position.FrontEnd,
   },
   {
-    id: "Freelancer",
+    id: 'Freelancer',
     company: {
-      name: "Freelancer",
+      name: 'Freelancer',
       description: (
         <>
-          During this period of my life I worked on various{" "}
+          During this period of my life I worked on various{' '}
           <Fn>projects for the university</Fn> I studied in. This kick-started
           my career as a web developer.
         </>
@@ -151,7 +151,7 @@ export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
   },
 ] as const);
 
-export type ExperienceId = typeof EXPERIENCE[number]["id"];
+export type ExperienceId = (typeof EXPERIENCE)[number]['id'];
 
 export type Experience = ExperienceBase<ExperienceId>;
 

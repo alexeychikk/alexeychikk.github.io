@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { CodeLikeBlock, Kw, Sl, Br, Fn, L } from "~/components/CodeLikeBlock";
-import { GoogleMap } from "~/components/GoogleMap";
-import { LinkLine } from "~/components/LinkLine";
-import { IfHirable, IfNotHirable } from "~/components/IfHirable";
-import { LoveSurvey } from "~/components/LoveSurvey";
+import { useStyles } from './Contacts.styles';
 
-import { useStyles } from "./Contacts.styles";
+import { CodeLikeBlock, Kw, Sl, Br, Fn, L } from '~/components/CodeLikeBlock';
+import { GoogleMap } from '~/components/GoogleMap';
+import { IfHirable, IfNotHirable } from '~/components/IfHirable';
+import { LinkLine } from '~/components/LinkLine';
+import { LoveSurvey } from '~/components/LoveSurvey';
 
 export const Contacts: React.FC = () => {
   const classes = useStyles();

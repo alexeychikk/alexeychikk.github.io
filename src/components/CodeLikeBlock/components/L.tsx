@@ -1,12 +1,13 @@
-import React, { HTMLAttributes } from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import type { HTMLAttributes } from 'react';
+import React from 'react';
 
-import { useStyles } from "../CodeLikeBlock.styles";
+import { useStyles } from '../CodeLikeBlock.styles';
 
 export interface LProps extends HTMLAttributes<HTMLDivElement> {
   active?: boolean;
   hover?: boolean;
-  git?: "green" | "blue";
+  git?: 'green' | 'blue';
 }
 
 /**
@@ -29,7 +30,7 @@ export const L: React.FC<LProps> = ({
         hover && classes.hover,
         git && classes.git,
         git && `${classes.git}-${git}`,
-        className
+        className,
       )}
       {...props}
     >

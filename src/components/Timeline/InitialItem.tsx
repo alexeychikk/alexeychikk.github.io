@@ -1,14 +1,14 @@
-import { Typography } from "@material-ui/core";
+import { Typography } from '@material-ui/core';
 import {
   TimelineItem,
   TimelineContent,
   TimelineSeparator,
   TimelineDot,
-} from "@material-ui/lab";
-import React from "react";
-import clsx from "clsx";
+} from '@material-ui/lab';
+import clsx from 'clsx';
+import React from 'react';
 
-import { useStyles } from "./TimelineItem.styles";
+import { useStyles } from './TimelineItem.styles';
 
 export interface InitialItemProps {
   children?: React.ReactNode;
@@ -23,7 +23,7 @@ const InitialItemBase: React.FC<InitialItemProps> = (props) => {
       className={clsx(
         classes.timelineItem,
         classes.initialItem,
-        props.className
+        props.className,
       )}
     >
       <TimelineSeparator>

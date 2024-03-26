@@ -1,10 +1,11 @@
-import React, { createContext, useMemo, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React, { createContext, useMemo, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import { SkillId, SKILLS } from "~/config/skills";
-import { useQuery } from "~/hooks";
+import { getSkillExperienceInMonths } from './getSkillExperienceInMonths';
 
-import { getSkillExperienceInMonths } from "./getSkillExperienceInMonths";
+import type { SkillId } from '~/config/skills';
+import { SKILLS } from '~/config/skills';
+import { useQuery } from '~/hooks';
 
 export interface SkillsContext {
   selectedSkills: SkillId[];
@@ -30,19 +31,22 @@ export const SkillsProvider: React.FC<SkillsProviderProps> = (props) => {
   const history = useHistory();
   const query = useQuery();
 
-  const skillsQuery = query.get("skills");
-  const selectedSkills = (skillsQuery
-    ? skillsQuery.split(",")
-    : []) as SkillId[];
-  const selectedSkillsExperience = selectedSkills.reduce((res, id) => {
-    res[id] = getSkillExperienceInMonths(id);
-    return res;
-  }, {} as Record<SkillId, number>);
+  const skillsQuery = query.get('skills');
+  const selectedSkills = (
+    skillsQuery ? skillsQuery.split(',') : []
+  ) as SkillId[];
+  const selectedSkillsExperience = selectedSkills.reduce(
+    (res, id) => {
+      res[id] = getSkillExperienceInMonths(id);
+      return res;
+    },
+    {} as Record<SkillId, number>,
+  );
 
   const setSelectedSkills = (skills: SkillId[]) => {
     history.push({
-      pathname: "/projects",
-      search: skills.length ? `?skills=${skills.join(",")}` : "",
+      pathname: '/projects',
+      search: skills.length ? `?skills=${skills.join(',')}` : '',
     });
   };
 
@@ -84,7 +88,7 @@ export const SkillsProvider: React.FC<SkillsProviderProps> = (props) => {
       unselectSkill,
       clearSelectedSkills,
     }),
-    [selectedSkills]
+    [selectedSkills],
   );
 
   return <context.Provider value={value}>{props.children}</context.Provider>;

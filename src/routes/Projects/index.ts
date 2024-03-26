@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react';
 
-export default React.lazy(() => import("./Projects"));
+export default React.lazy(() => import('./Projects'));

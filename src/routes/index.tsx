@@ -1,1 +1,1 @@
-export * from "./IndexRoute";
+export * from './IndexRoute';

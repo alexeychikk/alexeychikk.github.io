@@ -1,24 +1,24 @@
-import { createStyles, makeStyles } from "@material-ui/core";
+import { createStyles, makeStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
     linkOpen: {
-      whiteSpace: "nowrap",
+      whiteSpace: 'nowrap',
       color: theme.palette.primary.main,
-      "&:hover": {
+      '&:hover': {
         color: theme.palette.primary.light,
       },
-      "& > *": {
-        fontSize: "inherit",
-        display: "inline-block",
-        verticalAlign: "bottom",
+      '& > *': {
+        fontSize: 'inherit',
+        display: 'inline-block',
+        verticalAlign: 'bottom',
       },
-      "& svg": {
-        position: "relative",
+      '& svg': {
+        position: 'relative',
       },
     },
     icon: {
-      marginLeft: "0.5em",
+      marginLeft: '0.5em',
     },
-  })
+  }),
 );

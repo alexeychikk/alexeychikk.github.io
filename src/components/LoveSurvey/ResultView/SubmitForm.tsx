@@ -1,12 +1,12 @@
-import React, { useCallback } from "react";
-import { useToggle } from "react-use";
-import type { AsyncState } from "react-use/lib/useAsyncFn";
-import clsx from "clsx";
-import { Button, TextField } from "@material-ui/core";
+import { Button, TextField } from '@material-ui/core';
+import clsx from 'clsx';
+import React, { useCallback } from 'react';
+import { useToggle } from 'react-use';
+import type { AsyncState } from 'react-use/lib/useAsyncFn';
 
-import { IS_DEV } from "~/config/browser";
+import { useStyles } from './ResultView.styles';
 
-import { useStyles } from "./ResultView.styles";
+import { IS_DEV } from '~/config/browser';
 
 export interface SubmitFormProps {
   className?: string;
@@ -37,7 +37,7 @@ const SubmitFormBase: React.FC<SubmitFormProps> = (props) => {
         toggleOpened();
       }
     },
-    [isOpened, submitState]
+    [isOpened, submitState],
   );
 
   const handleSubmit = useCallback(
@@ -45,15 +45,15 @@ const SubmitFormBase: React.FC<SubmitFormProps> = (props) => {
       event.preventDefault();
 
       const { elements } = event.target as HTMLFormElement;
-      const nameInput = elements.namedItem("name") as HTMLInputElement;
-      const emailInput = elements.namedItem("email") as HTMLInputElement;
+      const nameInput = elements.namedItem('name') as HTMLInputElement;
+      const emailInput = elements.namedItem('email') as HTMLInputElement;
 
       props.onSubmit({
-        name: nameInput.value.trim() || "Anonymous",
+        name: nameInput.value.trim() || 'Anonymous',
         email: emailInput.value.trim(),
       });
     },
-    [props.onSubmit]
+    [props.onSubmit],
   );
 
   return (
@@ -62,7 +62,7 @@ const SubmitFormBase: React.FC<SubmitFormProps> = (props) => {
         classes.submitForm,
         isOpened && classes.isFormOpened,
         submitState.value && classes.isSubmitDone,
-        props.className
+        props.className,
       )}
       onSubmit={handleSubmit}
     >
@@ -72,7 +72,7 @@ const SubmitFormBase: React.FC<SubmitFormProps> = (props) => {
           label="Name"
           name="name"
           disabled={submitState.loading}
-          defaultValue={IS_DEV ? "Kate" : undefined}
+          defaultValue={IS_DEV ? 'Kate' : undefined}
         />
         <TextField
           className={classes.formInput}
@@ -81,21 +81,21 @@ const SubmitFormBase: React.FC<SubmitFormProps> = (props) => {
           type="email"
           required
           disabled={submitState.loading}
-          defaultValue={IS_DEV ? "kate.osten@gmail.com" : undefined}
+          defaultValue={IS_DEV ? 'kate.osten@gmail.com' : undefined}
         />
       </div>
       <Button
         className={classes.submitButton}
-        variant={isOpened ? "contained" : "outlined"}
+        variant={isOpened ? 'contained' : 'outlined'}
         tabIndex={0}
         onClick={handleClick}
-        type={isOpened && !submitState.value ? "submit" : "button"}
+        type={isOpened && !submitState.value ? 'submit' : 'button'}
         disabled={submitState.loading}
       >
         {submitState.loading ? (
-          "Sending"
+          'Sending'
         ) : submitState.value ? (
-          "Done"
+          'Done'
         ) : (
           <>
             Sub<span className={classes.heartUnicode}>♡</span>it

@@ -1,7 +1,7 @@
-import React from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import React from 'react';
 
-import { useStyles } from "./Loader.styles";
+import { useStyles } from './Loader.styles';
 
 interface LoaderProps {
   className?: string;

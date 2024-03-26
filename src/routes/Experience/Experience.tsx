@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { EXPERIENCE } from "~/config/experience";
-import { Timeline, InitialItem } from "~/components/Timeline";
+import { useStyles } from './Experience.styles';
+import { ExperienceTimelineItem } from './ExperienceTimelineItem';
 
-import { ExperienceTimelineItem } from "./ExperienceTimelineItem";
-
-import { useStyles } from "./Experience.styles";
+import { Timeline, InitialItem } from '~/components/Timeline';
+import { EXPERIENCE } from '~/config/experience';
 
 export const Experience: React.FC = () => {
   const classes = useStyles();

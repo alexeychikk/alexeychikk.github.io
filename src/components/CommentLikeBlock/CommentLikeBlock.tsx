@@ -1,7 +1,7 @@
-import React from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import React from 'react';
 
-import { useStyles } from "./CommentLikeBlock.styles";
+import { useStyles } from './CommentLikeBlock.styles';
 
 interface CommentLikeBlockProps {
   className?: string;
@@ -14,7 +14,7 @@ export const CommentLikeBlock: React.FC<CommentLikeBlockProps> = (props) => {
   return (
     <div className={clsx(classes.commentLikeBlock, props.className)}>
       <div className={classes.slash}>
-        /** {props.title} {!props.children && "*/"}
+        /** {props.title} {!props.children && '*/'}
       </div>
       {props.children && (
         <>

@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react';
 
-export default React.lazy(() => import("./Contacts"));
+export default React.lazy(() => import('./Contacts'));

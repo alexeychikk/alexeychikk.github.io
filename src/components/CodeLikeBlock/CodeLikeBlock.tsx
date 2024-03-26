@@ -1,8 +1,8 @@
-import React, { createContext, useContext, useMemo } from "react";
-import clsx from "clsx";
-import useResizeObserver from "use-resize-observer";
+import clsx from 'clsx';
+import React, { createContext, useContext, useMemo } from 'react';
+import useResizeObserver from 'use-resize-observer';
 
-import { useStyles } from "./CodeLikeBlock.styles";
+import { useStyles } from './CodeLikeBlock.styles';
 
 export interface CodeLikeBlockContext {
   linesCount: number;
@@ -21,21 +21,18 @@ interface CodeLikeBlockProps {
 }
 
 export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
-  const { ref: childrenRef, height: childrenHeight = 1 } = useResizeObserver<
-    HTMLDivElement
-  >();
-  const {
-    ref: sampleLineRef,
-    height: sampleLineHeight = 1,
-  } = useResizeObserver<HTMLDivElement>();
+  const { ref: childrenRef, height: childrenHeight = 1 } =
+    useResizeObserver<HTMLDivElement>();
+  const { ref: sampleLineRef, height: sampleLineHeight = 1 } =
+    useResizeObserver<HTMLDivElement>();
   const linesCount =
     Math.ceil(childrenHeight / sampleLineHeight) +
       (props.hasExtraLine ? 1 : 0) || 0;
   const classes = useStyles();
-  const value = useMemo(() => ({ lineHeight: sampleLineHeight, linesCount }), [
-    sampleLineHeight,
-    linesCount,
-  ]);
+  const value = useMemo(
+    () => ({ lineHeight: sampleLineHeight, linesCount }),
+    [sampleLineHeight, linesCount],
+  );
 
   return (
     <context.Provider value={value}>
@@ -48,7 +45,7 @@ export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
         </div>
         <div className={classes.lineNumbers}>
           {/* eslint-disable-next-line prefer-spread */}
-          {Array.apply(null, { length: linesCount } as []).map((e, i) => (
+          {Array.apply(null, { length: linesCount } as []).map((_, i) => (
             <div className={classes.lineNum} key={i}>
               {i + 1}
             </div>

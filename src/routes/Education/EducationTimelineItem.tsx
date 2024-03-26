@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { Education } from "~/config/education";
-import { TimelineItem } from "~/components/Timeline";
+import { TimelineItem } from '~/components/Timeline';
+import type { Education } from '~/config/education';
 
 export interface EducationTimelineItemProps extends Education {}
 
 const EducationTimelineItemBase: React.FC<EducationTimelineItemProps> = (
-  props
+  props,
 ) => {
   return (
     <TimelineItem

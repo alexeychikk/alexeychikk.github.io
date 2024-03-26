@@ -1,10 +1,10 @@
-import { Skeleton } from "@material-ui/lab";
-import React, { useState, useCallback } from "react";
-import clsx from "clsx";
+import { Skeleton } from '@material-ui/lab';
+import clsx from 'clsx';
+import React, { useState, useCallback } from 'react';
 
-import { useCodeBlockContext } from "~/components/CodeLikeBlock";
+import { useStyles } from './GoogleMap.styles';
 
-import { useStyles } from "./GoogleMap.styles";
+import { useCodeBlockContext } from '~/components/CodeLikeBlock';
 
 interface GoogleMapProps {
   className?: string;
@@ -24,7 +24,7 @@ const GoogleMapBase: React.FC<GoogleMapProps> = (props) => {
       className={clsx(
         classes.googleMap,
         isLoaded && classes.loaded,
-        props.className
+        props.className,
       )}
     >
       {!isLoaded && (

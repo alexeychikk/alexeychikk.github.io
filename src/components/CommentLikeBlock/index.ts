@@ -1,1 +1,1 @@
-export * from "./CommentLikeBlock";
+export * from './CommentLikeBlock';

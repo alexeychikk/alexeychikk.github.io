@@ -1,11 +1,13 @@
-import React from "react";
-import { Emoji } from "~/components/Emoji";
-import { IS_DEV } from "./browser";
+import React from 'react';
+
+import { IS_DEV } from './browser';
+
+import { Emoji } from '~/components/Emoji';
 
 export enum LoveQuestionType {
-  Radio = "Radio",
-  Check = "Check",
-  Custom = "Custom",
+  Radio = 'Radio',
+  Check = 'Check',
+  Custom = 'Custom',
 }
 
 export interface LoveQuestion {
@@ -28,7 +30,7 @@ export const LOVE_SURVEY: LoveQuestion[] = [
   {
     title: (
       <>
-        This quick test will show how (in)compatible we are{" "}
+        This quick test will show how (in)compatible we are{' '}
         <Emoji label="smile">😅</Emoji>
       </>
     ),
@@ -234,11 +236,14 @@ export const LOVE_SURVEY: LoveQuestion[] = [
 ];
 
 export const INITIAL_ANSWERS: Record<number, LoveAnswer[]> = IS_DEV
-  ? LOVE_SURVEY.reduce((res, question, index) => {
-      if (!question.testAnswerIndexes?.length) return res;
-      res[index] = question.testAnswerIndexes.map(
-        (index) => question.answers![index]
-      );
-      return res;
-    }, {} as Record<number, LoveAnswer[]>)
+  ? LOVE_SURVEY.reduce(
+      (res, question, index) => {
+        if (!question.testAnswerIndexes?.length) return res;
+        res[index] = question.testAnswerIndexes.map(
+          (index) => question.answers![index],
+        );
+        return res;
+      },
+      {} as Record<number, LoveAnswer[]>,
+    )
   : {};

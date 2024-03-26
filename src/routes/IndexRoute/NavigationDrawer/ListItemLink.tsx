@@ -1,12 +1,14 @@
-import { ListItem, ListItemProps } from "@material-ui/core";
-import React from "react";
+import type { ListItemProps } from '@material-ui/core';
+import { ListItem } from '@material-ui/core';
+import React from 'react';
 
-import { NavLink, NavLinkProps } from "~/components/NavLink";
+import { useStyles } from './ListItemLink.styles';
 
-import { useStyles } from "./ListItemLink.styles";
+import type { NavLinkProps } from '~/components/NavLink';
+import { NavLink } from '~/components/NavLink';
 
 export interface ListItemLinkProps extends NavLinkProps {
-  onClick?: ListItemProps<"div">["onClick"];
+  onClick?: ListItemProps<'div'>['onClick'];
 }
 
 const ListItemLinkBase: React.FC<ListItemLinkProps> = ({

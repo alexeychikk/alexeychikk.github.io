@@ -1,1 +1,1 @@
-export * from "./SkillsProvider";
+export * from './SkillsProvider';

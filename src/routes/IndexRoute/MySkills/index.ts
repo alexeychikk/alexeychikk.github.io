@@ -1,1 +1,1 @@
-export * from "./MySkills";
+export * from './MySkills';

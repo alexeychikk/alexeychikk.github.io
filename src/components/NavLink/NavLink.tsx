@@ -1,10 +1,11 @@
-import React from "react";
-import { Link, LinkProps, useRouteMatch } from "react-router-dom";
-import clsx from "clsx";
+import clsx from 'clsx';
+import React from 'react';
+import type { LinkProps } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
-import { ReactComponent as JsonIcon } from "~/assets/icons/json.svg";
+import { useStyles } from './NavLink.styles';
 
-import { useStyles } from "./NavLink.styles";
+import JsonIcon from '~/assets/icons/json.svg?react';
 
 export interface NavLinkProps {
   activeClassName?: string;
@@ -16,7 +17,7 @@ export interface NavLinkProps {
   iconClassName?: string;
   external?: boolean;
   to: string;
-  target?: LinkProps["target"];
+  target?: LinkProps['target'];
 }
 
 const NavLinkBase: React.FC<NavLinkProps> = (props) => {
@@ -26,16 +27,16 @@ const NavLinkBase: React.FC<NavLinkProps> = (props) => {
     exact: props.activeOnlyWhenExact,
   });
   const Icon = props.icon || JsonIcon;
-  const Component = props.external ? "a" : Link;
+  const Component = props.external ? 'a' : Link;
 
   return (
-    // @ts-ignore
+    // @ts-expect-error expected
     <Component
       className={clsx(
         classes.link,
         match && classes.active,
         match && props.activeClassName,
-        props.className
+        props.className,
       )}
       target={props.target}
       {...(props.external ? { href: props.to } : { to: props.to })}

@@ -1,7 +1,7 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
-import { Skill } from "~/config/skills";
-import { SkillItem } from "~/components/SkillsExplorer";
+import { SkillItem } from '~/components/SkillsExplorer';
+import type { Skill } from '~/config/skills';
 
 export interface MySkillItemProps extends Skill {
   active?: boolean;

@@ -1,19 +1,19 @@
-import { Typography } from "@material-ui/core";
+import { Typography } from '@material-ui/core';
 import {
   TimelineItem as MuiTimelineItem,
   TimelineContent,
   TimelineSeparator,
   TimelineDot,
   TimelineConnector,
-} from "@material-ui/lab";
-import React from "react";
-import { format, addMonths } from "date-fns";
-import clsx from "clsx";
+} from '@material-ui/lab';
+import clsx from 'clsx';
+import { format, addMonths } from 'date-fns';
+import React from 'react';
 
-import { formatIntervalShort } from "~/utils/date";
-import { CommentLikeBlock } from "~/components/CommentLikeBlock";
+import { useStyles } from './TimelineItem.styles';
 
-import { useStyles } from "./TimelineItem.styles";
+import { CommentLikeBlock } from '~/components/CommentLikeBlock';
+import { formatIntervalShort } from '~/utils/date';
 
 export interface TimelineItemProps {
   classes?: ClassesOverride<typeof useStyles>;
@@ -41,16 +41,16 @@ const TimelineItemBase: React.FC<TimelineItemProps> = (props) => {
         </Typography>
 
         <Typography variant="body2">
-          {format(props.dateFrom, "MMM yyyy")}
-          {" – "}
-          {props.dateTo ? format(props.dateTo, "MMM yyyy") : "Present"}
+          {format(props.dateFrom, 'MMM yyyy')}
+          {' – '}
+          {props.dateTo ? format(props.dateTo, 'MMM yyyy') : 'Present'}
           <span className={classes.timeDiff}>
-            {" < "}
+            {' < '}
             {formatIntervalShort({
               start: props.dateFrom,
               end: addMonths(props.dateTo || new Date(), 1),
             })}
-            {" >"}
+            {' >'}
           </span>
         </Typography>
 

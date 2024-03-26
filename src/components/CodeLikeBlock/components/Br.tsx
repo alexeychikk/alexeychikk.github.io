@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { L, LProps } from "./L";
+import type { LProps } from './L';
+import { L } from './L';
 
 /**
  * Line-break syntax-highlighting component.

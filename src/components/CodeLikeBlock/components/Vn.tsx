@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { useStyles } from "../CodeLikeBlock.styles";
+import { useStyles } from '../CodeLikeBlock.styles';
 
 /**
  * Variable name syntax-highlighting component.

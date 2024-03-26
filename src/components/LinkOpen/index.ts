@@ -1,1 +1,1 @@
-export * from "./LinkOpen";
+export * from './LinkOpen';

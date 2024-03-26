@@ -3,14 +3,14 @@ import {
   AccordionDetails,
   AccordionSummary,
   Typography,
-} from "@material-ui/core";
-import { ExpandMore } from "@material-ui/icons";
-import React, { useCallback, useState } from "react";
+} from '@material-ui/core';
+import { ExpandMore } from '@material-ui/icons';
+import React, { useCallback, useState } from 'react';
 
-import { ReactComponent as FolderIcon } from "~/assets/icons/folder-open.svg";
+import type { SkillItemElement } from './SkillItem';
+import { useStyles } from './SkillsFolder.styles';
 
-import { SkillItemElement } from "./SkillItem";
-import { useStyles } from "./SkillsFolder.styles";
+import FolderIcon from '~/assets/icons/folder-open.svg?react';
 
 export interface SkillsFolderProps {
   children:
@@ -32,13 +32,13 @@ const SkillsFolderBase: React.FC<SkillsFolderProps> = (props) => {
   const Icon = props.icon || FolderIcon;
 
   const handleExpandedChange = useCallback(
-    (e: React.ChangeEvent<{}>, isExpanded: boolean) => {
+    (_: React.ChangeEvent<unknown>, isExpanded: boolean) => {
       if (!props.expandable) {
         return;
       }
       setExpanded(isExpanded);
     },
-    [props.expandable]
+    [props.expandable],
   );
 
   return (

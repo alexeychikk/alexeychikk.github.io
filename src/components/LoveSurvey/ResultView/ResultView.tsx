@@ -1,21 +1,22 @@
-import React, { useEffect, useMemo } from "react";
-import clsx from "clsx";
-import { useAsyncFn, useToggle } from "react-use";
-import { Snackbar, Typography } from "@material-ui/core";
+import { Snackbar, Typography } from '@material-ui/core';
+import { Alert, AlertTitle } from '@material-ui/lab';
+import clsx from 'clsx';
+import React, { useEffect, useMemo } from 'react';
+import { useAsyncFn, useToggle } from 'react-use';
 
-import { LoveAnswer } from "~/config/loveSurvey";
-import { GrowingNumber } from "~/components/GrowingNumber";
+import { HeartsProgress } from '../HeartsProgress';
 
-import { HeartsProgress } from "../HeartsProgress";
+import { Conclusion } from './Conclusion';
 import {
   calculateCompatibilityPercent,
   prepareAnswersForSubmit,
-} from "./helpers";
-import { Conclusion } from "./Conclusion";
-import { SubmitForm, SubmitUser } from "./SubmitForm";
+} from './helpers';
+import { useStyles } from './ResultView.styles';
+import type { SubmitUser } from './SubmitForm';
+import { SubmitForm } from './SubmitForm';
 
-import { useStyles } from "./ResultView.styles";
-import { Alert, AlertTitle } from "@material-ui/lab";
+import { GrowingNumber } from '~/components/GrowingNumber';
+import type { LoveAnswer } from '~/config/loveSurvey';
 
 export interface ResultViewProps {
   className?: string;
@@ -29,25 +30,25 @@ const ResultViewBase: React.FC<ResultViewProps> = (props) => {
 
   const compatibilityPercent = useMemo(
     () => calculateCompatibilityPercent(props.answers),
-    [props.answers]
+    [props.answers],
   );
 
   const [submitState, submit] = useAsyncFn(
     async ({ name, email }: SubmitUser) => {
-      await fetch(`${process.env.REACT_APP_API_URL}/portfolio/love-survey`, {
-        method: "POST",
+      await fetch(`${import.meta.env.VITE_APP_API_URL}/portfolio/love-survey`, {
+        method: 'POST',
         body: JSON.stringify({
           name,
           email,
           compatibilityPercent,
           answers: prepareAnswersForSubmit(props.answers),
         }),
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' },
       });
       toggleSnackbarOpen(false);
       return true;
     },
-    [props.answers]
+    [props.answers],
   );
 
   useEffect(() => {

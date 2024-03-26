@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import { SkillCategory, SKILLS } from "~/config/skills";
-import { SkillsFolder } from "~/components/SkillsExplorer";
-import { useSkillsContext } from "~/components/SkillsProvider";
+import type { MySkillItemProps } from './MySkillItem';
+import { MySkillItem } from './MySkillItem';
 
-import { MySkillItem, MySkillItemProps } from "./MySkillItem";
+import { SkillsFolder } from '~/components/SkillsExplorer';
+import { useSkillsContext } from '~/components/SkillsProvider';
+import type { SkillCategory } from '~/config/skills';
+import { SKILLS } from '~/config/skills';
 
 export interface MySkillCategoryProps extends SkillCategory {
-  onSkillClick: MySkillItemProps["onClick"];
+  onSkillClick: MySkillItemProps['onClick'];
 }
 
 export const MySkillCategory: React.FC<MySkillCategoryProps> = (props) => {

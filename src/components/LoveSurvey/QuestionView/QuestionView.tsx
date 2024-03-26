@@ -1,5 +1,3 @@
-import React, { useCallback } from "react";
-import clsx from "clsx";
 import {
   Typography,
   RadioGroup,
@@ -7,15 +5,14 @@ import {
   Radio,
   Checkbox,
   FormGroup,
-} from "@material-ui/core";
+} from '@material-ui/core';
+import clsx from 'clsx';
+import React, { useCallback } from 'react';
 
-import {
-  LoveQuestion,
-  LoveAnswer,
-  LoveQuestionType,
-} from "~/config/loveSurvey";
+import { useStyles } from './QuestionView.styles';
 
-import { useStyles } from "./QuestionView.styles";
+import type { LoveQuestion, LoveAnswer } from '~/config/loveSurvey';
+import { LoveQuestionType } from '~/config/loveSurvey';
 
 export interface QuestionViewProps {
   className?: string;
@@ -32,7 +29,7 @@ const QuestionViewBase: React.FC<QuestionViewProps> = (props) => {
       const answer = props.question.answers![+event.target.value];
       props.onAnswersChange([answer], props.question);
     },
-    [props.question, props.onAnswersChange]
+    [props.question, props.onAnswersChange],
   );
 
   const handleCheckAnswer = useCallback(
@@ -43,7 +40,7 @@ const QuestionViewBase: React.FC<QuestionViewProps> = (props) => {
         : (props.answers || []).concat(answer);
       props.onAnswersChange(newAnswers, props.question);
     },
-    [props.question, props.answers, props.onAnswersChange]
+    [props.question, props.answers, props.onAnswersChange],
   );
 
   return (
