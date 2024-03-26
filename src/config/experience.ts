@@ -26,7 +26,9 @@ export const EXPERIENCE: Experience[] = [
     position: Position.FullStack,
     company: {
       name: `Innovecs`,
-      description: `Innovecs is a globally-recognized software development company and is listed among the top 100 <b>outsourcing companies</b>, Inc. 5,000, and Clutch ratings.`,
+      description: `Innovecs is a globally-recognized software development 
+      company and is listed among the top 100 <b>outsourcing companies</b>, 
+      Inc. 5,000, and Clutch ratings.`,
       link: 'https://innovecs.com/',
     },
   },
@@ -38,7 +40,9 @@ export const EXPERIENCE: Experience[] = [
     position: Position.BackEnd,
     company: {
       name: `CF "Enjoying Life"`,
-      description: `As a volunteer I developed and deployed REST API for a web application that allows war refugees to register in a queue for getting <b>humanitarian help<b/>.`,
+      description: `As a volunteer I developed and deployed REST API for a web 
+      application that allows war refugees to register in a queue for getting 
+      <b>humanitarian help</b>.`,
       link: 'https://happyold.com.ua/en',
     },
   },
@@ -49,7 +53,9 @@ export const EXPERIENCE: Experience[] = [
     position: Position.BackEnd,
     company: {
       name: 'Perimeter 81',
-      description: `<b>Zero Trust Network as a Service</b> designed to simplify secure network, cloud and application access for the modern and distributed workforce.`,
+      description: `<b>Zero Trust Network as a Service</b> designed to simplify 
+      secure network, cloud and application access for the modern and 
+      distributed workforce.`,
       link: 'https://www.linkedin.com/company/perimeter-81/',
     },
   },
@@ -60,7 +66,8 @@ export const EXPERIENCE: Experience[] = [
     position: Position.FullStack,
     company: {
       name: 'Trucknet Enterprise LTD',
-      description: `Cloud based <b>transport optimization platform</b> that utilizes smart freight exchange to improve efficiency & profitability.`,
+      description: `Cloud based <b>transport optimization platform</b> that 
+      utilizes smart freight exchange to improve efficiency & profitability.`,
       link: 'https://www.linkedin.com/company/busnet-&-trucknet/',
     },
   },
@@ -71,7 +78,9 @@ export const EXPERIENCE: Experience[] = [
     position: Position.FrontEnd,
     company: {
       name: 'Siteplus Pte LTD',
-      description: `<b>B2B website builder</b> that features Drag & Drop / WYSIWYG editor, responsive grid, hundreds of templates, content blocks, online store and more.`,
+      description: `<b>B2B website builder</b> that features Drag & Drop / 
+      WYSIWYG editor, responsive grid, hundreds of templates, content blocks, 
+      online store and more.`,
       link: 'https://www.linkedin.com/company/siteplus-pte-ltd/about/',
     },
   },
@@ -82,7 +91,9 @@ export const EXPERIENCE: Experience[] = [
     position: Position.FrontEnd,
     company: {
       name: 'Devster Lab',
-      description: `An <b>outsourcing company</b>, but also a team of friends - programmers, designers, dreamers, and innovators - who understand business. Working at this company felt like being at home with my family.`,
+      description: `An <b>outsourcing company</b>, but also a team of friends - 
+      programmers, designers, dreamers, and innovators - who understand 
+      business. Working at this company felt like being at home with my family.`,
       link: 'https://www.linkedin.com/company/devster-lab/about/',
     },
   },
@@ -94,7 +105,9 @@ export const EXPERIENCE: Experience[] = [
     position: Position.FullStack,
     company: {
       name: 'Freelancer',
-      description: `During this period of my life I worked on various <b>projects for the university</b> I studied in. This kick-started my career as a web developer.`,
+      description: `During this period of my life I worked on various 
+      <b>projects for the university</b> I studied in. This 
+      kick-started my career as a web developer.`,
     },
   },
 ];

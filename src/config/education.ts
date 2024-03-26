@@ -1,14 +1,24 @@
 export interface Education {
   id: string;
   name: string;
-  field: string;
+  field?: string;
   degree: string;
-  grade: string;
+  grade?: string;
   dateFrom: Date;
   dateTo?: Date;
+  description?: string;
 }
 
 export const EDUCATION: Education[] = [
+  {
+    id: 'Life',
+    name: `Life`,
+    degree: 'Self Education',
+    dateFrom: new Date(Date.UTC(1995, 1)),
+    description: `I am curious about the world and the way it works. I always 
+    try to learn something new every day no matter whether it is about 
+    programming, science, technology or music.`,
+  },
   {
     id: 'University',
     name: `Open International University of Human Development "Ukraine"`,
