@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { clsx } from 'clsx';
+
   import styles from './CommentLikeBlock.module.scss';
 </script>
 
-<div class="{styles.commentLikeBlock} {$$restProps.class}">
+<div class={clsx(styles.commentLikeBlock, $$restProps.class)}>
   <div class={styles.slash}>
     /** <slot name="title" />
     {!$$slots.default ? '*/' : ''}

@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { clsx } from 'clsx';
+
   import { delayedOut } from '../../../stores';
 
   import styles from './Popup.module.scss';
@@ -10,7 +12,7 @@
   $: visible.set(open);
 </script>
 
-<div class="{styles.popup} {open ? styles.open : ''} {$$restProps.class}">
+<div class={clsx(styles.popup, open && styles.open, $$restProps.class)}>
   <slot name="button" />
 
   <div

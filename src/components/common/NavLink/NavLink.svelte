@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { clsx } from 'clsx';
   import type { ComponentType } from 'svelte';
   import { Link, useLocation } from 'svelte-routing';
 
@@ -19,7 +20,12 @@
     ? $location.pathname === to
     : $location.pathname.startsWith(to);
 
-  $: className = `${styles.navLink} ${$$restProps.class} ${active ? `${styles.active} ${activeClass}` : ''}`;
+  $: className = clsx(
+    styles.navLink,
+    $$restProps.class,
+    active && styles.active,
+    active && activeClass,
+  );
 </script>
 
 {#if external}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { clsx } from 'clsx';
   import { addMonths, format } from 'date-fns';
 
   import { formatIntervalShort } from '../../../utils';
@@ -9,7 +10,7 @@
   export let dateTo: Date | undefined = undefined;
 </script>
 
-<div class="{styles.timelineItem} {$$restProps.class}">
+<div class={clsx(styles.timelineItem, $$restProps.class)}>
   <h6 class={styles.title}><slot name="title" /></h6>
 
   <p class={styles.dates}>

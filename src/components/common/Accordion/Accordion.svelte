@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { clsx } from 'clsx';
   import { cubicOut } from 'svelte/easing';
   import { slide } from 'svelte/transition';
 
@@ -8,7 +9,7 @@
   export let disabled = false;
 </script>
 
-<div class="{styles.accordion} {$$restProps.class}">
+<div class={clsx(styles.accordion, $$restProps.class)}>
   <div
     class={styles.summary}
     role="presentation"

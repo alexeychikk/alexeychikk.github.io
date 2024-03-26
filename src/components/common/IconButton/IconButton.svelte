@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { clsx } from 'clsx';
+
   import styles from './IconButton.module.scss';
 </script>
 
 <button
   {...$$restProps}
-  class="{styles.iconButton} {$$restProps.class}"
+  class={clsx(styles.iconButton, $$restProps.class)}
   on:click
 >
   <slot />

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { clsx } from 'clsx';
   import IconChevronRight from 'svelte-material-icons/ChevronRight.svelte';
   import { Link, useLocation } from 'svelte-routing';
 
@@ -17,7 +18,7 @@
   $: restRoutes = Object.values(ROUTES_META).filter((r) => r !== currentRoute);
 </script>
 
-<div class="{styles.breadcrumbs} {$$restProps.class}">
+<div class={clsx(styles.breadcrumbs, $$restProps.class)}>
   <span class={styles.item}>src</span>
 
   <IconChevronRight class={styles.separator} />
