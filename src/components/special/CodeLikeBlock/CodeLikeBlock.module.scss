@@ -85,7 +85,11 @@
     background-color: #2a2a2b;
   }
   & svg {
-    top: -0.27em;
+    top: -0.24em;
+  }
+
+  & a svg {
+    margin-left: -0.3em;
   }
 }
 

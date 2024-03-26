@@ -46,4 +46,6 @@
   color: theme.$color-text-primary;
   text-decoration: none;
   padding: 6px 16px;
+
+  @include theme.hoverBg;
 }

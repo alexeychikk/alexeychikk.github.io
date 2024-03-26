@@ -36,6 +36,7 @@ module.exports = {
       rules: {
         'import/no-duplicates': 'off',
         'no-undef': 'off',
+        'svelte/no-at-html-tags': 'off',
       },
     },
   ],

@@ -10,6 +10,7 @@ $color-bg-default: #212122;
 $color-bg-dark: #252526;
 $color-bg-light: #2d2d2d;
 $color-bg-paper: #1e1e1f;
+$color-bg-hover: rgba(255, 255, 255, 0.08);
 $color-scrollbar-thumb: #79797966;
 $color-scrollbar-thumb-hover: #646464b3;
 
@@ -21,3 +22,12 @@ $height-header: 46px;
 $height-breadcrumbs: 28px;
 $line-height-default: 1.43;
 $line-height-large: 1.5;
+
+@mixin hoverBg {
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  &:hover {
+    background-color: $color-bg-hover;
+  }
+}
