@@ -1,18 +1,9 @@
 import clsx from 'clsx';
-import React, { createContext, useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import useResizeObserver from 'use-resize-observer';
 
 import { useStyles } from './CodeLikeBlock.styles';
-
-export interface CodeLikeBlockContext {
-  linesCount: number;
-  lineHeight: number;
-}
-
-const context = createContext<CodeLikeBlockContext>({
-  linesCount: 0,
-  lineHeight: 0,
-});
+import { codeLikeBlockContext } from './lib';
 
 interface CodeLikeBlockProps {
   className?: string;
@@ -35,7 +26,7 @@ export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
   );
 
   return (
-    <context.Provider value={value}>
+    <codeLikeBlockContext.Provider value={value}>
       <div className={clsx(classes.codeLikeBlock, props.className)}>
         <div
           className={clsx(classes.lineNumbers, classes.sampleLine)}
@@ -55,12 +46,10 @@ export const CodeLikeBlock: React.FC<CodeLikeBlockProps> = (props) => {
           {props.children}
         </div>
       </div>
-    </context.Provider>
+    </codeLikeBlockContext.Provider>
   );
 };
 
 CodeLikeBlock.defaultProps = {
   hasExtraLine: true,
 };
-
-export const useCodeBlockContext = () => useContext(context);

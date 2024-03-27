@@ -1,7 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 import React from 'react';
 
 import { Fn, Sl } from '~/components/CodeLikeBlock';
-import { LinkOpen } from '~/components/LinkOpen';
 
 export interface Company {
   name: string;
@@ -45,16 +45,12 @@ export const EXPERIENCE = (<T extends any>(t: readonly ExperienceBase<T>[]) =>
   {
     id: 'Happyold',
     company: {
-      name: `Charitable foundation "Життєлюб"`,
+      name: `CF "Enjoying Life"`,
       description: (
         <>
           As a <Fn>volunteer</Fn> I developed and deployed REST API for a web
           application that allows war refugees to register in a queue for
-          getting <Fn>humanitarian help</Fn>. <br />
-          Live app:{' '}
-          <LinkOpen to="https://vpo.happyold.com.ua/" external>
-            vpo.happyold.com.ua
-          </LinkOpen>
+          getting <Fn>humanitarian help</Fn>.
         </>
       ),
       link: 'https://happyold.com.ua/',

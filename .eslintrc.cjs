@@ -3,11 +3,13 @@ module.exports = {
   root: true,
   extends: [
     'eslint:recommended',
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'prettier',
   ],
+  plugins: ['react-refresh'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
@@ -22,6 +24,9 @@ module.exports = {
     'import/resolver': {
       typescript: true,
       node: true,
+    },
+    react: {
+      version: 'detect',
     },
   },
   rules: {
@@ -61,5 +66,8 @@ module.exports = {
     'import/no-duplicates': 'error',
     'import/no-named-as-default': 'off',
     'import/no-named-as-default-member': 'off',
+    'react-refresh/only-export-components': 'warn',
+    'react/jsx-no-comment-textnodes': 'off',
+    'react/no-unescaped-entities': 'off',
   },
 };

@@ -65,5 +65,3 @@ export const IndexRoute: React.FC = () => {
     </div>
   );
 };
-
-export default IndexRoute;

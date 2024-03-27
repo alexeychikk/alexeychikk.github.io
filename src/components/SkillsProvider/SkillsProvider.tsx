@@ -1,29 +1,11 @@
-import React, { createContext, useMemo, useContext } from 'react';
+import React, { useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { getSkillExperienceInMonths } from './getSkillExperienceInMonths';
+import { getSkillExperienceInMonths, skillsContext } from './lib';
 
 import type { SkillId } from '~/config/skills';
 import { SKILLS } from '~/config/skills';
 import { useQuery } from '~/hooks';
-
-export interface SkillsContext {
-  selectedSkills: SkillId[];
-  selectedSkillsExperience: Record<SkillId, number>;
-  selectSkill(id: SkillId): void;
-  unselectSkill(id: SkillId): void;
-  selectAllSkills(): void;
-  clearSelectedSkills(): void;
-}
-
-const context = createContext<SkillsContext>({
-  selectedSkills: [],
-  selectedSkillsExperience: {} as Record<SkillId, number>,
-  selectSkill: () => {},
-  unselectSkill: () => {},
-  selectAllSkills: () => {},
-  clearSelectedSkills: () => {},
-});
 
 export interface SkillsProviderProps {}
 
@@ -91,7 +73,9 @@ export const SkillsProvider: React.FC<SkillsProviderProps> = (props) => {
     [selectedSkills],
   );
 
-  return <context.Provider value={value}>{props.children}</context.Provider>;
+  return (
+    <skillsContext.Provider value={value}>
+      {props.children}
+    </skillsContext.Provider>
+  );
 };
-
-export const useSkillsContext = () => useContext(context);

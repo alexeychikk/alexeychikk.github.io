@@ -47,7 +47,7 @@ const MainAppBarBase: React.FC<MainAppBarProps> = (props) => {
             <a
               href="https://github.com/alexeychikk"
               target="_blank"
-              rel="external nofollow"
+              rel="external nofollow noreferrer"
             >
               <IconButton aria-label="GitHub">
                 <GitHub />
@@ -56,13 +56,17 @@ const MainAppBarBase: React.FC<MainAppBarProps> = (props) => {
             <a
               href="https://www.linkedin.com/in/alex-zinkevych/"
               target="_blank"
-              rel="external nofollow"
+              rel="external nofollow noreferrer"
             >
               <IconButton aria-label="LinkedIn">
                 <LinkedIn />
               </IconButton>
             </a>
-            <a href="mailto:alexdarkmm@gmail.com" target="_blank">
+            <a
+              href="mailto:alexdarkmm@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <IconButton aria-label="E-Mail">
                 <MailOutlineRounded />
               </IconButton>

@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import type React from 'react';
 
 import AngularIcon from '~/assets/icons/angular.svg?react';
