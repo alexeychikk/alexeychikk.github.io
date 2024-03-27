@@ -24,4 +24,6 @@ export default defineConfig(({ command }) => ({
     }),
     command === 'build' && analyzer({ analyzerMode: 'static' }),
   ],
+  base: '',
+  build: { outDir: 'docs' },
 }));
