@@ -12,4 +12,6 @@ export default defineConfig(({ command }) => ({
     svgr(),
     command === 'build' && analyzer({ analyzerMode: 'static' }),
   ],
+  base: '',
+  build: { outDir: 'docs' },
 }));
