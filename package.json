@@ -19,7 +19,7 @@
     "lint": "prettier --check . && eslint .",
     "format": "eslint --fix . && prettier --write .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
