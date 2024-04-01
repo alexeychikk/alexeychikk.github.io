@@ -3,6 +3,7 @@
   import MySkills from '../../special/MySkills';
   import AppBar from '../AppBar';
   import Breadcrumbs from '../Breadcrumbs';
+  import MobileNavigation from '../MobileNavigation';
 
   import styles from './Layout.module.scss';
 
@@ -20,7 +21,7 @@
 </Drawer>
 
 <Drawer bind:open={isNavigationDrawerOpened} position="right">
-  {`Lorem ipsum dolor sit amet. `.repeat(100)}
+  <MobileNavigation on:click={() => (isNavigationDrawerOpened = false)} />
 </Drawer>
 
 <main class={styles.content}>

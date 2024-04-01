@@ -36,7 +36,7 @@
     <slot />
   </a>
 {:else}
-  <Link {to} class={className}>
+  <Link {to} class={className} on:click>
     {#if hasIcon}
       <svelte:component this={icon} class={styles.icon} />
     {/if}

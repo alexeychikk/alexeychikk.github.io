@@ -1,0 +1,8 @@
+@use 'src/assets/styles/theme';
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: theme.$color-divider;
+  border: none;
+}

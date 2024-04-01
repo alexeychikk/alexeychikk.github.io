@@ -6,7 +6,7 @@
 
   import styles from './Navigation.module.scss';
 
-  let routes = Object.values(ROUTES_META).filter((r) => !r.hidden);
+  const routes = Object.values(ROUTES_META).filter((r) => !r.hidden);
 </script>
 
 <div class={clsx(styles.navigation, $$restProps.class)}>
