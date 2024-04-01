@@ -2,7 +2,7 @@
   import IconChevronLeft from 'svelte-material-icons/ChevronLeft.svelte';
 
   import { delayedOut } from '../../../stores';
-  import IconButton from '../IconButton';
+  import Button from '../Button';
 
   import styles from './Drawer.module.scss';
 
@@ -33,9 +33,10 @@
   style:--drawer-transition-duration="{transitionDuration}ms"
 >
   <div class={styles.header}>
-    <IconButton on:click={() => (open = false)}>
+    <Button on:click={() => (open = false)}>
       <IconChevronLeft />
-    </IconButton>
+      Back
+    </Button>
   </div>
 
   <div class={styles.content}>
