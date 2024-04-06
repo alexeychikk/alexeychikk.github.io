@@ -1,0 +1,29 @@
+@use 'src/assets/styles/theme';
+@use 'src/assets/styles/responsive';
+
+.projects {
+  width: 100%;
+}
+
+.line {
+  max-width: 42em;
+}
+
+.skillTableWrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.skillTable {
+  width: 100%;
+  min-width: 440px;
+}
+
+.selectedSkill {
+  color: theme.$color-text-primary;
+}
+
+.skillIcon {
+  font-size: 1.2em;
+  margin-bottom: -0.2em;
+}

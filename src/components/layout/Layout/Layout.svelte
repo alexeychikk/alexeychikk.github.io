@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { createSkillsContext } from '../../../stores';
   import Drawer from '../../common/Drawer';
   import MySkills from '../../special/MySkills';
   import AppBar from '../AppBar';
@@ -9,6 +10,8 @@
 
   let isSkillsDrawerOpened = false;
   let isNavigationDrawerOpened = false;
+
+  createSkillsContext();
 </script>
 
 <AppBar
