@@ -6,6 +6,7 @@
     Sl,
     Fn,
     Br,
+    Vn,
   } from '../../components/special/CodeLikeBlock';
   import GoogleMap from '../../components/special/GoogleMap';
   import { IS_HIRABLE } from '../../config/experience';
@@ -15,7 +16,7 @@
 
 <CodeLikeBlock>
   <L>
-    <Kw>Currently</Kw> I live in <Sl>Kyiv</Sl>, Ukraine.
+    Currently <Kw>I live</Kw> in <Vn>Kyiv</Vn>, <Sl>Ukraine</Sl>.
   </L>
   {#if IS_HIRABLE}
     <L active git="green">
@@ -23,8 +24,8 @@
     </L>
   {:else}
     <L git="blue">
-      <Kw>I lived</Kw> in <Sl>Israel</Sl> for several years, but decided to return
-      back to Ukraine.
+      I lived in <Sl>Israel</Sl> for several years, but decided to return back to
+      Ukraine.
     </L>
   {/if}
   <Br />

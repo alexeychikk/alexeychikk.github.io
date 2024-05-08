@@ -24,10 +24,10 @@
   </L>
   <L active git="green">
     {#if IS_HIRABLE}
-      <Kw>Currently</Kw> I am <Sl>open</Sl> to new
+      Currently I am <Sl>open</Sl> to new
       <Fn>job opportunities</Fn>!
     {:else}
-      <Kw>Currently</Kw> I am not looking for a new job but feel free to
+      Currently I am not looking for a new job but feel free to
       <LinkOpen to="/contacts">contact</LinkOpen> me.
     {/if}
   </L>
@@ -40,7 +40,7 @@
     <Fn>code</Fn>.
   </L>
   <L>
-    <Kw>My</Kw> main <Fn>stack</Fn> is: <Vn>JavaScript / TypeScript</Vn>,
+    My main <Fn>stack</Fn> is: <Vn>JavaScript / TypeScript</Vn>,
     <Vn>React</Vn>, <Vn>Node.js</Vn> and <Vn>MongoDB</Vn>.
   </L>
   <L>
@@ -64,7 +64,7 @@
   <Br />
 
   <L>
-    <Kw>You can</Kw> find all of my <Fn>skills</Fn> in the <Vn>sidebar</Vn> on the
+    You can find all of my <Fn>skills</Fn> in the <Vn>sidebar</Vn> on the
     <Sl>left</Sl>
   </L>
   <L>
