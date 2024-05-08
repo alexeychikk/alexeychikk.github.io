@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@poppanator/sveltekit-svg": "^4.2.1",
+    "@rollup/plugin-strip": "^3.0.4",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "@tsconfig/svelte": "^5.0.2",
     "@types/eslint": "^8.56.5",

@@ -1,4 +1,5 @@
 import svg from '@poppanator/sveltekit-svg';
+import rollupPluginStrip from '@rollup/plugin-strip';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig } from 'vite';
 import { analyzer } from 'vite-bundle-analyzer';
@@ -27,5 +28,15 @@ export default defineConfig(({ command }) => ({
     command === 'build' && totalBundleSize(),
   ],
   base: '',
-  build: { outDir: 'docs' },
+  build: {
+    outDir: 'docs',
+    rollupOptions: {
+      plugins: [
+        rollupPluginStrip({
+          labels: ['dev'],
+          include: '**/*.ts',
+        }),
+      ],
+    },
+  },
 }));

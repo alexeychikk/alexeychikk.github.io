@@ -1,5 +1,6 @@
 import type { ComponentType } from 'svelte';
 
+// https://github.com/PKief/vscode-material-icon-theme/blob/main/icons
 import AngularIcon from '../assets/icons/angular.svg?component';
 import AWSIcon from '../assets/icons/aws.svg?component';
 import CoffeeScriptIcon from '../assets/icons/coffeescript.svg?component';
@@ -39,6 +40,7 @@ import SassIcon from '../assets/icons/sass.svg?component';
 import SentryIcon from '../assets/icons/sentry.svg?component';
 import SocketIoIcon from '../assets/icons/socket-io.svg?component';
 import StorybookIcon from '../assets/icons/storybook.svg?component';
+import SvelteIcon from '../assets/icons/svelte.svg?component';
 import TSIcon from '../assets/icons/typescript.svg?component';
 import VsCodeIcon from '../assets/icons/vscode.svg?component';
 import WebpackIcon from '../assets/icons/webpack.svg?component';
@@ -178,6 +180,13 @@ const skills: Skill[] = [
     hint: '(background)',
     icon: AngularIcon,
   },
+  {
+    id: 'Svelte',
+    categoryId: 'FrontEnd',
+    name: 'Svelte',
+    hint: '(this website)',
+    icon: SvelteIcon,
+  },
   // BackEnd
   { id: 'NodeJS', categoryId: 'BackEnd', name: 'Node.js', icon: NodeJsIcon },
   { id: 'NestJS', categoryId: 'BackEnd', name: 'NestJS', icon: NestJsIcon },
@@ -200,14 +209,12 @@ const skills: Skill[] = [
     id: 'PostgreSQL',
     categoryId: 'BackEnd',
     name: 'PostgreSQL',
-    hint: '(background)',
     icon: PostgreSqlIcon,
   },
   {
     id: 'AWS',
     categoryId: 'BackEnd',
     name: 'AWS',
-    hint: '(SQS, S3, SNS)',
     icon: AWSIcon,
   },
   {
