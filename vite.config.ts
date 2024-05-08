@@ -1,3 +1,4 @@
+import rollupPluginStrip from '@rollup/plugin-strip';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { analyzer } from 'vite-bundle-analyzer';
@@ -15,5 +16,15 @@ export default defineConfig(({ command }) => ({
     command === 'build' && totalBundleSize(),
   ],
   base: '',
-  build: { outDir: 'docs' },
+  build: {
+    outDir: 'docs',
+    rollupOptions: {
+      plugins: [
+        rollupPluginStrip({
+          labels: ['dev'],
+          include: '**/*.ts',
+        }),
+      ],
+    },
+  },
 }));

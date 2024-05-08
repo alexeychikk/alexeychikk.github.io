@@ -40,6 +40,7 @@ import SassIcon from '~/assets/icons/sass.svg?react';
 import SentryIcon from '~/assets/icons/sentry.svg?react';
 import SocketIoIcon from '~/assets/icons/socket-io.svg?react';
 import StorybookIcon from '~/assets/icons/storybook.svg?react';
+import SvelteIcon from '~/assets/icons/svelte.svg?react';
 import TSIcon from '~/assets/icons/typescript.svg?react';
 import VsCodeIcon from '~/assets/icons/vscode.svg?react';
 import WebpackIcon from '~/assets/icons/webpack.svg?react';
@@ -184,6 +185,12 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
     hint: '(background)',
     icon: AngularIcon,
   },
+  {
+    id: 'Svelte',
+    categoryId: 'FrontEnd',
+    name: 'Svelte',
+    icon: SvelteIcon,
+  },
   // BackEnd
   { id: 'NodeJS', categoryId: 'BackEnd', name: 'Node.js', icon: NodeJsIcon },
   { id: 'NestJS', categoryId: 'BackEnd', name: 'NestJS', icon: NestJsIcon },
@@ -206,14 +213,12 @@ const skills = (<T extends any>(t: readonly SkillBase<T>[]) => t)([
     id: 'PostgreSQL',
     categoryId: 'BackEnd',
     name: 'PostgreSQL',
-    hint: '(background)',
     icon: PostgreSqlIcon,
   },
   {
     id: 'AWS',
     categoryId: 'BackEnd',
     name: 'AWS',
-    hint: '(SQS, S3, SNS)',
     icon: AWSIcon,
   },
   {

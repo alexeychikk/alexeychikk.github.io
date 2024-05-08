@@ -1,56 +1,68 @@
 import { differenceInMonths } from 'date-fns';
 
-import type { Experience } from '~/config/experience';
 import { EXPERIENCE } from '~/config/experience';
 import type { SkillId } from '~/config/skills';
-import type { SkillUsage, JobSkills } from '~/config/skillsUsage';
 import {
   SKILLS_USAGE,
   CONTINUOUSLY_LEARNING_SKILLS,
 } from '~/config/skillsUsage';
 
 export function getSkillExperienceInMonths(skillId: SkillId): number {
-  let stillUsingSkillInExperience = false;
-  let lastExperienceWithSkill: Experience | undefined;
+  let prevDateTo: Date | undefined;
+  let str: string;
+  dev: str = `[${skillId}]`;
 
-  const totalMonths = SKILLS_USAGE.reduce(
-    (months, { experienceId, skills }: JobSkills) => {
-      const skillUsage = skills.find(
-        (s) => ((s as SkillUsage).id || s) === skillId,
-      );
-      if (!skillUsage) return months;
+  const totalMonths = EXPERIENCE.reduceRight((acc, experience) => {
+    const experienceSkills = SKILLS_USAGE.find(
+      (usage) => usage.experienceId === experience.id,
+    );
+    const skillUsage = experienceSkills?.skills.find((skill) =>
+      typeof skill === 'string' ? skill === skillId : skill.id === skillId,
+    );
+    const learningSkill = CONTINUOUSLY_LEARNING_SKILLS[skillId];
 
-      const experience = EXPERIENCE.find((e) => e.id === experienceId)!;
-      if (!lastExperienceWithSkill) lastExperienceWithSkill = experience;
+    if (!skillUsage && !learningSkill) return acc;
 
-      if (typeof skillUsage === 'string') {
-        if (!experience.dateTo) stillUsingSkillInExperience = true;
-        return (
-          months +
-          differenceInMonths(
-            experience.dateTo || new Date(),
-            experience.dateFrom,
-          )
-        );
-      }
+    const dateFrom =
+      ((learningSkill?.dateFrom?.getTime() || 0) >
+        experience.dateFrom.getTime() &&
+        learningSkill?.dateFrom) ||
+      experience.dateFrom;
 
-      return months + skillUsage.experienceInMonths;
-    },
-    0,
-  );
+    let months =
+      (typeof skillUsage !== 'string' && skillUsage?.experienceInMonths) ||
+      Math.max(
+        0,
+        differenceInMonths(experience.dateTo || new Date(), dateFrom),
+      ) * (skillUsage ? 1 : learningSkill?.learningTimeRatio ?? 1);
 
-  const learningSkill = CONTINUOUSLY_LEARNING_SKILLS[skillId];
-  if (stillUsingSkillInExperience || !learningSkill) return totalMonths;
+    let substr: string;
+    dev: substr = +months.toFixed(1)
+      ? `-(${+months.toFixed(1)}|${experienceSkills?.experienceId || '@'})${skillUsage ? '' : '*'}`
+      : '';
 
-  if (!lastExperienceWithSkill)
-    lastExperienceWithSkill = EXPERIENCE[EXPERIENCE.length - 1];
-  return (
-    totalMonths +
-    Math.round(
-      differenceInMonths(
-        new Date(),
-        learningSkill.dateFrom || lastExperienceWithSkill.dateTo!,
-      ) * (learningSkill.learningTimeRatio || 1),
-    )
-  );
+    if (prevDateTo && learningSkill) {
+      const dateTo =
+        ((learningSkill?.dateFrom?.getTime() || 0) > prevDateTo.getTime() &&
+          learningSkill.dateFrom) ||
+        prevDateTo;
+      const gapMonths =
+        Math.max(0, differenceInMonths(experience.dateFrom, dateTo)) *
+        (learningSkill.learningTimeRatio ?? 1);
+
+      months += gapMonths;
+      dev: substr = +gapMonths.toFixed(1)
+        ? `-(${+gapMonths.toFixed(1)}|@)` + substr
+        : substr;
+    }
+
+    prevDateTo = experience.dateTo;
+    dev: str += substr;
+    return acc + months;
+  }, 0);
+
+  dev: str += `=${+totalMonths.toFixed(1)}`;
+  dev: console.log(str);
+
+  return totalMonths;
 }
