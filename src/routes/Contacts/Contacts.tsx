@@ -2,7 +2,15 @@ import React from 'react';
 
 import { useStyles } from './Contacts.styles';
 
-import { CodeLikeBlock, Kw, Sl, Br, Fn, L } from '~/components/CodeLikeBlock';
+import {
+  CodeLikeBlock,
+  Kw,
+  Sl,
+  Br,
+  Fn,
+  L,
+  Vn,
+} from '~/components/CodeLikeBlock';
 import { GoogleMap } from '~/components/GoogleMap';
 import { IfHirable, IfNotHirable } from '~/components/IfHirable';
 import { LinkLine } from '~/components/LinkLine';
@@ -13,7 +21,7 @@ export const Contacts: React.FC = () => {
   return (
     <CodeLikeBlock>
       <L>
-        <Kw>Currently</Kw> I live in <Sl>Kyiv</Sl>, Ukraine.
+        Currently <Kw>I live</Kw> in <Vn>Kyiv</Vn>, <Sl>Ukraine</Sl>.
       </L>
       <IfHirable>
         <L active git="green">
@@ -22,8 +30,8 @@ export const Contacts: React.FC = () => {
       </IfHirable>
       <IfNotHirable>
         <L git="blue">
-          <Kw>I lived</Kw> in <Sl>Israel</Sl> for several years, but decided to
-          return back to Ukraine.
+          I lived in <Sl>Israel</Sl> for several years, but decided to return
+          back to Ukraine.
         </L>
       </IfNotHirable>
       <Br />

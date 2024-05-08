@@ -28,11 +28,10 @@ export const AboutMe: React.FC = () => {
       </L>
       <L active git="green">
         <IfHirable>
-          <Kw>Currently</Kw> I am <Sl>open</Sl> to new{' '}
-          <Fn>job opportunities</Fn>!
+          Currently I am <Sl>open</Sl> to new <Fn>job opportunities</Fn>!
         </IfHirable>
         <IfNotHirable>
-          <Kw>Currently</Kw> I am not looking for a new job but feel free to{' '}
+          Currently I am not looking for a new job but feel free to{' '}
           <LinkOpen to="/contacts" hasLinkIcon>
             contact
           </LinkOpen>{' '}
@@ -47,7 +46,7 @@ export const AboutMe: React.FC = () => {
         <Vn>maintainable</Vn> <Fn>code</Fn>.
       </L>
       <L>
-        <Kw>My</Kw> main <Fn>stack</Fn> is: <Vn>JavaScript / TypeScript</Vn>,{' '}
+        My main <Fn>stack</Fn> is: <Vn>JavaScript / TypeScript</Vn>,{' '}
         <Vn>React</Vn>, <Vn>Node.js</Vn> and <Vn>MongoDB</Vn>.
       </L>
       <L>
@@ -71,8 +70,8 @@ export const AboutMe: React.FC = () => {
       <Br />
 
       <L>
-        <Kw>You can</Kw> find all of my <Fn>skills</Fn> in the <Vn>sidebar</Vn>{' '}
-        on the <Sl>left</Sl>
+        You can find all of my <Fn>skills</Fn> in the <Vn>sidebar</Vn> on the{' '}
+        <Sl>left</Sl>
       </L>
       <L>
         (<Kw>swipe</Kw> or <Kw>tap</Kw> the <Sl>green folder</Sl>{' '}
