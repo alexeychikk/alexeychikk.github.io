@@ -63,8 +63,7 @@ export const LOVE_SURVEY: LoveQuestion[] = [
   {
     title: <>Whose side are you on?</>,
     type: LoveQuestionType.Radio,
-    score: 1,
-    doesWrongAnswerTriggerEnd: true,
+    score: 5,
     answers: [
       {
         title: (
